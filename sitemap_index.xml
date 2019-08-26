@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://hackonch.ml/post-sitemap.xml</loc>
+		<lastmod>2019-08-26T07:39:33+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://hackonch.ml/page-sitemap.xml</loc>
+		<lastmod>2019-08-19T22:50:10+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://hackonch.ml/category-sitemap.xml</loc>
+		<lastmod>2019-08-26T07:39:33+00:00</lastmod>
+	</sitemap>
+</sitemapindex>

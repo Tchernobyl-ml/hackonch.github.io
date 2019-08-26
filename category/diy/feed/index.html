@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>DIY &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/category/diy/feed/" rel="self" type="application/rss+xml" />
+	<link>https://hackonch.ml</link>
+	<description>Security rhymes with Liberty</description>
+	<lastBuildDate>Mon, 19 Aug 2019 17:36:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/wp-content/uploads/2019/08/f56f9-favicon-1-150x150.png</url>
+	<title>DIY &#8211; ~# Hackonch !</title>
+	<link>https://hackonch.ml</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Pi-Hole or how to adblock an entire network !</title>
+		<link>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/</link>
+				<comments>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/#respond</comments>
+				<pubDate>Sun, 14 Jul 2019 21:34:30 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Privacy]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/" class="btn btn-primary btn-effect btn-lg"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser if I do not have an ad blocker installed!</p>
+<p><center><img src = "https://i.imgur.com/ynmzKmA.jpg" style = "width: 50%; height: 50%" /><figcaption></center>A meme that explains my situation quite well 🙂 </figcaption>The problem with this kind of extensions is that they use a lot of processor/memory resources in addition to having to be installed on a browser to work. I know right, there are some browsers with built-in ad blockers but sometimes we just have neither the browser choice nor the ability to install an extension.</p>
+<p>Sometimes we just want it to work, like a charm, naturally, without having anything to do, on all devices, pretty out-of-the-box though.</p>
+<p>If you think as me, then you are at the right place, because today I suggest you this little tutorial <a href="https://blog.tchernobyl.ml/category/diy/"> DIY </a > in order to definitively end the ads.</p>
+<h3> Ingredients: </h3>
+<p>&#8211; a Raspberry Pi 🍓 (sorry there was no more raspberry emojis)<br />
+&#8211; an SD card, a 4 GB SD card should be more than enough.<br />
+&#8211; an USB power supply (if you don&#8217;t have the official Raspberry power supply on hand, your <strong> USB </strong> phone charger is enough.<br />
+&#8211; a Linux distribution, the most popular on Raspberry Pi being Raspbian, we will use Rapsbian, but any distro does the trick!<br />
+&#8211; another computer (to configure our Raspberry)</p>
+<h3> Prepare the ground: </h3>
+<p>Usually, when unbox your Raspberry Pi, there is nothing installed, let&#8217;s fix this by plugging your SD card into the SD card reader of your other computer to install Raspbian as specified on this little <a href="https://blog.tchernobyl.ml/diy/etcher-or-make-a-usb-bootable-on-linux-mac-os-or-meme-windows/"> tutorial </a></p>
+<p>After that, we activate the SSH service of our Raspberry Pi by going into the boot partition (and not the /boot folder at the root).Once you are in the right partition, simply create an empty file named &#8220;ssh&#8221;.</p>
+<p>Insert the SD card into the raspi port and you&#8217;re good to go. Turn everything on and SSH-connect to the Raspberry Pi:</p>
+<p><Pre><br />
+ssh pi @ [LOCAL_RASPI_ADDRESS]<br />
+</Pre></p>
+<p>The default password is: &#8220;raspberry&#8221;</p>
+<p>You can achieve that with the Bash terminal on Unix OS&#8217;s (Linux, BSD&#8217;s, Mac OS&#8230;) or with Putty on Windows</p>
+<p><center><img src = "https://i.imgur.com/YJJ5KN3.png" /><figcaption></center>we put the IP of the Raspberry in the IP field </figcaption><center><img src = "https://i.imgur.com/e4pV7nU.png" /><figcaption></center>then we put the word of 🙂 </figcaption>Once you have the remote control over the RPI, change at least the password of the default user to ensure a minimum security with the command:</p>
+<p><Pre><br />
+pi @ raspberry: ~ $ passwd<br />
+Current password: &#8220;raspberry&#8221;<br />
+New password: [ANYTHING_BUT_&#8221;raspberry&#8221;_!_!_!]<br />
+Confirmation of password: [the same password as previously entered 🤠]<br />
+</Pre></p>
+<p>Now it&#8217;s time to talk about the solution I chose: &#8220;Pi-Hole&#8221;. It&#8217;s a free and Open-Source solution, simplistic as hell which allows us to solve our little advertising problem in a quite intuitive and efficient way. Indeed, once we have implemented the solution, the Raspberry will play the role of &#8220;filter&#8221;.</p>
+<p>The installation of Pi-Hole is very simple:</p>
+<pre>
+pi @ raspberry: ~ $ curl -sSL https://install.pi-hole.net | bash
+</pre>
+<p>the script should start:</p>
+<p><center><img src = "https://i.imgur.com/rHChPdC.png" /><figcaption></center>What a raspberry &#8230; 😍 </figcaption></center></p>
+<p>We run the installation script by navigating with the arrow keys on the keyboard until this step which I think is the most important of all. Those who read my article on <a href = "https://blog.chernobyl.ml/diy/les-dns-or-how-to-review-the-control-on-the-life-privates-a-step -a-time / "rel="noopener noreferrer"target =" _ blank "> DNS </a> (<a href =" https://blog.tchernobyl.ml/diy/les-dns-or-how- -repert-the-control-on-its-private-life-a-step-at-a-time / "rel="noopener noreferrer"target =" _ blank "> here </a>) will know what to choose 🤠.<br />
+<center><img src = "https://i.imgur.com/wnfcdov.png" /></center></p>
+<p>Once the installation is complete, the address of an administration page and your password to access it are given, remember the password ! If you prefer another password, you can always change it via the command:</p>
+<pre>
+pi@raspberry:~ $ sudo pihole -a -p
+</pre>
+<p>Once everything is set up we just check that the admin page works, if all everything is fine you should deal with a page like this:</p>
+<p><center><img src="https://i.imgur.com/s6aW8Yq.png" /></center></p>
+<p>From there, you can configure Pi-Hole at your leisure or put finer settings if you wish. The advantage with this tool is we actually can monitor everything and potentially block everything, so please be careful to become a mini NSA or a Big Brother ! ☹️</p>
+<p><center><img src = "https://i.imgur.com/0oYW3Ta.jpg" /><figcaption></center>This is typically the example not to follow 😥 </figcaption></center></p>
+<p>From now on, you do as you feel! Indeed, you have three deployment choices:</p>
+<p>&#8211; The sweet way, by replacing the DNS IP address on your router by the IP address of your Raspberry Pi. That way, It will change for you the DNS server settings of all other devices on the network.</p>
+<p>&#8211; The fine way (or &#8220;case by case&#8221;), by changing the the DNS IP address of each device you want to &#8220;free&#8221; of ads.</p>
+<p>&#8211; The radical way, disable DHCP from your router and let the Raspberry do it all alone via the built-in DHCP server.</p>
+<p>The three methods will of course work. It only depends on how you choose to work. Personally I have a preference for the sweet way, because it is the one that I think is the least headache. For example, if you buy a new device, no configuration is required for this device because it will automatically retrieves the Raspberry IP address via your router.</p>
+<h3> Verdict </h3>
+<p>To have tested Pi-Hole, I must admit that this is the kind of solution as I like. Namely very easy to install, ultra simple to configure because it&#8217;s this kind of solution that will be the most effective. All served with a tastefully documentation that of course allows you to go further.</p>
+<p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay cool and drink water because water is life !</p>
+<p><center><img src = "https://i.imgur.com/R5bQSXE.jpg" /></center></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</title>
+		<link>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/</link>
+				<comments>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/#respond</comments>
+				<pubDate>Fri, 12 Jul 2019 16:18:17 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[System]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1189</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot of things. It cas even make your USB devices/SD cards &#8220;bootable&#8221;.</p>
+<p>For those who are already a lost, know that when you want to &#8220;burn&#8221; an operating system in order to install it, the real action is to make your device ( USB key, SD card, external hard drive &#8230;) &#8220;bootable&#8221;. For the purists, I&#8217;m aware that it&#8217;s not exactly that but hey! Keep in mind that you read a &#8220;reminder&#8221; 🤠</p>
+<p><center><img src = "https://i.imgur.com/ajIAehf.jpg"></p>
+<figure> &#8220;dd&#8221; would not sound like the diminutive for the Mother of Dragons? </figure>
+<p></center></p>
+<p>The issue with this wonder of nature (dd, not Daenerys !!) is that like many wonders of that kind, you have to put your hands in the grease to use it because it&#8217;s not for beginners on Mac OS nor Windows. This is why there are essentially only people who have already been able to manipulate a Linux who know &#8220;dd&#8221;.</p>
+<p><center><img src = "https://i.imgur.com/oAdiJVV.jpg"><figcaption> This gentleman seems to know &#8220;dd&#8221; </figcaption></center></p>
+<p>Until you taste to a Linux, here is a solution I&#8217;ve been using for a quite long time already: &#8220;Etcher&#8221; (or newly &#8220;Balena Etcher&#8221;).</p>
+<p>The advantage with &#8220;Etcher&#8221; is that it&#8217;s one of those cross-platform and ultra-simplistic applications I like. Indeed Etcher can as well run on Linux, Mac OS or even Windows.</p>
+<p>The interface is hyper simplistic:</p>
+<p><center><img src = "https://i.imgur.com/Vw5Ymue.png"></center></p>
+<p>There are literally three buttons, I don&#8217;t think we can do more &#8220;user friendly&#8221; </p>
+<p>Thus, to make any storage bootable, you must:</p>
+<p>1 °) Select the image .iso/.img of the operating system you want to install<br />
+2 °) Select the removable storage (USB key, external hard disk, SD card, &#8230;)<br />
+3 °) &#8220;Flash!&#8221; or press the last button to make the removable storage &#8220;bootable&#8221; 🤠</p>
+<p><center><img src = "https://i.imgur.com/iZrydEH.jpg"></p>
+<figure> I wouldn&#8217;t said better 🤠</figure>
+<p></center></p>
+<h3> Verdict </h3>
+<p>Etcher does not replace &#8220;dd&#8221; but allows you at least to make ALL (and I mean all) devices you attach to your computer fully &#8220;bootable&#8221;.</p>
+<p>Which is, it must be admitted, quite useful when you break your Linux because of a bet with your friends and you&#8217;re in trouble because the only computer available to flash your USB stick is an old fashioned Mac OS or a rotten Windows (Sounds like there&#8217;s a story 🤠)</p>
+<p>In addition, I find this tool puts a real order in all the whole bunch of &#8220;Unetbootin,&#8221; Rufus &#8220;,&#8221; Linux live iso &#8220;and derivatives of all kinds which I find too unnecessary difficult to use .</p>
+<p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay cool with monkeys and drink water because water is water and water is life !!</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>How to get started into CTF&#8217;s</title>
+		<link>https://hackonch.ml/diy/how-to-get-started-into-ctfs/</link>
+				<comments>https://hackonch.ml/diy/how-to-get-started-into-ctfs/#respond</comments>
+				<pubDate>Wed, 22 May 2019 15:46:52 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1026</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone ! Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is ! 1°) The equipment We don&#8217;t make&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone !</p>
+<p>Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is !</p>
+<h3> 1°) The equipment </h3>
+<blockquote><p> We don&#8217;t make omelettes without breaking eggs, but to do so, we need some eggs! </p></blockquote>
+<p>Yup! the equipment is pretty important. In fact for Capture The Flags, there&#8217;s no need of a performance beast. For example, when I started, I remember this old Nec m320 dating back to 2003 and weighing at least 5 kg and even it wasn&#8217;t a luxury, I still have great memories with.</p>
+<p><center><img src="https://www.diltoo.com/Photos/27/27550-ordinateur-portable-nec-1.jpg" width="450" ​​height="600" class="alignnone size-full wp-image-1027" /><figcaption> Aaahh the beautiful era of portable computers that had the same weight as a potato bag 🤠 </figcaption></center></p>
+<p>In short, it&#8217;s not necessary at all to invest into gamers PC at € 2,000 each, only for CTF&#8217;s&#8217;s. We can recycle an old computer to begin with.</p>
+<p>On the other hand what is AB-SO-LU-TE-LY needed is an adequate operating system. No more Windows 10 or even Mac OS X! What you need is a Linux one 🐧</p>
+<p><center><img src="https://memegenerator.net/img/instances/61963857/linux-linux-everywhere.jpg" alt="linux everywhere" /></center></p>
+<p>There is indeed a good panel of Linux distributions specialized in computer security but my little personal top list remains the following:</p>
+<ul>
+<li><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank"> Kali Linux </a> (formerly Backtrack, user friendly) </li>
+<li><a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank"> Archstrike </a> (not for beginners ⚠️) </li>
+<li><a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank"> Back Box </a> (based on Ubuntu) </li>
+<li><a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank"> Parrot OS </a> (a fork of Kali Linux) </li>
+</ul>
+<p>It is quite important that you forge your own opinion later. But to begin with, the overwhelming majority will chose Kali Linux. It&#8217;s pretty stable distribution, based on Debian and in addition the community is consequent. Which means that most compatibility issues concerning, as instance drivers, may have already an online workaround, that&#8217;s pretty cool especially when you are a beginner 🤠.</p>
+<h3> 2°) Where to find CTF&#8217;s images? </H3></p>
+<p>A CTF is primarily a disk image file&#8230; but not that only. Indeed, in my previous article, I dealed with a site (<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank"> Vulnhub </a> ) which provides a large choice of image files to be download. These images can easily be mounted locally on a virtual machine (Virtual Box or KVM).</p>
+<p>But it may be a real headache for a beginner. That&#8217;s why other sites exist:</p>
+<p>We can mention <a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank"> Root-Me </a>, which is a French multilingual association aiming to promote knowledge about piracy and information security. The platform provides all well done challenges in various categories (Network, programming, Web, steganography, foresics, etc &#8230;) in addition to a CTF section where several slots are available to the community with a wide choice of images. To be an active member and supporting the association I must admit, this is a nice project.</p>
+<p>For those who prefer a EU-wide community, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank"> Hack The Box </a> is also a good address. The plateform is specialized in CTF&#8217;s. The images are handmade exclusively by comunity members. Just as Root-Me there is zero configuration to deal with, everything is online. Only a <a href="https://blog.tchernobyl.ml/diy/monter-son-own-vpn-like-a-nul-introduction/" rel="noopener noreferrer" target="_blank"> VPN </a> must be configured but everything is well explained on the site.</p>
+<p>I think I went around for the best sites where you can enjoy tasty CTF&#8217;s, if you know other sites, I would be more than happy to add them to the list !</p>
+<h3> 3°) Go, go, Power Rangers ! </h3>
+<p>Now: we have everything we need, it&#8217;s time to have fun until the Defcon or any other local cybersecurity event. For example, for me it&#8217;s La Nuit Du Hack ! (or newly &#8220;Le hack&#8221;) in France.</p>
+<p>Voilà ! I hope you enjoyed this post, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this post useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay a cool hacker and eat some watermelon because watermelon are so cool !!</p>
+<h3> Some links </h3>
+<p><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">https://www.kali.org/</a>   &#8211; Kali Linux<br />
+<a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank">https://archstrike.org/</a> &#8211; ArchStrike<br />
+<a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank">https://www.backbox.org/</a>    &#8211; BackBox<br />
+<a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank">https://www.parrotsec.org/</a>  &#8211; Parrot OS</p>
+<p><a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">https://www.root-me.org/</a>    &#8211; Root-Me<br />
+<a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">https://www.hackthebox.eu/</a>  &#8211; Hack The Box<br />
+<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">https://www.vulnhub.com/</a>    &#8211; Vulnhub</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/how-to-get-started-into-ctfs/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+	</channel>
+</rss>

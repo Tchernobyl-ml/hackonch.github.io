@@ -1,0 +1,3 @@
+Sitemap: https://blog.tchernobyl.ml/sitemap.xml
+User-agent:*
+Disallow:

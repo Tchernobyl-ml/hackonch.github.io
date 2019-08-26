@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Privacy &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/category/privacy/feed/" rel="self" type="application/rss+xml" />
+	<link>https://hackonch.ml</link>
+	<description>Security rhymes with Liberty</description>
+	<lastBuildDate>Mon, 26 Aug 2019 07:37:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/wp-content/uploads/2019/08/f56f9-favicon-1-150x150.png</url>
+	<title>Privacy &#8211; ~# Hackonch !</title>
+	<link>https://hackonch.ml</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Why Wifi and Privacy don&#8217;t fit together</title>
+		<link>https://hackonch.ml/privacy/why-wifi-and-privacy-dont-fit-together/</link>
+				<pubDate>Fri, 02 Aug 2019 00:00:33 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Privacy]]></category>
+
+		<guid isPermaLink="false">https://tchernobyl.altervista.org/?p=1414</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, If you read me regularly, you should know how a fervent supporter of privacy I am. Sometimes, I can even turn myself into a genuine government agent and&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/privacy/why-wifi-and-privacy-dont-fit-together/" class="btn btn-primary btn-effect btn-lg"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/privacy/why-wifi-and-privacy-dont-fit-together/">Why Wifi and Privacy don&#8217;t fit together</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>If you read me regularly, you should know how a fervent supporter of privacy I am. Sometimes, I can even turn myself into a genuine government agent and go as far as possible into investigating and find out those responsible for general mass attacks (<a href = "https://hackonch.ml/analysis-of-a-chinese-mass-attack-ft-codoso-team/" > here </a>) or, as more recently, attacks targeting a precise profile of users (<a href = "https://hackonch.ml/investigation-russian-phishing-campaign-via-text-messages-on-leboncoin/"> there </a>)</p>
+<p>As you may guess with the title of this post, we are not going to visit this time the confines of Russia or China to investigate on dark individuals. Nope, I suggest you instead to take a look at threats hanging over us, or should I say in your house! Yep, in your house, right now, or even at your workplace.</p>
+<p><center><img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" alt = "gif"/><figcaption>The reaction of many readers at this time of this post</figcaption></center></p>
+<p>Indeed, with all these cases of mass espionage and high level hacking, there is IMHO too much a trend to neglect or even forget the risks of sending in the air its emails, its bank codes, its password or in one word: its data. Today, there are of course many so-called &#8220;wireless&#8221; protocols which allow us to send data to the air (Bluetooth, GSM, ZigBee, NFC, &#8230;). Today we will focus on one of the most used, you may have already guessed it and that&#8217;s the in the title of this post (coincidence?): WI-FI!</p>
+<p><center><img src="https://media.giphy.com/media/JEf4yZp4H1rMc/giphy.gif" alt = "gif"/></center></p>
+<h3> A bit of history </h3>
+<p> Wi-Fi is a set of standards for wireless networks developed by the Institute of Electrical and Electronics Engineers (IEEE 802). Its first standard is published in 1997, and allows exchanges at a theoretical speed of 2 Mbit/s (it&#8217;s very slow nowadays). The set has been enhanced in 1999, with the publication of IEEE 802.11a and 802.11b standards which increase the theoretical throughput rate to 54 Mbit/s as well as a privacy protection system: the famous WEP (Wired Equivalent Privacy). </p>
+<p> It&#8217;s for WI-FI, the very first system to protect users against hackers. Except that<strong> Firstly </strong>, WEP was an option and therefore, a lot of people simply disregarded it. <strong> Secondly </strong>, in short, WEP used a robust encryption algorithm for that time. The fact, is we saw about 10 seconds ago that the performances had been increased by X27 between 1997 and 1999. You understand then that it was not necessary to wait a long time to be able to break the encryption used by WEP. For the cryptoaholics, the responsible all of this was the RC4 algorithm that breaks today less than ten seconds.</p>
+<p> To replace WEP, in 2003 was designed WPA which is still widely used today. That&#8217;s why, if you check out your phone to find some wifi networks you should find a large number of WPA with a possibility of variant as WPA2 or WPA3 with a suffix &#8220;Company&#8221;, &#8220;PSK&#8221; or &#8220;TKIP&#8221;.</p>
+<p><center><img src="https://pics.loveforquotes.com/%E7%B1%B3-wi-fi-looking-for-networks-turn-wi-fi-off-get-your-56421688.png" alt = "gif"/><figcaption> This one is a good one 🤭</figcaption></center></p>
+<h3> WPA in a few numbers </h3>
+<p> Of course, WPA was not spared by vulnerabilities. But doing a little researches on our beloved Wikipedia, didn&#8217;t reveal a couple of flaws as WEP but: </p>
+<p><center></p>
+<h1> 9 flaws </h1>
+<p></center></p>
+<p> Just that! But wait, this ins&#8217;t the worst part. Indeed, a few dozen known vulnerabilities in one of the most used protocols of the 21st century isn&#8217;t a bad sign but a pretty good one because it means that the publisher is aware of these flaws. In order to protect their customers, publishers can release a patch or even a workaround to continue to use the device safely until the patched version is released.</p>
+<p> The real problem with WPA is that there is no versioning at all. Basically when WPA version 1.0 is released but unfortunately (or fortunately ?) in the meanwhile, some flaws are heard, these flaws are not patched immediately in a version &#8220;WPA version 1.1 patch&#8221;. No, no, no and there is the worst part ! When flaws are found, for example, on version 1.0 it is necessary to wait for the second version &#8220;WPA2&#8221; to hope to see them patched. If it&#8217;s reassuring for some people to see vulnerabilities patched in a year with WPA to WP2, how about waiting for:</p>
+<p><center></p>
+<h1> 14 YEARS !!! </h1>
+<p></center></p>
+<p> Yep, between WPA2 to WPA3 there is 14 years 🤠 ! But it&#8217;s even funnier than that because most of the Wi-Fi vendors haven&#8217;t even implemented an <strong>UPDATE</strong> function on their devices. We could almost believe that they were not even expecting a third WPA standard 🤠! It&#8217;s a NO-NO even for those big companies that everyone uses their chips without knowing it. Well you have to believe that it is quite normal today to drive with a 14 year old car that we know the brakes can actually breake at any time!</p>
+<p><center><img src="https://media.giphy.com/media/OongkSFTbly8w/giphy.gif "alt =" gif "/><figcaption> YOLO as we say 🤠 </figcaption></center></p>
+<h3> Did you know ? </h3>
+<p> Do you know the principle of &#8220;Did you know? &#8220;? Usually, I don&#8217;t say no, but with WI-FI, we will have a good time, I can guarantee it!  </p>
+<h5> Did you know? </h5>
+<p> If you see some SSID (The names of Wi-Fi networks, eg FBI Surveillance) it also means that you are actually receiving the network packets of different devices connected to those networks. As each packet contains a header to know which network it is connected to, we can determine how many devices are connected to a network. Another important field, the MAC address that is defined by the manufacturer of the device is also indicated. Which means that even without being authenticated to the network, I can know exacly  which and how many devices are connected to a network. Hell yeah ! Enjoy your privacy in 2019 🤠 !</p>
+<p><center><img src="https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt = "gif"/></center></p>
+<h5> Did you know? </h5>
+<p> Wi-Fi implements a function to deauthenticate all users on a network, quite useful if you want to annoy all your neighborhood !</p>
+<p><center><img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif "alt =" gif "/></center></p>
+<h5> Did you know? </h5>
+<p> On public Wi-Fi networks , everyone has access to everyone&#8217;s data, so if you are enjoying a tasty Happy Meal at a well-known restaurant and for any reason you are connecting to your Minecraft server in FTP, the Wi-Fi hotspot will actually sends your password in clear in the air within an area of 26 576,97 m² (the maximum range of a wifi hotspot being 92 m indoors)</p>
+<p><center><img src="https://media.giphy.com/media/OqBEghKMTW79m/giphy.gif" alt = "gif"/><figcaption> this packet is afraid to be intercepted 🤠 </figcaption></center></p>
+<h5> Did you know? </h5>
+<p> There is actually no control to know who is whom on a wifi network. For instance, if I deauthenticate you from your wifi router, and I sneak to your doorstep to turn on a fake access point with the same name of your real access point. There is no way for you to say &#8220;Oh, there&#8217;s a bad guy at my doorstep performing a traffic redirection &#8220;. You will simply give me all your data including all your passwords thinking that it&#8217;s your usual connection.</p>
+<h5> Did you know? </h5>
+<p>There is still a significant number of Wi-Fi networks still under WEP in the world. For example, in 2015, 36.5% of Wi-Fi networks in Paris could be accessed without any password, and no less than 61.5% of Wi-Fi networks were password protected but used a poor encryption method such as, for example, just totally random picked: WEP. The study was carried out on &#8220;Avenue de l&#8217;Opera&#8221;, along the Seine and up to Notre-Dame de Paris, where 7,523 Wi-Fi networks belonging to hotels, cafés, offices and private residences were identified.</p>
+<p><center><img src="https://media.giphy.com/media/3oKIPznTgmcQGOlqyA/giphy.gif" alt="gif" /><figcaption>Don&#8217;t even think about getting free WI-FI !! 🤠</figcaption></center></p>
+<h5> Did you know? </h5>
+<p>Since August 2010, boxes with less than € 5 that work without human intervention, automatically search for WEP connections 1 km away, decode them and thus provide a free Internet connection to any computer connected to it, regardless of the system. exploitation. they also allow by extension to listen to the network in order to capture all the passwords that circulate on it. All as anonymous as illegal.</p>
+<h5> Did you know? </h5>
+<p>China has its own national standard to replace WPA named WAPI for WLAN Authentication Privacy Infrastructure.</p>
+<p><center><img src="https://media.giphy.com/media/xT9KVAN7Jvn22hekdG/giphy.gif" alt="gif" /><figcaption>This country will never stop surprising me 🤔</figcaption></center></p>
+<h5> Did you know? </h5>
+<p>Although WPA3 is supposed to be operational since January 2019, its key feature called OWE for &#8220;Opportunistic wireless Encryption&#8221; is still unavailable. If this feature was available, it would make the example of the Minecraft FTP connection over the hotel wifi just impossible. Even if according to Wikipedia, an attack of this kind is still possible even with OWE. Well, WPA3 remains a colander, a modern colander certainly, but a colander anyway!</p>
+<h5> Verdict </h5>
+<p>For better or for worse, Wi-Fi is ubiquitous today and although it&#8217;s quite practical and effective in terms of speed, Wi-Fi is all but privacy friendly.</p>
+<p>In my opinion, there is far too few quality of what user get at the end. We are deploying always more Wi-Fi hotspot, always more powerful, ever more practical, but without solving the real problems it poses. I&#8217;ll say it right away, don&#8217;t think I&#8217;m carpeting into my cave with a foil hat and screaming &#8220;BIG BROTHER IS WATCHING ME&#8221; all the time !</p>
+<p>I&#8217;m the first to use Wi-Fi in hotels or in McDonald&#8217;s between two French-fries with ketchup to watch youtubes poop videos. However, I think that Wi-Fi problems are a bit like Iphones, we always add new innovative features and make sure to fully exploit the potential of the device without solve the problem #1 which could break everything: the battery with Iphones and the privacy what is,even more important. </p>
+<p>Voilà ! I hope you enjoyed this article, do not hesitate to make your own idea on the subject and comment. We don&#8217;t change good habits, send the link of this article to your friends or your colleagues it&#8217;s very important if you want the site to grow. I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay safe, stay well and stay strong !</p>
+<h5>Because I&#8217;m not all-knowing</h5>
+<p>https://fr.wikipedia.org/wiki/Wi-Fi<br />
+https://fr.wikipedia.org/wiki/Wi-Fi_Protected_Access<br />
+https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers<br />
+https://www.journaldugeek.com/2015/07/29/etude-a-paris-365-des-reseaux-wi-fi-sont-accessibles-sans-aucun-mot-de-passe/</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/privacy/why-wifi-and-privacy-dont-fit-together/">Why Wifi and Privacy don&#8217;t fit together</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Pi-Hole or how to adblock an entire network !</title>
+		<link>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/</link>
+				<comments>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/#respond</comments>
+				<pubDate>Sun, 14 Jul 2019 21:34:30 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Privacy]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser if I do not have an ad blocker installed!</p>
+<p><center><img src = "https://i.imgur.com/ynmzKmA.jpg" style = "width: 50%; height: 50%" /><figcaption></center>A meme that explains my situation quite well 🙂 </figcaption>The problem with this kind of extensions is that they use a lot of processor/memory resources in addition to having to be installed on a browser to work. I know right, there are some browsers with built-in ad blockers but sometimes we just have neither the browser choice nor the ability to install an extension.</p>
+<p>Sometimes we just want it to work, like a charm, naturally, without having anything to do, on all devices, pretty out-of-the-box though.</p>
+<p>If you think as me, then you are at the right place, because today I suggest you this little tutorial <a href="https://blog.tchernobyl.ml/category/diy/"> DIY </a > in order to definitively end the ads.</p>
+<h3> Ingredients: </h3>
+<p>&#8211; a Raspberry Pi 🍓 (sorry there was no more raspberry emojis)<br />
+&#8211; an SD card, a 4 GB SD card should be more than enough.<br />
+&#8211; an USB power supply (if you don&#8217;t have the official Raspberry power supply on hand, your <strong> USB </strong> phone charger is enough.<br />
+&#8211; a Linux distribution, the most popular on Raspberry Pi being Raspbian, we will use Rapsbian, but any distro does the trick!<br />
+&#8211; another computer (to configure our Raspberry)</p>
+<h3> Prepare the ground: </h3>
+<p>Usually, when unbox your Raspberry Pi, there is nothing installed, let&#8217;s fix this by plugging your SD card into the SD card reader of your other computer to install Raspbian as specified on this little <a href="https://blog.tchernobyl.ml/diy/etcher-or-make-a-usb-bootable-on-linux-mac-os-or-meme-windows/"> tutorial </a></p>
+<p>After that, we activate the SSH service of our Raspberry Pi by going into the boot partition (and not the /boot folder at the root).Once you are in the right partition, simply create an empty file named &#8220;ssh&#8221;.</p>
+<p>Insert the SD card into the raspi port and you&#8217;re good to go. Turn everything on and SSH-connect to the Raspberry Pi:</p>
+<p><Pre><br />
+ssh pi @ [LOCAL_RASPI_ADDRESS]<br />
+</Pre></p>
+<p>The default password is: &#8220;raspberry&#8221;</p>
+<p>You can achieve that with the Bash terminal on Unix OS&#8217;s (Linux, BSD&#8217;s, Mac OS&#8230;) or with Putty on Windows</p>
+<p><center><img src = "https://i.imgur.com/YJJ5KN3.png" /><figcaption></center>we put the IP of the Raspberry in the IP field </figcaption><center><img src = "https://i.imgur.com/e4pV7nU.png" /><figcaption></center>then we put the word of 🙂 </figcaption>Once you have the remote control over the RPI, change at least the password of the default user to ensure a minimum security with the command:</p>
+<p><Pre><br />
+pi @ raspberry: ~ $ passwd<br />
+Current password: &#8220;raspberry&#8221;<br />
+New password: [ANYTHING_BUT_&#8221;raspberry&#8221;_!_!_!]<br />
+Confirmation of password: [the same password as previously entered 🤠]<br />
+</Pre></p>
+<p>Now it&#8217;s time to talk about the solution I chose: &#8220;Pi-Hole&#8221;. It&#8217;s a free and Open-Source solution, simplistic as hell which allows us to solve our little advertising problem in a quite intuitive and efficient way. Indeed, once we have implemented the solution, the Raspberry will play the role of &#8220;filter&#8221;.</p>
+<p>The installation of Pi-Hole is very simple:</p>
+<pre>
+pi @ raspberry: ~ $ curl -sSL https://install.pi-hole.net | bash
+</pre>
+<p>the script should start:</p>
+<p><center><img src = "https://i.imgur.com/rHChPdC.png" /><figcaption></center>What a raspberry &#8230; 😍 </figcaption></center></p>
+<p>We run the installation script by navigating with the arrow keys on the keyboard until this step which I think is the most important of all. Those who read my article on <a href = "https://blog.chernobyl.ml/diy/les-dns-or-how-to-review-the-control-on-the-life-privates-a-step -a-time / "rel="noopener noreferrer"target =" _ blank "> DNS </a> (<a href =" https://blog.tchernobyl.ml/diy/les-dns-or-how- -repert-the-control-on-its-private-life-a-step-at-a-time / "rel="noopener noreferrer"target =" _ blank "> here </a>) will know what to choose 🤠.<br />
+<center><img src = "https://i.imgur.com/wnfcdov.png" /></center></p>
+<p>Once the installation is complete, the address of an administration page and your password to access it are given, remember the password ! If you prefer another password, you can always change it via the command:</p>
+<pre>
+pi@raspberry:~ $ sudo pihole -a -p
+</pre>
+<p>Once everything is set up we just check that the admin page works, if all everything is fine you should deal with a page like this:</p>
+<p><center><img src="https://i.imgur.com/s6aW8Yq.png" /></center></p>
+<p>From there, you can configure Pi-Hole at your leisure or put finer settings if you wish. The advantage with this tool is we actually can monitor everything and potentially block everything, so please be careful to become a mini NSA or a Big Brother ! ☹️</p>
+<p><center><img src = "https://i.imgur.com/0oYW3Ta.jpg" /><figcaption></center>This is typically the example not to follow 😥 </figcaption></center></p>
+<p>From now on, you do as you feel! Indeed, you have three deployment choices:</p>
+<p>&#8211; The sweet way, by replacing the DNS IP address on your router by the IP address of your Raspberry Pi. That way, It will change for you the DNS server settings of all other devices on the network.</p>
+<p>&#8211; The fine way (or &#8220;case by case&#8221;), by changing the the DNS IP address of each device you want to &#8220;free&#8221; of ads.</p>
+<p>&#8211; The radical way, disable DHCP from your router and let the Raspberry do it all alone via the built-in DHCP server.</p>
+<p>The three methods will of course work. It only depends on how you choose to work. Personally I have a preference for the sweet way, because it is the one that I think is the least headache. For example, if you buy a new device, no configuration is required for this device because it will automatically retrieves the Raspberry IP address via your router.</p>
+<h3> Verdict </h3>
+<p>To have tested Pi-Hole, I must admit that this is the kind of solution as I like. Namely very easy to install, ultra simple to configure because it&#8217;s this kind of solution that will be the most effective. All served with a tastefully documentation that of course allows you to go further.</p>
+<p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay cool and drink water because water is life !</p>
+<p><center><img src = "https://i.imgur.com/R5bQSXE.jpg" /></center></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Wire as a good replacement for Skype</title>
+		<link>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/</link>
+				<comments>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/#respond</comments>
+				<pubDate>Mon, 08 Jul 2019 23:35:34 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Privacy]]></category>
+		<category><![CDATA[System]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1180</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, If as me, you live in a cave, know that Microsoft will stop the Skype project development! When Microsoft announced it quietly 🤠 I realize that some people&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/">Wire as a good replacement for Skype</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>If as me, you live in a cave, know that Microsoft will stop the Skype project development!</p>
+<p><center><img src = "https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif" alt = "skype"><figcaption> When Microsoft announced it quietly 🤠 </figcaption></center></p>
+<p>I realize that some people won&#8217;t even find the usefulness of making a post on it but for the others (and I know a lot !) who can&#8217;t simply imagine the word &#8220;Videoconference&#8221; rhyme with anything other than Skype, I have something that might interest you:</p>
+<h3> Wire </h3>
+<h3> 1 °) What is it? </h3>
+<p>Wire is above all a compagny but it&#8217;s also a fully open source and cross-platform software, which means that you can install it either on Linux, Mac OS, Android, IOS or even Windows. But before you install it, there are several &#8220;plans&#8221; a bit like slack for those who know. So you can create two kinds of account on the site &#8220;business&#8221; (paying) or &#8220;personal&#8221; (free), a mail and a password are more than enough to create a personal account.</p>
+<p><center><img src = "https://media.giphy.com/media/3o7TKrugYn6cXQAMTK/giphy.gif" alt = "applause"><figcaption> Minimalism folks, minimalism 🤠 !</figcaption></center></p>
+<h3> 2 °) Features </h3>
+<p>Once your account is created and the app is installed, there&#8217;s not much left to do:</p>
+<p><center><img src = "https://gigaom2.files.wordpress.com/2014/12/wire-screenshot-2.jpeg" alt = "macos"><figcaption> Wire on Mac OS 🤠 </figcaption></center>You can do everything as you would do on Skype, create conversation groups, add people to contacts, share your screen or your camera, share images,&#8230; All of that without having this feeling of being constantly monitored by the NSA or any other privacy killer. Indeed, all communications are encrypted end-to-end ! Which means that except the person you are chatting with, no one will know that your dog is called Medor, and not even Wire!</p>
+<p>Here is the icing on the cake: Wire does not serve any ads (yup, it is still possible in 2019).</p>
+<p><center><img src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" alt = "macos"><figcaption> The epic face I&#8217;ve made when I saw there was 0% of ads 🤠 </figcaption></center></p>
+<h3> 3 °) Verdict </h3>
+<p>You may have already understood it, I&#8217;m totally under the spell of Wire. I have honestly tried a myriade of replacements to Skype and even Discord (yes, yes it&#8217;s possible), but every time there was something wrong. Except for Wire, where everything works like a charm, the quality of the audio, the design, everything is tasty!</p>
+<p>Voilà ! I hope you enjoyed this post, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this post useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay away from barbed wire and enjoy free <del>candies</del> softwares !!</p>
+<p>NB: I&#8217;m not paid by Wire, it&#8217;s only my personal opinion about it ! </p>
+<h3> Some links </h3>
+<p>official website: <a href="https://wire.com/en/" rel="noopener noreferrer" target="_blank"> https://wire.com/en/ </a><br />
+download: <a href="https://wire.com/en/download/" rel="noopener noreferrer" target="_blank"> https://wire.com/en/download/ </a></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/">Wire as a good replacement for Skype</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+		<item>
+		<title>Net Neutrality &#8211; How to know if your ISP is safe ?</title>
+		<link>https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/</link>
+				<comments>https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/#respond</comments>
+				<pubDate>Mon, 08 Jul 2019 00:37:21 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Privacy]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1171</guid>
+				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you know what net neutrality is? If you don&#8217;t, here&#8217;s a quick reminder from Wikipedia: Net neutrality or network neutrality is a principle that guarantees the equal&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/">Net Neutrality &#8211; How to know if your ISP is safe ?</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p>Do you know what net neutrality is? If you don&#8217;t, here&#8217;s a quick reminder from Wikipedia:</p>
+<blockquote><p>
+Net neutrality or network neutrality is a principle that guarantees the equal treatment of all data flows on the Internet. This principle excludes, for example, any positive or negative discrimination with regard to the source, destination or content of the information transmitted over the network. </p></blockquote>
+<p>I also remember that a few years ago it really made the buzz when the United States had decided bottle it, plenty of stars from all walks of life had shown their dissatisfaction with this measure that was profitable only for those juicy operators as AT&#038;T, Verizon and so on &#8230;</p>
+<p><center><img src = "https://media.giphy.com/media/UOOrmYpZPwRm8/giphy.gif" alt = "US"></center></p>
+<p>In Europe, fortunately, the institutions are still *against* the big companies wishing to end it (but for how long?).</p>
+<p><center><img src = "https://media.giphy.com/media/l3mZ99WVXIFIGsZY4/giphy.gif" alt = "EU"></center></p>
+<p>But if for any reason you&#8217;re in doubt about your Internet Service Provider (ISP), you can still do this simple<a href = "https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer"target =" _ blank "> test </a> (<a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank"> https: // ip.lafibre.info/neutralite.php </a>)</p>
+<p>It couldn&#8217;t be easier :</p>
+<p>Two pictures must be downloaded, one via HTTP, the other one via HTTPS, if one of the two pictures is lighter than the other then you are in trouble !!!</p>
+<p>Indeed, if you notice a difference of size, then it is necessary to compare with reference one (ex: for the first picture, 43 225 bytes):</p>
+<p>If it is the image in HTTP which is smaller, it may mean that your ISP is manipulating the images to reduce their size (and splutter in the process the principle of net neutrality 😠).</p>
+<p><center><img src = "https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt = "Bravo!"></center></p>
+<p>If on the other hand it&#8217;s the HTTPS one, then you should quickly disconnect/reconnect your router and redo the test because it may be surely the sign that your internet connection is not safe 😰 !!!</p>
+<p><center><img src = "https://media.giphy.com/media/xT39D0tJm471uhvhaU/giphy.gif" alt = "AV"><figcaption> This is called a good &#8220;Firewall&#8221; 🤡 </figcaption></center></p>
+<p>In my case, I&#8217;ve made a small script that gave me this result:<br />
+<Pre><br />
+[✓] IMAGE_HTTP: 43,225<br />
+| ✓] IMAGE_HTTPS: 43,225</p>
+<p>[✓] The ISP is neutral!</p>
+<p></Pre><br />
+<center><img src = "https://media.giphy.com/media/26tPo1I4XyWzIBjFe/giphy.gif" alt = "content"><figcaption> Yes, I pretty does the same in my room when I saw the results 🤠 </figcaption></center></p>
+<p>I &#8216;ve written this script with Shell, because I honestly don&#8217;t know any lighter and easier langage on Linux/Mac OS&#8230;Nevertheless if you are the &#8220;happy&#8221; &#8220;&#8221; possessor &#8220;&#8221; of a Windows or if you just want to see me code a script for this beautiful and very friendly operating system #sarcasm don&#8217;t hesitate to let me know, I would be happy to help (it will be an opportunity to make a Github repository for the blog)!</p>
+<p>Voilà ! I hope you enjoyed this post, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this post useful, spread it ! I&#8217;ll see you soon for a new article!</p>
+<p>Until then, stay away from barbed wire and enjoy free candies softwares !!</p>
+<p><center><img src = "https://i.imgur.com/hxg3uAB.jpg" alt="neutrality"></center></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/">Net Neutrality &#8211; How to know if your ISP is safe ?</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+							</item>
+	</channel>
+</rss>

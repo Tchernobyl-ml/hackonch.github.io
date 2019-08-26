@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Coup de Gueule &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/fr/category/coups-de-gueule/feed/" rel="self" type="application/rss+xml" />
+	<link>https://tchernobyl.altervista.org</link>
+	<description>Sécurité rime avec Liberté</description>
+	<lastBuildDate>Tue, 23 Jul 2019 20:38:45 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
+	<title>Coup de Gueule &#8211; ~# Hackonch !</title>
+	<link>https://tchernobyl.altervista.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Commando et Flare VM pour terminer Windows (usine à gaz)²</title>
+		<link>https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/</link>
+				<pubDate>Wed, 03 Jul 2019 20:13:02 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Coup de Gueule]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1155</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Je ne sais pas pour vous, mais lorsque je faisais mes débuts en hacking et que le seul langage que j&#8217;arrivais à peu près à maîtriser&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/">Commando et Flare VM pour terminer Windows (usine à gaz)²</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Je ne sais pas pour vous, mais lorsque je faisais mes débuts en hacking et que le seul langage que j&rsquo;arrivais à peu près à maîtriser c&rsquo;était le Batch, j&rsquo;ignorais complètement l&rsquo;existence de Linux !</p>
+<p>Par pitié ne me jugez pas, j&rsquo;ai déjà assez honte comme ça de l&rsquo;écrire 😣 ! </p>
+<p>Il faut dire que j&rsquo;étais vraiment un noob , à tel point que je pensais que tous les grands piratages étaient faits sur Windows (j&rsquo;étais bien naïf). Donc lorsqu&rsquo;un jour un camarade me révèle l&rsquo;existence de BackTrack 5 r3 (nouvellement GNU Kali Linux), j&rsquo;étais tout émoustillé de faire mes premiers <strong>VRAIS</strong> pas dans le monde du hacking le tout émulé bien sûr dans une machine virtuelle (Virtual Box à l&rsquo;époque 🙂 ), car j&rsquo;avais je cite « peur de casser mon ordinateur » (ahh, ce que je pouvais être *tellement* naïf&#8230;)</p>
+<p>Pourquoi est-ce que je vous dis tout ça ? C&rsquo;est très simple, lorsque j&rsquo;étais plus jeune, les distributions Windows orienté hacking ça n&rsquo;existait pas&#8230; </p>
+<p><img src="https://i.imgur.com/cYOMBDF.png" alt="capture" /><br />
+<img src="https://i.imgur.com/KSkcVsS.png" alt="capture" /></p>
+<p>Maintenant oui.</p>
+<p><img src="https://media.giphy.com/media/RVZD5dJ5fviUg/giphy.gif" alt="meme" /></p>
+<p>En toute honnêteté je suis complètement passé à côté. À tel point que si j&rsquo;en parle aujourd&rsquo;hui, c&rsquo;est exclusivement parce que certains d&rsquo;entre vous, que je remercie au passage, m&rsquo;ont demandé d&rsquo;en parler, de dire un peu ce que j&rsquo;en pensais etc&#8230; (n&rsquo;hésitez d&rsquo;ailleurs pas à continuer à m&rsquo;écrire, j&rsquo;en suis super ravi).</p>
+<p>Au départ, je dois vous avouer que j&rsquo;ai cru à une farce ou à une info vraisemblablement pas vérifiée ou mal interprétée, c&rsquo;est pourquoi j&rsquo;ai vérifié par moi-même&#8230; Je suis bien resté 2 minutes devant mon écran à ne pas savoir comment réagir. En effet, je ne sais pas si je dois rire ou si je dois pleurer de rire devant le fait que « ça y est, en 2019, Windows a deux « distributions » et elles sont toutes les deux orientées sécurité informatique ».</p>
+<p>Les anciens du site pourront vous l&rsquo;attester, j&rsquo;aime bien taper sur Windaube et peut-être d&rsquo;ailleurs que ça ne fait rire que moi mais je trouve carrément tordant le fait de mettre « Windows » et « Hacking » dans la même phrase. </p>
+<p><img src="https://media.giphy.com/media/HyvjlU00Ad4xq/giphy.gif" alt="hackerus windowsius" /><figcaption>un authentique spécimen de hackerus windowsius 🙂</figcaption></p>
+<p>Bon plus sérieusement, j&rsquo;ai quand même voulu tester ces deux distrib Lin..Windows (la bonne blague) et je peux vous affirmer que dès le début on ressent bien le côté machine à gaz de Windows. </p>
+<p>Tout d&rsquo;abord, il faut savoir que ces deux distrib sont publiées par <strong>FireEye</strong>. Pour ceux qui ne connaisseraient ce nom et qui seraient un peu plus branchés jeux vidéos, sachez que si <strong>Kaspersky</strong> est un peu le « <strong>Ubisoft</strong> » de la sécurité informatique, <strong>FireEye</strong>, c&rsquo;est plus l&rsquo; « Electronic Arts » (EA) de la sécurité informatique. Il s&rsquo;agit donc d&rsquo;une grosse entreprise Américaine qui a des contrats un peu partout et qui prend un malin plaisir à faire la chasse aux groupes d’hackeurs gouvernementaux « ennemis ». </p>
+<p>Enfin bref, tout ça pour dire que c&rsquo;est la même entité qui publie ces distributions (qui sont d&rsquo;ailleurs plus proches du pack de logiciel que de la véritable distribution). </p>
+<p>Il y a donc deux packs, le starter pack du parfait Malware Hunter(chasseur de virus)/ Ingénieur Forensic nommé « Flare VM » et le starter pack du parfait Pentester / jean-Hackeur en puissance, avec Commando VM</p>
+<p><img src="https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif" alt="jean-hackeur" /><figcaption>un authentique spécimen de jean-hackerus en puissanctus  🙂</figcaption></p>
+<p>Pour installer une des deux versions (Flare VM ou Commando VM) il faut au préalable avoir installé une machine virtuelle avec Windows 7, <del datetime="2019-07-03T18:15:09+00:00">8</del>, 8.1 ou <del datetime="2019-07-03T18:15:09+00:00">9</del> 10 et être allé sur le dépot github associé à la version (<a href="https://github.com/fireeye/flare-vm" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/flare-vm</a> ou <a href="https://github.com/fireeye/commando-vm" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/commando-vm</a>) afin de télécharger et exécuter un petit fichier powershell « Install.ps ».</p>
+<p>Lorsque le script a installé pour 60 Go de disque dur (oui oui, c&rsquo;est dans la configuration requise *MINIMALE*) vous voici avec votre fond d&rsquo;écran changé </p>
+<p><img src="https://i.imgur.com/cYOMBDF.png" alt="capture" /></p>
+<h3>OU</h3>
+<p><img src="https://i.imgur.com/KSkcVsS.png" alt="capture" /></p>
+<p>Et voilà ! Vous êtes partis pour faire la même chose que sur <strong>GNU Kali Linux</strong> mais en moins bien et en deux téléchargements différents le tout sur la plus vulnérable de toutes les machines à gaz (Bah oui il ne faut pas non plus s&rsquo;imaginer laisser Windows Defender allumé, ça serait pas drôle sinon)!! Comment?! que dites-vous ? « Oui mais là c&rsquo;est un truc spécial pour Windows » ? Aurais-je entendu dans le fond de la salle ? Ha ha&#8230; Vous êtes si naïfs&#8230;</p>
+<p><img src="https://media.giphy.com/media/fYsyULfLlvBzW/giphy.gif" alt="lol" /><figcaption>Je suis sûr que plus d&rsquo;un « Windowsien » aura cette réaction en fin d&rsquo;article  🙂 </figcaption></p>
+<p>D&rsquo;après le dépôt github, « <a href="https://github.com/fireeye/flare-vm#pentest" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/flare-vm#pentest</a> » pour être plus précis, on voit très clairement écrit que la partie « Pentest » de Flare VM est constitué de « Windows binaries from Kali Linux » (Binaires Windows provenant de <strong>*GNU*</strong> Kali Linux). Ainsi, comme vous pouvez l&rsquo;imaginer, il en est de même pour Commando VM où là encore est précisé « Windows binaries from Kali Linux » en plus d&rsquo;être confirmé dans la « note légale » (<a href="https://github.com/fireeye/commando-vm#legal-notice" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/commando-vm#legal-notice</a> pour ceux qui veulent vérifier). </p>
+<p>Bon, pour en dire du bien, il y a bien quelques nouveautés, comme un semblant d&rsquo;installateur de paquets nommé <del datetime="2019-07-03T18:15:09+00:00">*apt*</del> « cup » ou encore une sorte de toute nouvelle version 2.0 qui apporte, je cite, « pleins de nouveaux changements » et qui n&rsquo;est bien évidement pas installable via ce même installateur de paquets #payetonutilité. </p>
+<p>En bref, vous l&rsquo;avez peut-être compris en lisant cet article, je suis loin d&rsquo;être conquis à l&rsquo;idée d&rsquo;utiliser le jumeau lourdement handicapé d&rsquo;un pauvre « GNU Kali Linux ».exe</p>
+<p>Je tire peut-être sur l&rsquo;ambulance, mais quand je vois le niveau d&rsquo;utilité / de mise au point du truc, je ne peux pas m&#8217;empêcher de me poser la question « Pourquoi ? » :</p>
+<p>Pourquoi tenter une distrib sur Windows alors que ça ne marche tout simplement pas ! Sérieusement, il n&rsquo;y a qu&rsquo;à regarder la configuration minimum requise : 4Go de RAM pour 60Go de disque !!</p>
+<p>Pourquoi ne pas avoir fait une distribution Linux du truc ? Ça aurait quand même déjà un peu plus de crédibilité et un minium de viabilité 🙁 </p>
+<p>Pourquoi est-ce qu&rsquo;il a fallu attendre 2019 pour voir apparaître les premières distributions « hacking » sur Windows ? </p>
+<p><img src="https://media.giphy.com/media/b8jefh8LnBmMw/giphy.gif" alt="questions" /></p>
+<p>En attendant de trouver des réponses à ces grandes questions sans doute sans réponses de l&rsquo;Univers, vous pouvez toujours faire parler du blog autour de vous si le site vous plait et que vous avez envie qu&rsquo;il prenne plus d&rsquo;ampleur !</p>
+<p>Ça me fait énormément plaisir à chaque fois de voir le nombre de visiteurs augmenter, n&rsquo;hésitez pas non plus à me proposer des idées d&rsquo;articles je lis bien entendu tous vos messages 😉 </p>
+<p>Aller portez-vous bien et d&rsquo;ici là, à la prochaine !</p>
+<p><img src="https://i.imgur.com/hqP2n6U.jpg" alt="richard approuve" /></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/">Commando et Flare VM pour terminer Windows (usine à gaz)²</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>[Coup de Gueule] Comment gagner de l&#8217;argent sur internet en copiant sur le voisin</title>
+		<link>https://hackonch.ml/fr/coups-de-gueule/coup-de-gueule-comment-gagner-de-largent-sur-internet-en-copiant-sur-le-voisin/</link>
+				<pubDate>Tue, 02 Jul 2019 19:01:02 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Coup de Gueule]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1125</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Aujourd&#8217;hui je voudrais vous faire part d&#8217;une curiosité qui m&#8217;est apparue tel un iceberg sur le paisible océan qu&#8217;est Internet. C&#8217;est à peu près comme ça&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/coups-de-gueule/coup-de-gueule-comment-gagner-de-largent-sur-internet-en-copiant-sur-le-voisin/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/coups-de-gueule/coup-de-gueule-comment-gagner-de-largent-sur-internet-en-copiant-sur-le-voisin/">[Coup de Gueule] Comment gagner de l&rsquo;argent sur internet en copiant sur le voisin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Aujourd&rsquo;hui je voudrais vous faire part d&rsquo;une curiosité qui m&rsquo;est apparue tel un iceberg sur le paisible océan qu&rsquo;est Internet.</p>
+<p><img src="https://media.giphy.com/media/haOs8T5pDXZMQ/giphy.gif" alt="iceberg" /><figcaption>C&rsquo;est à peu près comme ça que ça c&rsquo;est passé monsieur l&rsquo;agent 🙂</figcaption>J&rsquo;étais à fond avec un ami sur un CTF ultra difficile, le genre de CTF tellement difficile, que la moindre avancée était tout aussi jouissive qu&rsquo;une victoire contre un boss de Dark Souls 3, m&rsquo;voyez. Je prépare d&rsquo;ailleurs un autre article en parallèle de celui-ci qui raconte justement ce CTF de malade mental assez différent de ce qui se fait habituellement 🙂 . </p>
+<p>Enfin bref, nous avions bien progressé ; si bien que nous sommes arrivés à une étape clef nommée « <strong>élévation des privilèges</strong> » (l&rsquo;étape où on devient administrateur de la machine)</p>
+<p>À ce moment là, je colle par inadvertance quelque chose dans mon navigateur tout fraîchement installé et qui avait encore Google (ou « gogole » comme j&rsquo;aime bien l&rsquo;appeler) en moteur de recherche par défaut. Je tombe alors là dessus :</p>
+<img src="https://i.imgur.com/ERuwYRV.png" alt="google" width="800" height="487" class="size-medium wp-image-1126" />
+<p>Récapitulons, il y a 6 résultats. Parmi ces résultats les deux premiers sont très similaires. En effet, les deux possèdent une même date d&rsquo;indexation, environ le même texte&#8230; La seule différence réside dans le titre complètement « What The Fuck » du second :</p>
+<p><strong>« Prostituee en caravane &#8211; agence de rencontre badoo »</strong></p>
+<p>Mais ça ne s&rsquo;arrête pas là ! Lorsque l&rsquo;on tente de voir le cache (la page que Google a visité telle qu&rsquo;elle lors de l&rsquo;indexation) on se rend compte d&rsquo;un truc : </p>
+<p>Diantre ! La page a été intégralement copiée ! </p>
+<img src="https://i.imgur.com/lNZxzop.png" alt="google" width="800" height="487" class="size-medium wp-image-1126" />
+<p>Même les commentaires des internautes se retrouvent prostitués (sans mauvais jeux de mots) ! !</p>
+<img src="https://i.imgur.com/ldRYLnF.png" alt="google" width="800" height="487" class="size-medium wp-image-1126" />
+<p>Sérieux, même l&rsquo;ami Frédéric Bezies a eu droit à cette barbarie&#8230;</p>
+<img src="https://i.imgur.com/L2S65RP.png" alt="google" width="800" height="487" class="size-medium wp-image-1126" />
+<p>Si vous ne savez pas de qui il s&rsquo;agit, allez jeter un petit coup d&rsquo;œil à son <a href="http://frederic.bezies.free.fr/blog/" rel="noopener noreferrer" target="_blank">blog </a>(http://frederic.bezies.free.fr/blog/), les amoureux de logiciel libre vont a-d-o-r-e-r ;).</p>
+<p>Mais trève de batifolage. Ce qui me révolte, c&rsquo;est que lorsque l&rsquo;on compare justement le référencement de de notre ami Frédéric sur Google, on note « 43 200 résultats » et à titre informatif, « MisterJDay » (pour les vrais qui connaissent) c&rsquo;est 78 000 résultats. Pourquoi est-ce que je m&rsquo;attarde sur le référencement ? Parce que le domaine littlelionmen.com (le domaine fautif) apparaît dans : </p>
+<img src="https://i.imgur.com/L8725Ia.png" alt="google" width="800" height="487" class="size-medium wp-image-1126" />
+<p>C&rsquo;est fou quand même de se dire que les gens qui sont derrières ces pratiques honteuses sont mieux référencés sur Google en copiant des sites et en proposant des annonces (qui soit dit en passant, sont totalement bidonnes) que des gens qui sont pour ainsi dire mes modèles depuis plusieurs années déjà et qui consacrent leur temps à créer un véritable contenu avec un minimum de qualité. Contenu qui sert littéralement de <strong>chair à pâté</strong> pour ce genre de sites (très) peu scrupuleux. </p>
+<p>Sérieusement même dans « Images » il n&rsquo;y a que du contenu geek / Linux et attention ! Uniquement de sites en français s&rsquo;il vous plaît !</p>
+<p>Enfin bref, c&rsquo;est ainsi que je fonde une nouvelle catégorie d&rsquo;articles nommée tout simplement « Coup de gueule » pour justement pousser un bon coup de gueule et ainsi dire « STOP », un peu comme là, par exemple.</p>
+<p>Aller portez-vous bien les amis et à la prochaine pour de nouveaux articles </p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/coups-de-gueule/coup-de-gueule-comment-gagner-de-largent-sur-internet-en-copiant-sur-le-voisin/">[Coup de Gueule] Comment gagner de l&rsquo;argent sur internet en copiant sur le voisin</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

