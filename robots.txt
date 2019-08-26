@@ -1,3 +1,4 @@
 Sitemap: https://hackonch.ml/sitemap.xml
+Sitemap: https://hackonch.ml/fr/sitemap.xml
 User-agent:*
 Disallow:

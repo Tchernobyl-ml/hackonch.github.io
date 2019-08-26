@@ -1,3 +1,4 @@
-Sitemap: https://blog.tchernobyl.ml/sitemap.xml
+Sitemap: https://hackonch.ml/fr/sitemap.xml
+Sitemap: https://hackonch.ml/sitemap.xml
 User-agent:*
 Disallow:
