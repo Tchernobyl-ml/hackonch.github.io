@@ -10,7 +10,7 @@
 <channel>
 	<title>DIY &#8211; ~# Hackonch !</title>
 	<atom:link href="https://hackonch.ml/category/diy/feed/" rel="self" type="application/rss+xml" />
-	<link>https://hackonch.ml</link>
+	<link>https://tchernobylus.altervista.org</link>
 	<description>Security rhymes with Liberty</description>
 	<lastBuildDate>Mon, 19 Aug 2019 17:36:31 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -23,7 +23,7 @@
 <image>
 	<url>https://hackonch.ml/wp-content/uploads/2019/08/f56f9-favicon-1-150x150.png</url>
 	<title>DIY &#8211; ~# Hackonch !</title>
-	<link>https://hackonch.ml</link>
+	<link>https://tchernobylus.altervista.org</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
@@ -36,16 +36,16 @@
 				<category><![CDATA[DIY]]></category>
 		<category><![CDATA[Privacy]]></category>
 
-		<guid isPermaLink="false">https://hackonch.ml/?p=1202</guid>
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
 				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/" class="btn btn-primary btn-effect btn-lg"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Hi everyone,</p>
 <p>Do you use Adblock, Ublock or any other extension to block ads? In my case, I do so. It&#8217;s quite simple, I simply can not use a browser if I do not have an ad blocker installed!</p>
 <p><center><img src = "https://i.imgur.com/ynmzKmA.jpg" style = "width: 50%; height: 50%" /><figcaption></center>A meme that explains my situation quite well 🙂 </figcaption>The problem with this kind of extensions is that they use a lot of processor/memory resources in addition to having to be installed on a browser to work. I know right, there are some browsers with built-in ad blockers but sometimes we just have neither the browser choice nor the ability to install an extension.</p>
 <p>Sometimes we just want it to work, like a charm, naturally, without having anything to do, on all devices, pretty out-of-the-box though.</p>
-<p>If you think as me, then you are at the right place, because today I suggest you this little tutorial <a href="https://hackonch.ml/category/diy/"> DIY </a > in order to definitively end the ads.</p>
+<p>If you think as me, then you are at the right place, because today I suggest you this little tutorial <a href="https://blog.tchernobyl.ml/category/diy/"> DIY </a > in order to definitively end the ads.</p>
 <h3> Ingredients: </h3>
 <p>&#8211; a Raspberry Pi 🍓 (sorry there was no more raspberry emojis)<br />
 &#8211; an SD card, a 4 GB SD card should be more than enough.<br />
@@ -53,7 +53,7 @@
 &#8211; a Linux distribution, the most popular on Raspberry Pi being Raspbian, we will use Rapsbian, but any distro does the trick!<br />
 &#8211; another computer (to configure our Raspberry)</p>
 <h3> Prepare the ground: </h3>
-<p>Usually, when unbox your Raspberry Pi, there is nothing installed, let&#8217;s fix this by plugging your SD card into the SD card reader of your other computer to install Raspbian as specified on this little <a href="https://hackonch.ml/diy/etcher-or-make-a-usb-bootable-on-linux-mac-os-or-meme-windows/"> tutorial </a></p>
+<p>Usually, when unbox your Raspberry Pi, there is nothing installed, let&#8217;s fix this by plugging your SD card into the SD card reader of your other computer to install Raspbian as specified on this little <a href="https://blog.tchernobyl.ml/diy/etcher-or-make-a-usb-bootable-on-linux-mac-os-or-meme-windows/"> tutorial </a></p>
 <p>After that, we activate the SSH service of our Raspberry Pi by going into the boot partition (and not the /boot folder at the root).Once you are in the right partition, simply create an empty file named &#8220;ssh&#8221;.</p>
 <p>Insert the SD card into the raspi port and you&#8217;re good to go. Turn everything on and SSH-connect to the Raspberry Pi:</p>
 <p><Pre><br />
@@ -75,7 +75,7 @@ pi @ raspberry: ~ $ curl -sSL https://install.pi-hole.net | bash
 </pre>
 <p>the script should start:</p>
 <p><center><img src = "https://i.imgur.com/rHChPdC.png" /><figcaption></center>What a raspberry &#8230; 😍 </figcaption></center></p>
-<p>We run the installation script by navigating with the arrow keys on the keyboard until this step which I think is the most important of all. Those who read my article on <a href = "https://blog.chernobyl.ml/diy/les-dns-or-how-to-review-the-control-on-the-life-privates-a-step -a-time / "rel="noopener noreferrer"target =" _ blank "> DNS </a> (<a href =" https://hackonch.ml/diy/les-dns-or-how- -repert-the-control-on-its-private-life-a-step-at-a-time / "rel="noopener noreferrer"target =" _ blank "> here </a>) will know what to choose 🤠.<br />
+<p>We run the installation script by navigating with the arrow keys on the keyboard until this step which I think is the most important of all. Those who read my article on <a href = "https://blog.chernobyl.ml/diy/les-dns-or-how-to-review-the-control-on-the-life-privates-a-step -a-time / "rel="noopener noreferrer"target =" _ blank "> DNS </a> (<a href =" https://blog.tchernobyl.ml/diy/les-dns-or-how- -repert-the-control-on-its-private-life-a-step-at-a-time / "rel="noopener noreferrer"target =" _ blank "> here </a>) will know what to choose 🤠.<br />
 <center><img src = "https://i.imgur.com/wnfcdov.png" /></center></p>
 <p>Once the installation is complete, the address of an administration page and your password to access it are given, remember the password ! If you prefer another password, you can always change it via the command:</p>
 <pre>
@@ -95,7 +95,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
 <p>Until then, stay cool and drink water because water is life !</p>
 <p><center><img src = "https://i.imgur.com/R5bQSXE.jpg" /></center></p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/">Pi-Hole or how to adblock an entire network !</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -110,10 +110,10 @@ pi@raspberry:~ $ sudo pihole -a -p
 		<category><![CDATA[Fun]]></category>
 		<category><![CDATA[System]]></category>
 
-		<guid isPermaLink="false">https://hackonch.ml/?p=1189</guid>
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1189</guid>
 				<description><![CDATA[<div class="post-excerpt">Hi everyone, Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Hi everyone,</p>
 <p>Do you know &#8220;dd&#8221;? No ? This is a small GNU binary, surely one of the most essential that could exists. It allows you to do a lot of things. It cas even make your USB devices/SD cards &#8220;bootable&#8221;.</p>
@@ -141,7 +141,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>In addition, I find this tool puts a real order in all the whole bunch of &#8220;Unetbootin,&#8221; Rufus &#8220;,&#8221; Linux live iso &#8220;and derivatives of all kinds which I find too unnecessary difficult to use .</p>
 <p>Voilà ! I hope you enjoyed this article, don&#8217;t hesitate to make your own idea and comment. We don&#8217;t change good habits, if you found this little DIY useful, spread it ! I&#8217;ll see you soon for a new article!</p>
 <p>Until then, stay cool with monkeys and drink water because water is water and water is life !!</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/">Etcher or how to burn an .iso / .img on Linux, Mac OS and even Windows</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -155,10 +155,10 @@ pi@raspberry:~ $ sudo pihole -a -p
 				<category><![CDATA[DIY]]></category>
 		<category><![CDATA[Fun]]></category>
 
-		<guid isPermaLink="false">https://hackonch.ml/?p=1026</guid>
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1026</guid>
 				<description><![CDATA[<div class="post-excerpt">Hi everyone ! Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is ! 1°) The equipment We don&#8217;t make&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/" class="btn btn-primary btn-effect"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Hi everyone !</p>
 <p>Many people asked me to write a little post on how to get started into CTF&#8217;s, so here it is !</p>
@@ -181,7 +181,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>A CTF is primarily a disk image file&#8230; but not that only. Indeed, in my previous article, I dealed with a site (<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank"> Vulnhub </a> ) which provides a large choice of image files to be download. These images can easily be mounted locally on a virtual machine (Virtual Box or KVM).</p>
 <p>But it may be a real headache for a beginner. That&#8217;s why other sites exist:</p>
 <p>We can mention <a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank"> Root-Me </a>, which is a French multilingual association aiming to promote knowledge about piracy and information security. The platform provides all well done challenges in various categories (Network, programming, Web, steganography, foresics, etc &#8230;) in addition to a CTF section where several slots are available to the community with a wide choice of images. To be an active member and supporting the association I must admit, this is a nice project.</p>
-<p>For those who prefer a EU-wide community, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank"> Hack The Box </a> is also a good address. The plateform is specialized in CTF&#8217;s. The images are handmade exclusively by comunity members. Just as Root-Me there is zero configuration to deal with, everything is online. Only a <a href="https://hackonch.ml/diy/monter-son-own-vpn-like-a-nul-introduction/" rel="noopener noreferrer" target="_blank"> VPN </a> must be configured but everything is well explained on the site.</p>
+<p>For those who prefer a EU-wide community, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank"> Hack The Box </a> is also a good address. The plateform is specialized in CTF&#8217;s. The images are handmade exclusively by comunity members. Just as Root-Me there is zero configuration to deal with, everything is online. Only a <a href="https://blog.tchernobyl.ml/diy/monter-son-own-vpn-like-a-nul-introduction/" rel="noopener noreferrer" target="_blank"> VPN </a> must be configured but everything is well explained on the site.</p>
 <p>I think I went around for the best sites where you can enjoy tasty CTF&#8217;s, if you know other sites, I would be more than happy to add them to the list !</p>
 <h3> 3°) Go, go, Power Rangers ! </h3>
 <p>Now: we have everything we need, it&#8217;s time to have fun until the Defcon or any other local cybersecurity event. For example, for me it&#8217;s La Nuit Du Hack ! (or newly &#8220;Le hack&#8221;) in France.</p>
@@ -195,7 +195,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p><a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">https://www.root-me.org/</a>    &#8211; Root-Me<br />
 <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">https://www.hackthebox.eu/</a>  &#8211; Hack The Box<br />
 <a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">https://www.vulnhub.com/</a>    &#8211; Vulnhub</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/diy/how-to-get-started-into-ctfs/">How to get started into CTF&#8217;s</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/diy/how-to-get-started-into-ctfs/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
