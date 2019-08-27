@@ -10,7 +10,7 @@
 <channel>
 	<title>DIY &#8211; ~# Hackonch !</title>
 	<atom:link href="https://hackonch.ml/fr/category/diy/feed/" rel="self" type="application/rss+xml" />
-	<link>https://tchernobyl.altervista.org</link>
+	<link>https://hackonch.ml/fr/</link>
 	<description>Sécurité rime avec Liberté</description>
 	<lastBuildDate>Mon, 19 Aug 2019 17:22:35 +0000</lastBuildDate>
 	<language>fr-FR</language>
@@ -23,7 +23,7 @@
 <image>
 	<url>https://hackonch.ml/fr/wp-content/uploads/2019/08/favicon-1-90x90.png</url>
 	<title>DIY &#8211; ~# Hackonch !</title>
-	<link>https://tchernobyl.altervista.org</link>
+	<link>https://hackonch.ml/fr/</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
@@ -39,24 +39,24 @@
 		<category><![CDATA[Vie Privée]]></category>
 		<category><![CDATA[Web]]></category>
 
-		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1202</guid>
+		<guid isPermaLink="false">https://hackonch.ml/?p=1202</guid>
 				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&#8217;est très simple, je ne&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/" class="btn btn-primary btn-effect btn-lg"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Coucou tout le monde, </p>
 <p>Est-ce que vous utilisez Adblock, Ublock ou tout autre extension pour bloquer les pubs ? En ce qui me concerne, oui. C&rsquo;est très simple, je ne peux tout simplement pas utiliser un navigateur si je n&rsquo;ai pas de bloqueur de pub d&rsquo;installé !</p>
 <p><img src="https://i.imgur.com/ynmzKmA.jpg" style="width: 50%;height: 50%" /><figcaption>Un meme qui explique bien ma situation 🙂</figcaption>Le souci avec ce genre d&rsquo;extensions, c&rsquo;est qu&rsquo;elles consomment beaucoup de ressources processeur / mémoire en plus de devoir être installées sur le navigateur en question pour fonctionner. Alors oui, je sais, il existe des navigateurs avec des bloqueurs de pub intégrés mais parfois, on a juste ni le choix du navigateur, ni la possibilité d&rsquo;installer une extension. </p>
 <p>Parfois, on aimerait juste que ça fonctionne, comme ça, naturellement, sans n&rsquo;avoir rien à faire et ça, sur tous les appareils de la maison ou du bureau (« out-of-the-box » comme diront les plus anglophones 🙂 ).</p>
-<p>Si vous pensez comme moi, alors vous êtes à la bonne adresse, car aujourd&rsquo;hui, je vous propose ce petit tuto <a href="https://blog.tchernobyl.ml/category/diy/">DIY</a> afin d&rsquo;en finir définitivement avec les pubs chez vous ou à votre lieu de travail.</p>
+<p>Si vous pensez comme moi, alors vous êtes à la bonne adresse, car aujourd&rsquo;hui, je vous propose ce petit tuto <a href="https://hackonch.ml/category/diy/">DIY</a> afin d&rsquo;en finir définitivement avec les pubs chez vous ou à votre lieu de travail.</p>
 <h3>Ingrédients : </h3>
 <p>&#8211; un Raspberry Pi 🍓 (désolé il n&rsquo;y avait plus d&#8217;emojis framboise)<br />
-&#8211; une carte SD, à la base je n&rsquo;en ai pas vraiment besoin vu l&rsquo;installation que j&rsquo;ai (<a href="https://blog.tchernobyl.ml/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" rel="noopener noreferrer" target="_blank">ici</a>)mais une carte SD de 4 Go devrait être largement suffisante.<br />
+&#8211; une carte SD, à la base je n&rsquo;en ai pas vraiment besoin vu l&rsquo;installation que j&rsquo;ai (<a href="https://hackonch.ml/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" rel="noopener noreferrer" target="_blank">ici</a>)mais une carte SD de 4 Go devrait être largement suffisante.<br />
 &#8211; une alimentation usb (si vous n&rsquo;avez pas l&rsquo;alimentation officielle sous la main, votre chargeur *<strong>USB</strong>* de téléphone fait largement l&rsquo;affaire)<br />
 &#8211; une distribution Linux, la plus plébiscité sur Raspberry Pi étant Raspbian, on prendra Rapsbian, mais n&rsquo;importe quel distrib fait l&rsquo;affaire !<br />
 &#8211; un autre ordinateur (pour configcaptionr notre framboise)</p>
 <h3>Préparer le terrain : </h3>
-<p>Normalement, quand vous sortez du carton votre Raspberry Pi, il n&rsquo;y a rien d&rsquo;installé, courrez donc brancher votre carte SD dans le lecteur de carte SD de votre autre ordinateur afin d&rsquo;installer Raspbian sur la carte comme précisé sur ce petit <a href="https://blog.tchernobyl.ml/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">tuto</a></p>
+<p>Normalement, quand vous sortez du carton votre Raspberry Pi, il n&rsquo;y a rien d&rsquo;installé, courrez donc brancher votre carte SD dans le lecteur de carte SD de votre autre ordinateur afin d&rsquo;installer Raspbian sur la carte comme précisé sur ce petit <a href="https://hackonch.ml/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">tuto</a></p>
 <p>Après cela, on s&#8217;empresse d&rsquo;activer le service SSH de notre Raspberry Pi en allant dans la partition boot (et non le dossier /boot à la racine). Une fois qu&rsquo;on est dans la bonne partition, on crée simplement un fichier vide nommé « ssh ».</p>
 <p>Et voilà, c&rsquo;est bon pour l&rsquo;installation du Raspberry, il ne reste plus qu&rsquo;à insérer la carte SD dans le port prévu à cet effet, d&rsquo;allumer le tout et d&rsquo;utiliser son terminal en se connectant via SSH au Raspberry Pi :</p>
 <pre>
@@ -77,7 +77,7 @@ Confirmation du mot de passe : [le même mot de passe que précédement entré :
 pi@raspberry:~ $ curl -sSL https://install.pi-hole.net | bash
 </pre>
 <p>le script devrait se lancer :</p>
-<p><img src="https://i.imgur.com/rHChPdC.png" /><figcaption>cette framboise&#8230; 😍</figcaption>On déroule le script d&rsquo;installation en naviguant avec les touches directionnelles du clavier jusqu&rsquo;à cette étape qui est selon moi la plus importante. Ceux qui auront lu mon article sur les <a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">DNS</a> (<a href="https://blog.tchernobyl.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">ici</a>) sauront quoi choisir en DNS 🙂<br />
+<p><img src="https://i.imgur.com/rHChPdC.png" /><figcaption>cette framboise&#8230; 😍</figcaption>On déroule le script d&rsquo;installation en naviguant avec les touches directionnelles du clavier jusqu&rsquo;à cette étape qui est selon moi la plus importante. Ceux qui auront lu mon article sur les <a href="https://hackonch.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">DNS</a> (<a href="https://hackonch.ml/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" rel="noopener noreferrer" target="_blank">ici</a>) sauront quoi choisir en DNS 🙂<br />
 <img src="https://i.imgur.com/wnfcdov.png" /></p>
 <p>Une fois l&rsquo;installation terminée, l&rsquo;adresse d&rsquo;une page d&rsquo;administration ainsi que votre mot de passe pour y accéder vous sont donnés, retenez le mot de passe ! Si vous préférez un autre mot de passe, vous pouvez toujours le changez via la commande : </p>
 <pre>
@@ -96,7 +96,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
 <p>D&rsquo;ici là, portez-vous bien, buvez de l&rsquo;eau car l&rsquo;eau c&rsquo;est la vie et à bientôt tout le monde !</p>
 <p><img src="https://i.imgur.com/bYJGrl5.jpg" /></p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/">Pi-Hole ou comment mettre Adblock sur tout un réseau</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/pi-hole-ou-comment-mettre-adblock-sur-tout-un-reseau/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -111,10 +111,10 @@ pi@raspberry:~ $ sudo pihole -a -p
 		<category><![CDATA[Fun]]></category>
 		<category><![CDATA[Système]]></category>
 
-		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1189</guid>
+		<guid isPermaLink="false">https://hackonch.ml/?p=1189</guid>
 				<description><![CDATA[<div class="post-excerpt">Coucou tout le monde, Connaissez-vous « dd » ? Non ? Il s&#8217;agit d&#8217;un petit binaire GNU, sûrement un des plus incontournables qui existe. Il permet de faire tout un tas de&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Coucou tout le monde,</p>
 <p>Connaissez-vous « dd » ? Non ? Il s&rsquo;agit d&rsquo;un petit binaire GNU, sûrement un des plus incontournables qui existe. Il permet de faire tout un tas de choses dont rendre des périphériques USB / cartes SD « bootables ».</p>
@@ -141,7 +141,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>En plus, je trouve que cet outil met un peu d&rsquo;ordre dans tout le bazar de « Unetbootin, « Rufus », « Linux live iso » et dérivés en tous genres que je trouve bien trop compliqués à utiliser pour pas grand-chose.</p>
 <p>Voili, voilou, on ne change pas les bonnes habitudes, j&rsquo;espère que cet article vous a plus, n&rsquo;hésitez pas à le partager avec vos collègues ou vos amis et évidemment à faire votre propre idée sur le sujet.</p>
 <p>D&rsquo;ici là, portez-vous bien, soyeux heureux et à bientôt tout le monde !</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/">Etcher ou rendre une usb bootable sur Linux, Mac OS ou même Windows</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/etcher-ou-rendre-une-usb-bootable-sur-linux-mac-os-ou-meme-windows/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -155,14 +155,14 @@ pi@raspberry:~ $ sudo pihole -a -p
 				<category><![CDATA[DIY]]></category>
 		<category><![CDATA[Fun]]></category>
 
-		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=1026</guid>
+		<guid isPermaLink="false">https://hackonch.ml/?p=1026</guid>
 				<description><![CDATA[<div class="post-excerpt">Bonjour à tous, Avant de commencer, ceux qui suivent déjà le blog doivent déjà savoir ce qu&#8217;est un CTF (Capture The Flag), pour les autres qui découvrent le site ou&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Bonjour à tous,</p>
-<p>Avant de commencer, ceux qui suivent déjà le blog doivent déjà savoir ce qu&rsquo;est un CTF (Capture The Flag), pour les autres qui découvrent le site ou qui ne sont pas sûr, allez par <a href="https://blog.tchernobyl.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">ici</a> jeter un petit coup d&rsquo;oeil 🙂</p>
-<p>J&rsquo;ai été ravi de voir que mon précédent article sur les <a href="https://blog.tchernobyl.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">Capture The Flag</a> en a convaincu plus d&rsquo;un à se lancer dans l&rsquo;aventure. Mais même si mon article a plu, d&rsquo;en l&rsquo;ensemble j&rsquo;ai constaté que je ne répondais pas à toutes les interrogations qu&rsquo;un <a href="https://translate.google.com/?um=1&amp;ie=UTF-8&amp;hl=fr&amp;client=tw-ob#en/fr/newbie" rel="noopener noreferrer" target="_blank">newbie</a> peut se poser.</p>
+<p>Avant de commencer, ceux qui suivent déjà le blog doivent déjà savoir ce qu&rsquo;est un CTF (Capture The Flag), pour les autres qui découvrent le site ou qui ne sont pas sûr, allez par <a href="https://hackonch.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">ici</a> jeter un petit coup d&rsquo;oeil 🙂</p>
+<p>J&rsquo;ai été ravi de voir que mon précédent article sur les <a href="https://hackonch.ml/fun/les-capture-the-flag-un-bon-moyen-dentretenir-sa-forme/" rel="noopener noreferrer" target="_blank">Capture The Flag</a> en a convaincu plus d&rsquo;un à se lancer dans l&rsquo;aventure. Mais même si mon article a plu, d&rsquo;en l&rsquo;ensemble j&rsquo;ai constaté que je ne répondais pas à toutes les interrogations qu&rsquo;un <a href="https://translate.google.com/?um=1&amp;ie=UTF-8&amp;hl=fr&amp;client=tw-ob#en/fr/newbie" rel="noopener noreferrer" target="_blank">newbie</a> peut se poser.</p>
 <p>C&rsquo;est pourquoi aujourd&rsquo;hui, je vous partage LA bonne recette en trois étapes pour bien débuter dans les CTF.</p>
 <h3>1°) Le matériel </h3>
 <blockquote><p>On ne fait pas d&rsquo;omelettes sans casser d’œufs mais encore faut-il en avoir !</p></blockquote>
@@ -183,7 +183,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p>Un CTF, c&rsquo;est avant tout un fichier d&rsquo;image disque&#8230; mais pas que. En effet, dans mon précédent article, j&rsquo;avais traité d&rsquo;un site (<a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">Vulnhub</a>) qui fournit des fichiers d&rsquo;images à télécharger et qu&rsquo;on peut très facilement monter en local sur une machine virtuelle (Virtual Box ou KVM).</p>
 <p>Le truc c&rsquo;est que pour débuter, c&rsquo;est pas forcément évident de configurer une machine virtuelle. C&rsquo;est pourquoi d&rsquo;autre sites existent:</p>
 <p>On peut citer <a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">Root-Me</a>, qui est une association francophone (cocorico) à but non lucratif visant à promouvoir les connaissances en matière de piratage et de sécurité de l&rsquo;information. La plateforme fournit tous pleins de challenges super bien faits dans diverses catégories (Réseau, programmation, Web, stéganographie, etc&#8230;) en plus d&rsquo;une section CTF ou plusieurs machines sont mises à disposition de la communauté avec un large choix d&rsquo;images. Pour être membre actif et supportant l&rsquo;association je dois reconnaître qu&rsquo;il s&rsquo;agit là d&rsquo;un chouette projet.</p>
-<p>Pour ceux qui n&rsquo;ont pas peur d&rsquo;oser l&rsquo;anglais, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">Hack The Box</a> est aussi une bonne adresse. En effet il s&rsquo;agit d&rsquo;une plateforme spécialisé dans les CTF. Les images sont faites mains exclusivement par des membres de la communauté, il en existe de tous les niveaux et de toutes les couleurs. Tout comme Root-Me il y a zéro configuration à faire, tout est en ligne. Seul un accès au <a href="https://blog.tchernobyl.ml/diy/monter-son-propre-vpn-comme-un-nul-introduction/" rel="noopener noreferrer" target="_blank">VPN</a> doit être configuré mais tout est super bien expliqué sur le site.</p>
+<p>Pour ceux qui n&rsquo;ont pas peur d&rsquo;oser l&rsquo;anglais, <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">Hack The Box</a> est aussi une bonne adresse. En effet il s&rsquo;agit d&rsquo;une plateforme spécialisé dans les CTF. Les images sont faites mains exclusivement par des membres de la communauté, il en existe de tous les niveaux et de toutes les couleurs. Tout comme Root-Me il y a zéro configuration à faire, tout est en ligne. Seul un accès au <a href="https://hackonch.ml/diy/monter-son-propre-vpn-comme-un-nul-introduction/" rel="noopener noreferrer" target="_blank">VPN</a> doit être configuré mais tout est super bien expliqué sur le site.</p>
 <p>Je pense avoir fait le tour concernant les meilleurs sites où on peut déguster de savoureux CTF, si certains connaissent d&rsquo;autres sites, je serais plus que ravis de les rajouter !</p>
 <h3>3°) C&rsquo;est parti !</h3>
 <p>Maintenant qu&rsquo;on a tout ce qu&rsquo;il nous faut, il ne reste plus qu&rsquo;à s&rsquo;amuser et à prendre du bon temps en attendant la Nuit du Hack ! </p>
@@ -197,7 +197,7 @@ pi@raspberry:~ $ sudo pihole -a -p
 <p><a href="https://www.root-me.org/" rel="noopener noreferrer" target="_blank">https://www.root-me.org/</a>    &#8211; Root-Me<br />
 <a href="https://www.hackthebox.eu/" rel="noopener noreferrer" target="_blank">https://www.hackthebox.eu/</a>  &#8211; Hack The Box<br />
 <a href="https://www.vulnhub.com/" rel="noopener noreferrer" target="_blank">https://www.vulnhub.com/</a>    &#8211; Vulnhub</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/">Comment bien débuter dans les CTF</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/comment-bien-debuter-dans-les-ctf/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -210,10 +210,10 @@ pi@raspberry:~ $ sudo pihole -a -p
 		<dc:creator><![CDATA[~# Hackonch !]]></dc:creator>
 				<category><![CDATA[DIY]]></category>
 
-		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=729</guid>
+		<guid isPermaLink="false">https://hackonch.ml/?p=729</guid>
 				<description><![CDATA[<div class="post-excerpt">Bonjour à tous les amis, j&#8217;espère que vous allez bien. Pour moi, ça va, je souffle enfin. En effet, certains l&#8217;ont très certainement remarqué mais le site a eu une&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/">Hackonch.ml: Un Raspberry et ça repart !</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/">Hackonch.ml: Un Raspberry et ça repart !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Bonjour à tous les amis,<br />
 j&rsquo;espère que vous allez bien. Pour moi, ça va, je souffle enfin. En effet, certains l&rsquo;ont très certainement remarqué mais le site a eu une dernière période assez difficile. Entre 404, 403, 521, et la très fameuse 500, on a eu droit à tout le bestiaire des erreurs HTTP. On a même eu droit à une redirection digne des sites aux noms de domaines suspendus.</p>
@@ -224,7 +224,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 <p>En effet, vu que je n&rsquo;ai ouvert que le port HTTP sur mon routeur, tout les autres ports ne sont visible qu&rsquo;à l&rsquo;intérieur du réseau local et non pas par internet. Setup très malin donc 🙂</p>
 <p>J&rsquo;ai aussi profité de la migration afin d&rsquo;améliorer les performances du site. C&rsquo;est d&rsquo;ailleurs une véritable réussite, on est passé de 3 secondes de chargements par pages à seulement 486 ms !  </p>
 <p>En bref, vive les Framboises, vive GNU/Linux et vive les techno Open sources !! o/ </p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/">Hackonch.ml: Un Raspberry et ça repart !</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/">Hackonch.ml: Un Raspberry et ça repart !</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/tchernobyl-ml-un-raspberry-pi-et-ca-repart/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -241,7 +241,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 		<guid isPermaLink="false">https://tchernobyl.ml/?p=502</guid>
 				<description><![CDATA[<div class="post-excerpt">Derrière ce sigle barbare et tout pleins de mystère se cache un des protocoles les plus essentiels à Internet, j&#8217;ai nommé: Domain Name System. Pourquoi est-ce qu&#8217;il est si essentiel&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p class="has-drop-cap">Derrière ce sigle barbare et tout pleins de mystère se cache un des protocoles les plus essentiels à Internet, j&rsquo;ai nommé: <strong>Domain Name System</strong>.</p>
@@ -349,7 +349,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 
 
 <p>Aller en espérant avoir rendu un fier service, je vous dit à bientôt les coupains 🙂</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/">Les DNS ou comment reprendre le contrôle sur sa vie privée une étape à la fois</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/les-dns-ou-comment-reprendre-le-controle-sur-sa-vie-privee-une-etape-a-la-fois/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -365,7 +365,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 		<guid isPermaLink="false">https://tchernobyl.ml/?p=306</guid>
 				<description><![CDATA[<div class="post-excerpt">Étape 2 &#8211; La configuration du client Pour se connecter au serveur qu&#8217;on vient de configurer, on va utiliser un client non officiel mais très pratique, libre et surtout disponible&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/">Monter son propre VPN comme un nul  (2/2)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/">Monter son propre VPN comme un nul  (2/2)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <h2>Étape 2 &#8211; La configuration du client</h2>
@@ -380,7 +380,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 
 
 
-<div class="wp-block-image"><figure class="aligncenter"><img src="https://blog.tchernobyl.ml/wp-content/uploads/2019/01/image-2.png" alt="image-2" class="wp-image-541" /></figure></div>
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hackonch.ml/wp-content/uploads/2019/01/image-2.png" alt="image-2" class="wp-image-541" /></figure></div>
 
 
 
@@ -429,7 +429,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 
 
 <p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/">Monter son propre VPN comme un nul  (2/2)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/">Monter son propre VPN comme un nul  (2/2)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-2-2/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -445,7 +445,7 @@ Du côté matériel par contre, le serveur est directement relié au routeur par
 		<guid isPermaLink="false">https://tchernobyl.ml/?p=295</guid>
 				<description><![CDATA[<div class="post-excerpt">Pour les raisons décrites dans l&#8217;introduction on va monter nous même une infrastructure VPN totalement fonctionnelle, sécurisé et libre&#160; C&#8217;est parti!&#160; Liste des ingrédients:&#160; _ Un PC (Linux, Android, Mac,&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/">Monter son propre VPN comme un nul  (1/2)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/">Monter son propre VPN comme un nul  (1/2)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>Pour les raisons décrites dans l&rsquo;introduction on va monter nous même une infrastructure VPN totalement fonctionnelle, sécurisé et libre&nbsp;</p>
@@ -678,7 +678,7 @@ openvpn  tchernobyl.ovpn</pre>
 
 
 <p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/">Monter son propre VPN comme un nul  (1/2)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/">Monter son propre VPN comme un nul  (1/2)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-1-2/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
@@ -694,7 +694,7 @@ openvpn  tchernobyl.ovpn</pre>
 		<guid isPermaLink="false">https://tchernobyl.ml/?p=294</guid>
 				<description><![CDATA[<div class="post-excerpt">Avant de commencer cette mini série DIY, faisons une mini FAQ: Un VPN, c&#8217;est quoi ?&#160; Un Virtual Private Network (VPN) est un petit bricolage qui permet de faire passer&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/" class="btn btn-primary btn-effect"><span>Lire l&#039;Article</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/">Monter son propre VPN comme un nul  (introduction)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/">Monter son propre VPN comme un nul  (introduction)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>Avant de commencer cette mini série DIY, faisons une mini FAQ:</p>
@@ -738,7 +738,7 @@ openvpn  tchernobyl.ovpn</pre>
 
 
 <p class="has-text-color has-vivid-cyan-blue-color">@tchernobyl</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/">Monter son propre VPN comme un nul  (introduction)</a> appeared first on <a rel="nofollow" href="https://tchernobyl.altervista.org">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/">Monter son propre VPN comme un nul  (introduction)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml/fr/">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fr/diy/monter-son-propre-vpn-comme-un-nul-introduction/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
