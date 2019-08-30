@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://hackonch.ml/fr/</loc>
-		<lastmod>2019-08-27T11:42:50+01:00</lastmod>
+		<lastmod>2019-08-30T11:18:20+01:00</lastmod>
 	</url>
 	<url>
 		<loc>https://hackonch.ml/fr/editos/edito-doctobre-premiers-pas/</loc>
@@ -403,6 +403,15 @@
 			<image:loc>https://hackonch.ml/fr/wp-content/uploads/2019/08/computer-1209641_1280.jpg</image:loc>
 			<image:title><![CDATA[computer 1209641 1280]]></image:title>
 			<image:caption><![CDATA[computer 1209641 1280]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://hackonch.ml/fr/malware-hunting/comment-prendre-le-controle-dune-dizaine-de-botnets-russes-par-erreur/</loc>
+		<lastmod>2019-08-30T11:18:20+01:00</lastmod>
+		<image:image>
+			<image:loc>https://hackonch.ml/fr/wp-content/uploads/2019/08/gopnikbasement.jpg</image:loc>
+			<image:title><![CDATA[gopnikbasement]]></image:title>
+			<image:caption><![CDATA[gopnikbasement]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
