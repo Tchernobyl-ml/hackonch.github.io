@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//tchernobylus.altervista.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
-		<loc>https://hackonch.ml/post-sitemap.xml</loc>
+		<loc>https://hackonch.github.io/post-sitemap.xml</loc>
 		<lastmod>2019-09-19T18:36:27+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>https://hackonch.ml/page-sitemap.xml</loc>
+		<loc>https://hackonch.github.io/page-sitemap.xml</loc>
 		<lastmod>2019-08-19T22:50:10+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>https://hackonch.ml/category-sitemap.xml</loc>
+		<loc>https://hackonch.github.io/category-sitemap.xml</loc>
 		<lastmod>2019-09-19T18:36:27+00:00</lastmod>
 	</sitemap>
 </sitemapindex>
