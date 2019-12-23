@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//tchernobylus.altervista.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//hackonch.ml/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://hackonch.github.io/</loc>
+		<loc>https://hackonch.ml/</loc>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/tos/</loc>
+		<loc>https://hackonch.ml/tos/</loc>
 		<lastmod>2019-08-19T19:09:08+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/c50e5-clipboard-close-up-composition-893894.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/c50e5-clipboard-close-up-composition-893894.jpg</image:loc>
 			<image:title><![CDATA[clipboard-close-up-composition-893894]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/faq/</loc>
+		<loc>https://hackonch.ml/faq/</loc>
 		<lastmod>2019-08-19T22:50:10+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/15b13-advise-answer-arrow-208494-2.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/15b13-advise-answer-arrow-208494-2.jpg</image:loc>
 			<image:title><![CDATA[advise-answer-arrow-208494-2]]></image:title>
 		</image:image>
 	</url>

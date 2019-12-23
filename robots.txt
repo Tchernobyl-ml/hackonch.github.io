@@ -1,4 +1,4 @@
-Sitemap: https://hackonch.github.io/sitemap.xml
-Sitemap: https://hackonch.github.io/fr/sitemap.xml
+Sitemap: https://hackonch.ml/sitemap.xml
+Sitemap: https://hackonch.ml/fr/sitemap.xml
 User-agent:*
 Disallow:

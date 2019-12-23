@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//hackonch.github.io/fr/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//hackonch.ml/fr/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
-		<loc>https://hackonch.github.io/fr/post-sitemap.xml</loc>
+		<loc>https://hackonch.ml/fr/post-sitemap.xml</loc>
 		<lastmod>2019-08-30T11:18:20+01:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>https://hackonch.github.io/fr/page-sitemap.xml</loc>
+		<loc>https://hackonch.ml/fr/page-sitemap.xml</loc>
 		<lastmod>2019-07-23T22:43:34+01:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>https://hackonch.github.io/fr/category-sitemap.xml</loc>
+		<loc>https://hackonch.ml/fr/category-sitemap.xml</loc>
 		<lastmod>2019-08-30T11:18:20+01:00</lastmod>
 	</sitemap>
 </sitemapindex>

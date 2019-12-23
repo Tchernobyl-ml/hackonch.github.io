@@ -1,141 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//tchernobylus.altervista.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//hackonch.ml/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://hackonch.github.io/</loc>
+		<loc>https://hackonch.ml/</loc>
 		<lastmod>2019-09-19T18:36:27+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/</loc>
+		<loc>https://hackonch.ml/diy/etcher-or-how-to-burn-an-iso-img-on-linux-mac-os-and-even-windows/</loc>
 		<lastmod>2019-08-18T09:22:15+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/f8e29-bootable.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/f8e29-bootable.jpg</image:loc>
 			<image:title><![CDATA[bootable]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/system/wire-as-a-good-replacement-for-skype/</loc>
+		<loc>https://hackonch.ml/system/wire-as-a-good-replacement-for-skype/</loc>
 		<lastmod>2019-08-18T10:29:00+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/9e481-b.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/9e481-b.jpg</image:loc>
 			<image:title><![CDATA[b]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/diy/how-to-get-started-into-ctfs/</loc>
+		<loc>https://hackonch.ml/diy/how-to-get-started-into-ctfs/</loc>
 		<lastmod>2019-08-19T17:22:22+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/05/fsociety-nahren-obschestvo-mr-5163.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/05/fsociety-nahren-obschestvo-mr-5163.jpg</image:loc>
 			<image:title><![CDATA[fsociety-nahren-obschestvo-mr-5163]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/diy/pi-hole-or-how-to-adblock-an-entire-network/</loc>
+		<loc>https://hackonch.ml/diy/pi-hole-or-how-to-adblock-an-entire-network/</loc>
 		<lastmod>2019-08-19T17:36:31+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/8d4d7-adblock.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/8d4d7-adblock.jpg</image:loc>
 			<image:title><![CDATA[adblock]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/fun/how-to-lose-your-information-system-on-a-print-server/</loc>
+		<loc>https://hackonch.ml/fun/how-to-lose-your-information-system-on-a-print-server/</loc>
 		<lastmod>2019-08-19T17:37:37+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/82a06-harold-0.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/82a06-harold-0.jpg</image:loc>
 			<image:title><![CDATA[harold-0]]></image:title>
 			<image:caption><![CDATA[background]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/fun/malware-hunting-the-end-of-darkcomet/</loc>
+		<loc>https://hackonch.ml/fun/malware-hunting-the-end-of-darkcomet/</loc>
 		<lastmod>2019-08-19T17:43:31+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/05/a317a-space-1486556_1280.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/05/a317a-space-1486556_1280.jpg</image:loc>
 			<image:title><![CDATA[darkcomet]]></image:title>
 			<image:caption><![CDATA[darkcomet]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/</loc>
+		<loc>https://hackonch.ml/fun/analysis-of-a-chinese-mass-attack-ft-codoso-team/</loc>
 		<lastmod>2019-08-19T17:46:17+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/04/29564-espoir.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/04/29564-espoir.jpg</image:loc>
 			<image:title><![CDATA[dragon]]></image:title>
 			<image:caption><![CDATA[dragon]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/news/some-august-news/</loc>
+		<loc>https://hackonch.ml/news/some-august-news/</loc>
 		<lastmod>2019-08-26T03:24:43+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/beach-1867436_1280.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/beach-1867436_1280.jpg</image:loc>
 			<image:title><![CDATA[beach-1867436_1280]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/privacy/why-wifi-and-privacy-dont-fit-together/</loc>
+		<loc>https://hackonch.ml/privacy/why-wifi-and-privacy-dont-fit-together/</loc>
 		<lastmod>2019-08-26T07:36:31+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/cf4d2-cafe-1209769_1280.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/cf4d2-cafe-1209769_1280.jpg</image:loc>
 			<image:title><![CDATA[cafe-1209769_1280]]></image:title>
 			<image:caption><![CDATA[background]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/malware-hunting/baldr-or-how-to-get-pwned-for-cheating-on-fortnite/</loc>
+		<loc>https://hackonch.ml/malware-hunting/baldr-or-how-to-get-pwned-for-cheating-on-fortnite/</loc>
 		<lastmod>2019-08-26T07:36:35+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/011c6-adobestock_205189657.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/011c6-adobestock_205189657.jpg</image:loc>
 			<image:title><![CDATA[205189657]]></image:title>
 			<image:caption><![CDATA[background]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/</loc>
+		<loc>https://hackonch.ml/privacy/net-neutrality-how-to-know-if-your-isp-is-safe/</loc>
 		<lastmod>2019-08-26T07:37:33+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/af889-c.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/af889-c.jpg</image:loc>
 			<image:title><![CDATA[c]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/shouts/command-vm-and-flare-vm-to-loose-faith-in-windows/</loc>
+		<loc>https://hackonch.ml/shouts/command-vm-and-flare-vm-to-loose-faith-in-windows/</loc>
 		<lastmod>2019-08-26T07:38:15+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/07/f2131-building-business-caution-2282658.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/07/f2131-building-business-caution-2282658.jpg</image:loc>
 			<image:title><![CDATA[building-business-caution-2282658]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/malware-hunting/investigation-russian-phishing-campaign-via-text-messages-on-leboncoin/</loc>
+		<loc>https://hackonch.ml/malware-hunting/investigation-russian-phishing-campaign-via-text-messages-on-leboncoin/</loc>
 		<lastmod>2019-08-26T07:39:33+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/06/48276-leboncoin.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/06/48276-leboncoin.jpg</image:loc>
 			<image:title><![CDATA[leboncoin]]></image:title>
 			<image:caption><![CDATA[leboncoin]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/news/tchernobyl-ml-become-hackonch-ml/</loc>
+		<loc>https://hackonch.ml/news/tchernobyl-ml-become-hackonch-ml/</loc>
 		<lastmod>2019-08-27T13:30:27+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/computer-1209641_1280.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/computer-1209641_1280.jpg</image:loc>
 			<image:title><![CDATA[computer-1209641_1280]]></image:title>
 			<image:caption><![CDATA[computer_code]]></image:caption>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/malware-hunting/how-to-take-control-of-a-dozen-russian-botnets-by-mistake/</loc>
+		<loc>https://hackonch.ml/malware-hunting/how-to-take-control-of-a-dozen-russian-botnets-by-mistake/</loc>
 		<lastmod>2019-09-15T18:36:25+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/08/gopnikissurprised.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/08/gopnikissurprised.jpg</image:loc>
 			<image:title><![CDATA[gopnikissurprised]]></image:title>
 		</image:image>
 	</url>
 	<url>
-		<loc>https://hackonch.github.io/privacy/how-they-are-gaining-more-power-day-after-day/</loc>
+		<loc>https://hackonch.ml/privacy/how-they-are-gaining-more-power-day-after-day/</loc>
 		<lastmod>2019-09-19T18:36:27+00:00</lastmod>
 		<image:image>
-			<image:loc>https://hackonch.github.io/wp-content/uploads/2019/09/pouet.jpg</image:loc>
+			<image:loc>https://hackonch.ml/wp-content/uploads/2019/09/pouet.jpg</image:loc>
 			<image:title><![CDATA[pouet]]></image:title>
 			<image:caption><![CDATA[background]]></image:caption>
 		</image:image>
